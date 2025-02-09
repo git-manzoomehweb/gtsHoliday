@@ -1,0 +1,168 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root {
+  --primary: #97000c;
+  --primary-950: #97000c;
+  --primary-900: #bd000f;
+  --primary-800: #cb141e;
+  --primary-700: #d81f25;
+  --primary-600: #ea2b2b;
+  --primary-500: #f9372b;
+  --primary-400: #f44a48;
+  --primary-300: #ea6e6d;
+  --primary-200: #f39796;
+  --primary-100: #ffcbd0;
+  --primary-50: #ffeaed;
+
+  --secondary: #97000c;
+  --secondary-950: #97000c;
+  --secondary-900: #bd000f;
+  --secondary-800: #cb141e;
+  --secondary-700: #d81f25;
+  --secondary-600: #ea2b2b;
+  --secondary-500: #f9372b;
+  --secondary-400: #f44a48;
+  --secondary-300: #ea6e6d;
+  --secondary-200: #f39796;
+  --secondary-100: #ffcbd0;
+  --secondary-50: #ffeaed;
+
+  --zinc: #09090b;
+  --zinc-950: #09090b;
+  --zinc-900: #18181b;
+  --zinc-800: #27272a;
+  --zinc-700: #3f3f46;
+  --zinc-600: #52525b;
+  --zinc-500: #71717a;
+  --zinc-400: #a1a1aa;
+  --zinc-300: #d4d4d8;
+  --zinc-200: #e4e4e7;
+  --zinc-100: #f4f4f5;
+  --zinc-50: #fafafa;
+
+  --red-50: #fef2f2;
+  --red-60: rgba(234, 43, 43, 0.2);
+  --black-1: rgba(0, 0, 0, 0.5);
+}
+@font-face {
+  font-family: PFEuroset;
+  src: url("./fonts/PFEuroset.ttf");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+html,
+body,
+a,
+button {
+  font-family: PFEuroset !important ;
+}
+body {
+  position: relative;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+.scroll-thin::-webkit-scrollbar {
+  width: 4px !important;
+}
+::-webkit-scrollbar-track {
+  background: #e5e5e5;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-500) !important;
+  border-radius: 10px;
+  box-shadow: inset 3px 3px 3px rgba(0, 0, 0, 0.203);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-950) !important;
+}
+.first-swiper .swiper-pagination-bullet,
+.first-swiper-mob .swiper-pagination-bullet {
+  background-color: var(--primary-50) !important;
+  width: 11px !important ;
+  height: 11px !important ;
+  opacity: 1 !important;
+  border-radius: 50% !important;
+}
+.first-swiper .swiper-pagination-bullet:hover {
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.106);
+}
+.first-swiper .swiper-pagination-bullet.swiper-pagination-bullet-active,
+.first-swiper-mob .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background-color: var(--primary-300) !important;
+}
+.rezervation-item li {
+  background-color: var(--primary-600);
+  color: white;
+  transition: all 0.25s ease-in-out;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+}
+.rezervation-item li svg path {
+  fill: white;
+}
+li.inactive {
+  background-color: white;
+  color: var(--primary-600);
+}
+li.inactive svg path {
+  fill: var(--primary-600);
+}
+li.inactive:hover {
+  background-color: var(--primary-600);
+  color: white;
+}
+li.inactive:hover svg path {
+  fill: white;
+}
+
+.flight-items li div::before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  top: 0;
+  left: -19px;
+  z-index: 1;
+}
+.flight-items li input[type="radio"]:checked + label div::before {
+  border: 2px solid white;
+}
+.flight-items li div::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  top: 0;
+  left: -19px;
+  border: 2px solid #fff;
+}
+.flight-items li input[type="radio"]:checked + label div::after {
+  color: white;
+  font-weight: 600;
+  content: "\f111";
+  font-family: "fontawesome";
+  top: 6px;
+  left: -13.4px;
+  width: 4px;
+  height: 4px;
+  background-color: white;
+  line-height: 20px;
+  text-align: center;
+  font-size: 0;
+}
+.Noactive-date {
+  background-color: var(--primary-300);
+  cursor: not-allowed;
+}
+.Noactive-date::placeholder {
+  color: var(--primary-700) !important;
+}

@@ -1,0 +1,558 @@
+<basis core="dbsource" source="hosting" name="tag" urlid="[##cms.seo.urlid##]">
+  <member type="list" name="list" request="taglist" preview=""></member>
+</basis>
+<basis
+  core="dbsource"
+  source="basiscore"
+  lid="2"
+  mid="18"
+  name="db"
+  usedforid="[##cms.query.catid##]"
+>
+  <member name="scalar" type="scalar" typeid="150" />
+</basis>
+<basis
+  core="dbsource"
+  source="basiscore"
+  name="db"
+  mid="1"
+  lid="2"
+  usedforid="2372523"
+>
+  <member name="view-article" type="view" />
+  <basis
+    core="dbsource"
+    source="basiscore"
+    lid="2"
+    mid="1"
+    name="db"
+    catid="[##cms.query.catid##]"
+  >
+    <member
+      name="navigation"
+      type="tree"
+      request="navcatid"
+      parentid="[##cms.query.catid##]"
+    />
+  </basis>
+
+  <basis
+    core="dbsource"
+    source="basiscore"
+    lid="2"
+    mid="1"
+    name="db"
+    catid="[##cms.query.catid##]"
+  >
+    <member
+      name="article-list"
+      type="list"
+      link="article.bc"
+      propertyid="7244"
+      perpage="12"
+      pageno="[##cms.query.pagenum|(1)##]"
+      size="416x237"
+      order="ord"
+    />
+    <member
+      name="paging"
+      type="list"
+      request="paging"
+      count="5"
+      parentname="article-list"
+    />
+  </basis>
+  <!DOCTYPE html>
+  <html lang="en" dir="ltr">
+    <head>
+      <meta charset="UTF-8" />
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0,shrink-to-fit=no,viewport-fit=cover"
+      />
+      <title>[##cms.seo.title|(GTS Holiday Travel Agency)##]</title>
+      <meta
+        name="description"
+        content="[##cms.seo.description|(GTS Holiday Travel Agency)##]"
+      />
+      <basis
+        core="dbsource"
+        source="hosting"
+        name="tag"
+        urlid="[##cms.seo.urlid##]"
+      >
+        <member type="list" name="list" request="taglist" preview=""></member>
+      </basis>
+      <basis core="print" datamembername="tag.list">
+        <face filter="key = 'canonical'">
+          <link rel="canonical" href="@value" />
+        </face>
+        <face>
+          <meta property="@key" content="@value" />
+        </face>
+      </basis>
+      <basis core="call" file="pwa.inc" lid="2" />
+      <basis core="call" file="style.inc" lid="2" />
+    </head>
+
+    <body class="">
+      <basis core="call" file="header.inc" lid="2" />
+
+      <main
+        class="pt-[99.5px] overflow-hidden w-full justify-center relative flex"
+      >
+        <section
+          class="w-full relative lg:w-[950px] xl:w-[1200px] 2xl:w-[1280px] flex flex-col gap-4 items-center justify-center"
+        >
+          <span class="absolute top-0 left-[-6rem]">
+            <svg
+              width="332"
+              height="467"
+              viewBox="0 0 332 467"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M194.788 11.2672L159.052 0.977337C149.17 -1.86807 139.416 5.83003 139.893 16.0989L149.142 215.538C149.894 231.74 144.79 247.67 134.764 260.42L3.79442 426.97C-2.79373 435.348 1.20401 447.73 11.4493 450.68L63.6493 465.711C71.8956 468.085 80.7632 466.821 88.0157 462.238L310.894 321.383C329.939 309.347 337.16 285.094 327.799 264.601L223.315 35.8508C217.85 23.8874 207.43 14.9072 194.788 11.2672Z"
+                fill="#FAF0F0"
+              />
+            </svg>
+          </span>
+          <span class="absolute top-2 right-[-8rem]">
+            <svg
+              width="302"
+              height="476"
+              viewBox="0 0 302 476"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M183.836 471.29L220.817 475.215C231.043 476.3 239.311 467.025 237.058 456.995L193.3 262.196C189.745 246.371 192.003 229.796 199.662 215.498L299.705 28.7278C304.738 19.3327 298.649 7.83274 288.047 6.70749L234.03 0.974385C225.497 0.0686994 216.983 2.85397 210.637 8.62771L15.6195 186.061C-1.04537 201.224 -3.94268 226.362 8.83601 244.917L151.473 452.036C158.932 462.869 170.755 469.902 183.836 471.29Z"
+                fill="#FAF0F0"
+              />
+            </svg>
+          </span>
+
+          <ul class="flex gap-2 items-center z-20">
+            <li
+              itemprop="itemListElement"
+              itemscope
+              itemtype="https://schema.org/ListItem"
+              class="text-xs hover:text-primary-600 text-zinc-600"
+            >
+              <a itemprop="item" aria-label="home" href="/">
+                <span itemprop="name"> Home </span>
+                <meta itemprop="position" content="1" />
+              </a>
+            </li>
+            <li class="text-xs text-zinc-600">></li>
+            <basis core="print" datamembername="db.navigation">
+              <face filter="RowNumber=max(RowNumber) and parentcatid<>212901">
+                <li
+                  class="text-xs text-zinc-900"
+                  itemprop="itemListElement"
+                  itemscope
+                  itemtype="https://schema.org/ListItem"
+                >
+                  <span itemprop="name">@title</span>
+                  <meta itemprop="position" content="@rownumber" />
+                </li>
+              </face>
+              <face filter="link is null and parentcatid<>212901">
+                <li
+                  class="text-xs flex gap-2 hover:text-primary-600 text-zinc-600"
+                  itemprop="itemListElement"
+                  itemscope
+                  itemtype="https://schema.org/ListItem"
+                >
+                  <a
+                    class="text-xs hover:text-primary-600 text-zinc-600"
+                    itemprop="item"
+                    href="/article-list.bc?catid=@parentcatid"
+                    aria-label="@title"
+                    ><span itemprop="name">@title</span>
+                    <meta itemprop="position" content="@rownumber" />
+                  </a>
+
+                  <span class="text-xs text-zinc-600"> > </span>
+                </li>
+              </face>
+              <face filter="parentcatid<>212901">
+                <li
+                  class="text-xs flex gap-2 hover:text-primary-600 text-zinc-600"
+                  itemprop="itemListElement"
+                  itemscope
+                  itemtype="https://schema.org/ListItem"
+                >
+                  <a
+                    class="text-xs hover:text-primary-600 text-zinc-600"
+                    itemprop="item"
+                    href="@link"
+                    aria-label="@title"
+                    ><span class="text-zinc-900" itemprop="name">@title</span>
+                    <meta itemprop="position" content="@rownumber" />
+                  </a>
+                  <span class="text-xs text-zinc-600"> > </span>
+                </li>
+              </face>
+            </basis>
+          </ul>
+          <basis core="print" datamembername="db.scalar">
+            <face>
+              <h1 class="text-xl z-20 font-normal text-zinc-900">@column1</h1>
+            </face>
+          </basis>
+
+          <p class="text-sm z-20 font-normal text-zinc-900">
+            Get to know with the best GTS Holiday Blog
+          </p>
+          <form
+            id="search-content-article"
+            method="get"
+            action=""
+            class="w-[60%] z-20 relative search-content p-2 rounded-xl bg-primary-600 seraching-form"
+          >
+            <div class="w-full flex gap-4 bg-primary-400 rounded-xl p-2">
+              <input
+                class="w-[89%] truncate outline-none rounded-xl p-2 bg-white border-0 focus:border-0 focus:outline-none"
+                placeholder="Search blog"
+                type="text"
+                autocomplete="off"
+                name="search-content-name"
+                id="search-content-name"
+              />
+              <button
+                class="bg-zinc-950 group hover:shadow-2xl shadow-inner hover:bg-zinc-100 transition-all duration-200 ease-in-out py-6 flex items-center justify-center rounded-xl w-[10%] h-full"
+                type="submit"
+              >
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M17.6207 17.6543C18.0072 17.2704 18.6268 17.2704 19.0134 17.6543L21.568 19.7164H21.6124C22.1292 20.2388 22.1292 21.0858 21.6124 21.6082C21.0955 22.1306 20.2576 22.1306 19.7407 21.6082L17.6207 19.1785L17.5403 19.0877C17.3904 18.898 17.3076 18.6615 17.3076 18.4164C17.3076 18.1304 17.4203 17.8562 17.6207 17.6543ZM10.5776 2C12.8526 2 15.0343 2.91344 16.6429 4.53936C18.2516 6.16529 19.1553 8.37052 19.1553 10.6699C19.1553 15.4582 15.3149 19.3399 10.5776 19.3399C5.84034 19.3399 2 15.4582 2 10.6699C2 5.88166 5.84034 2 10.5776 2Z"
+                    fill="white"
+                    class="group-hover:fill-zinc-950 transition-all duration-200 ease-in-out"
+                  />
+                </svg>
+              </button>
+            </div>
+            <input id="catidsearched" type="hidden" value="0" name="catid" />
+            <ul
+              class="flex-col absolute hidden w-full search-drop-down bg-white rounded-xl"
+            >
+              <basis core="list" datamembername="db.article-list">
+                <face>
+                  <li onclick="contentSearched('@title','@id')">
+                    @title
+                    <span class="hidden linkspan">/@link</span>
+                  </li>
+                </face>
+                <face filter="link is null">
+                  <li onclick="contentSearched('@title','@id')">
+                    @title
+                    <span class="hidden linkspan">/article.bc?id=@id</span>
+                  </li>
+                </face>
+              </basis>
+            </ul>
+          </form>
+          <basis core="list" datamembername="db.article-list">
+            <else-layout>
+              <div
+                class="w-full flex flex-col gap-3 items-center justify-center"
+              >
+                <svg
+                  width="72"
+                  height="72"
+                  viewBox="0 0 72 72"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M16.2061 47.0127H8.70312C7.46113 47.0127 6.45312 48.0207 6.45312 49.2627C6.45312 50.5047 7.46113 51.5127 8.70312 51.5127H16.2061C17.4481 51.5127 18.4561 50.5047 18.4561 49.2627C18.4561 48.0207 17.4481 47.0127 16.2061 47.0127Z"
+                    fill="#A1A1AA"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M17.3221 18.334H8.70312C7.46112 18.334 6.45312 19.342 6.45312 20.584C6.45312 21.826 7.46112 22.834 8.70312 22.834H17.3221C18.5641 22.834 19.5721 21.826 19.5721 20.584C19.5721 19.342 18.5641 18.334 17.3221 18.334Z"
+                    fill="#A1A1AA"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M8.70312 37.1133H12.9871C14.2291 37.1133 15.2371 36.1053 15.2371 34.8633C15.2371 33.6213 14.2291 32.6133 12.9871 32.6133H8.70312C7.46113 32.6133 6.45312 33.6213 6.45312 34.8633C6.45312 36.1053 7.46113 37.1133 8.70312 37.1133Z"
+                    fill="#A1A1AA"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M41.5809 13.5762C30.6069 13.5762 21.7148 22.4742 21.7148 33.4512C21.7148 44.4252 30.6069 53.3232 41.5809 53.3232C52.5549 53.3232 61.4499 44.4252 61.4499 33.4512C61.4499 22.4742 52.5549 13.5762 41.5809 13.5762Z"
+                    fill="#A1A1AA"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M64.8539 54.3908L60.1709 49.7198C59.2469 48.7988 57.7529 48.7988 56.8349 49.7258C55.9139 50.6468 55.9139 52.1438 56.8379 53.0648L61.5209 57.7328C61.9829 58.1918 62.5859 58.4228 63.1889 58.4228C63.7919 58.4228 64.3979 58.1918 64.8599 57.7298C65.7809 56.8058 65.7779 55.3118 64.8539 54.3908Z"
+                    fill="#A1A1AA"
+                  />
+                </svg>
+                <p class="text-base text-zinc-400">No article found .</p>
+              </div>
+            </else-layout>
+            <layout>
+              <div
+                class="w-full flex flex-wrap blog-container mt-16 gap-3 z-20"
+              >
+                @child
+              </div>
+            </layout>
+            <face filter="RowNumber in ('5')">
+              <div class="relative h-[235px] overflow-hidden rounded-xl">
+                <img
+                  loading="lazy"
+                  class="!w-full !h-full object-cover"
+                  src="@00416X00237prp"
+                  alt="@title"
+                  width="416"
+                  height="237"
+                />
+                <span
+                  class="z-10 p-6 absolute top-0 left-0 w-full h-full flex flex-col gap-1 justify-end"
+                >
+                  <h2 class="text-white tetx-base font-normal">@title</h2>
+                  <p
+                    class="text-white line-clamp-3 tetx-xs font-normal scale-[0.85] -translate-x-8"
+                  >
+                    @prp_7244
+                  </p>
+                  <a
+                    class="bg-primary-600 hover:shadow-lg hover:scale-105 hover:bg-primary-950 transition-all duration-200 ease-in-out text-white rounded-xl flex justify-center items-center w-[156px] h-12"
+                    href="@link"
+                    >Viwe more</a
+                  >
+                </span>
+              </div>
+              <div
+                class="w-full px-8 py-9 my-5 flex justify-between bg-primary-600 rounded-xl items-center relative"
+              >
+                <div class="flex flex-col gap-3">
+                  <h5 class="text-white font-normal text-[32px] leading-6">
+                    Sign in save money
+                  </h5>
+                  <p class="text-white text-base font-normal">
+                    Save 10% or more at particpation properties-just look for
+                    the blue genius label
+                  </p>
+                </div>
+                <img
+                  loading="lazy"
+                  class="!h-[144px] !w-[166px]"
+                  width="498"
+                  height="433"
+                  src="[##cms.cms.cdn##]/images/gift.png"
+                  alt="gift"
+                />
+              </div>
+            </face>
+            <face filter="RowNumber in ('5') and link is null">
+              <div class="relative h-[235px] overflow-hidden rounded-xl">
+                <img
+                  loading="lazy"
+                  class="!w-full !h-full object-cover"
+                  src="@00416X00237prp"
+                  alt="@title"
+                  width="416"
+                  height="237"
+                />
+                <span
+                  class="z-10 p-6 absolute top-0 left-0 w-full h-full flex flex-col gap-1 justify-end"
+                >
+                  <h2 class="text-white tetx-base font-normal">@title</h2>
+                  <p
+                    class="text-white line-clamp-3 tetx-xs font-normal scale-[0.85] -translate-x-8"
+                  >
+                    @prp_7244
+                  </p>
+                  <a
+                    class="bg-primary-600 hover:shadow-lg hover:scale-105 hover:bg-primary-950 transition-all duration-200 ease-in-out text-white rounded-xl flex justify-center items-center w-[156px] h-12"
+                    href="/article.bc?id=@id"
+                    >Viwe more</a
+                  >
+                </span>
+              </div>
+              <div
+                class="w-full px-8 py-9 my-5 flex justify-between bg-primary-600 rounded-xl items-center relative"
+              >
+                <div class="flex flex-col gap-3">
+                  <h5 class="text-white font-normal text-[32px] leading-6">
+                    Sign in save money
+                  </h5>
+                  <p class="text-white text-base font-normal">
+                    Save 10% or more at particpation properties-just look for
+                    the blue genius label
+                  </p>
+                </div>
+                <img
+                  loading="lazy"
+                  class="!h-[144px] !w-[166px]"
+                  width="498"
+                  height="433"
+                  src="[##cms.cms.cdn##]/images/gift.png"
+                  alt="gift"
+                />
+              </div>
+            </face>
+            <face filter="RowNumber not in ('5')">
+              <div class="relative h-[235px] overflow-hidden rounded-xl">
+                <img
+                  loading="lazy"
+                  class="!w-full !h-full object-cover"
+                  src="@00416X00237prp"
+                  alt="@title"
+                  width="416"
+                  height="237"
+                />
+                <span
+                  class="z-10 p-6 absolute top-0 left-0 w-full h-full flex flex-col gap-1 justify-end"
+                >
+                  <h2 class="text-white tetx-base font-normal">@title</h2>
+                  <p
+                    class="text-white line-clamp-3 tetx-xs font-normal scale-[0.85] -translate-x-8"
+                  >
+                    @prp_7244
+                  </p>
+                  <a
+                    class="bg-primary-600 hover:shadow-lg hover:scale-105 hover:bg-primary-950 transition-all duration-200 ease-in-out text-white rounded-xl flex justify-center items-center w-[156px] h-12"
+                    href="@link"
+                    >Viwe more</a
+                  >
+                </span>
+              </div>
+            </face>
+            <face filter="RowNumber not in ('5') and link is null">
+              <div class="relative h-[235px] overflow-hidden rounded-xl">
+                <img
+                  loading="lazy"
+                  class="!w-full !h-full object-cover"
+                  src="@00416X00237prp"
+                  alt="@title"
+                  width="416"
+                  height="237"
+                />
+                <span
+                  class="z-10 p-6 absolute top-0 left-0 w-full h-full flex flex-col gap-1 justify-end"
+                >
+                  <h2 class="text-white tetx-base font-normal">@title</h2>
+                  <p
+                    class="text-white line-clamp-3 tetx-xs font-normal scale-[0.85] -translate-x-8"
+                  >
+                    @prp_7244
+                  </p>
+                  <a
+                    class="bg-primary-600 hover:shadow-lg hover:scale-105 hover:bg-primary-950 transition-all duration-200 ease-in-out text-white rounded-xl flex justify-center items-center w-[156px] h-12"
+                    href="/article.bc?id=@id"
+                    >Viwe more</a
+                  >
+                </span>
+              </div>
+            </face>
+          </basis>
+
+          <div class="w-full flex gap-4 justify-center items-center">
+            <basis core="print" datamembername="db.paging">
+              <face filter="(@sta='pre')">
+                <a
+                  class="flex group hover:bg-primary-50 hover:text-primary-600 justify-center items-center w-14 h-14 rounded-xl bg-zinc-200"
+                  href="/[##cms.cms.link_page##]&pagenum=@page&catid=[##cms.query.catid##]"
+                  aria-label="angle-left"
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M14 19L7 12L14 5"
+                      stroke="#18181B"
+                      class="group-hover:stroke-primary-600"
+                      stroke-width="1.5"
+                      stroke-linecap="square"
+                    />
+                  </svg>
+                </a>
+              </face>
+            </basis>
+
+            <basis core="print" datamembername="db.paging">
+              <face filter="(@page=[##cms.query.pagenum|(1)##])">
+                <a
+                  class="flex group hover:bg-primary-50 hover:text-primary-600 justify-center items-center w-14 h-14 rounded-xl bg-zinc-200"
+                  href="/[##cms.cms.link_page##]&pagenum=@page&catid=[##cms.query.catid##]"
+                >
+                  @page
+                </a>
+              </face>
+              <face
+                filter="(@page<>[##cms.query.pagenum|(1)##]) and (@page>0) and (@sta='no')"
+              >
+                <a
+                  href="/[##cms.cms.link_page##]&pagenum=@page&catid=[##cms.query.catid##]"
+                  class="flex group hover:bg-primary-50 hover:text-primary-600 justify-center items-center w-14 h-14 rounded-xl bg-zinc-200"
+                >
+                  @page
+                </a>
+              </face>
+            </basis>
+
+            <basis core="print" datamembername="db.paging">
+              <face filter="(@sta='nex')">
+                <a
+                  href="/[##cms.cms.link_page##]&pagenum=@page&catid=[##cms.query.catid##]"
+                  aria-label="angle-right"
+                  class="flex group rotate-180 hover:bg-primary-50 hover:text-primary-600 justify-center items-center w-14 h-14 rounded-xl bg-zinc-200"
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M14 19L7 12L14 5"
+                      stroke="#18181B"
+                      class="group-hover:stroke-primary-600"
+                      stroke-width="1.5"
+                      stroke-linecap="square"
+                    />
+                  </svg>
+                </a>
+              </face>
+            </basis>
+          </div>
+
+          <basis core="view" datamembername="db.view-article">
+            <face filter="RowNumber<>1">
+              <div class="w-full flex flex-col gap-6">
+                <h2 class="text-base font-normal text-zinc-900">@text</h2>
+                <div class="text-xs font-normal text-zinc-900">@largetext</div>
+              </div>
+            </face>
+          </basis>
+        </section>
+      </main>
+
+      <basis core="call" file="footer.inc" lid="2" />
+    </body>
+    <script src="https://cdn.basiscore.net/basisfly.com/js/swiper-bundle.min.js"></script>
+  </html>
+</basis>

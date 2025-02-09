@@ -1,0 +1,286 @@
+<basis core="dbsource" source="hosting" name="tag" urlid="[##cms.seo.urlid##]">
+  <member type="list" name="list" request="taglist" preview=""></member>
+</basis>
+<header
+  class="bg-white header-t z-[200] w-full fixed top-0 flex justify-center items-center py-4 px-4 lg:px-0"
+>
+  <div
+    class="w-full lg:w-[950px] xl:w-[1200px] 2xl:w-[1280px] flex justify-between"
+  >
+    <div class="flex gap-7 items-center">
+      <a href="/" aria-label="logo"
+        ><img
+          src="[##cms.cms.cdn##]/images/logo.png"
+          alt="logo"
+          width="179"
+          height="64"
+          loading="lazy"
+          decoding="async"
+          class="lg:!w-[179px] lg:!h-[64px] !h-[34px] !w-[97px]"
+      /></a>
+      <div class="hidden lg:flex gap-7 items-center">
+        <a
+          class="transition-all duration-150 ease-in-out hover:text-primary-600 text-zinc-900 text-sm"
+          href="/"
+          >Home</a
+        >
+        <a
+          class="transition-all duration-150 ease-in-out hover:text-primary-600 text-zinc-900 text-sm"
+          href="/about-us"
+          >about us</a
+        >
+        <a
+          class="transition-all duration-150 ease-in-out hover:text-primary-600 text-zinc-900 text-sm"
+          href="/blog"
+          >Blog</a
+        >
+      </div>
+    </div>
+    <div class="flex gap-4 items-center">
+      <button
+        class="bg-zinc-900 relative text-white currency-rate rounded-xl w-14 h-14 hidden lg:flex justify-center items-center"
+        type="button"
+      >
+        <span class="currency-loading absolute top-0 right-0 hidden"
+          ><i class="fas fa-spinner fa-spin"></i
+        ></span>
+        <div
+          class="currency-content flex w-full h-full items-center justify-center"
+        >
+          <div
+            data-active="0"
+            class="currency-selected flex w-full h-full items-center justify-center"
+            onclick="currency_selected(this)"
+          >
+            <svg
+              width="12"
+              height="22"
+              viewBox="0 0 12 22"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M7.31428 17.006V12.6803C8.44818 12.6926 9.3661 13.6537 9.3661 14.8363C9.3661 16.0256 8.44818 16.9936 7.31428 17.006ZM2.6339 7.6175C2.6339 6.40887 3.53858 5.42712 4.68038 5.33775V9.911C3.5399 9.82163 2.6339 8.833 2.6339 7.6175ZM12 14.8363C12 12.1371 9.89946 9.94263 7.31428 9.93025V5.32125H7.76205C8.64572 5.32125 9.36478 6.06787 9.36478 6.985V7.16237C9.36478 7.92275 9.95477 8.53737 10.6817 8.53737C11.4087 8.53737 11.9987 7.92275 11.9987 7.16237V6.985C11.9987 4.55125 10.0983 2.57125 7.76205 2.57125H7.31428V1.375C7.31428 0.614625 6.72429 0 5.99733 0C5.27038 0 4.68038 0.614625 4.68038 1.375V2.58775C2.08605 2.67987 0 4.89225 0 7.61888C0.00131695 10.3496 2.08869 12.5689 4.68038 12.661V17.0088H4.23789C3.35428 17.0088 2.63654 16.2566 2.63654 15.3312C2.63654 14.5709 2.04654 13.9562 1.31959 13.9562C0.592629 13.9562 0.00263371 14.5709 0.00263371 15.3312C0.00263371 17.7719 1.903 19.7588 4.23789 19.7588H4.68038V20.625C4.68038 21.384 5.27038 22 5.99733 22C6.72429 22 7.31428 21.384 7.31428 20.625V19.756C9.89946 19.7436 12 17.5422 12 14.8363Z"
+                fill="white"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          class="currency-list text-sm absolute z-10 rounded shadow unvisible"
+        >
+          <div class="scroll">
+            <ul>
+         
+          </ul>
+          </div>
+        </div>
+      </button>
+      <button
+        class="!bg-transparent rounded-xl border-zz w-[111px] h-14 justify-center border border-zinc-900 text-zinc-950 hidden lg:flex items-center gap-5"
+        type="button"
+      >
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M16.6599 18.6473C13.099 18.8809 8.07966 14.6367 7.18457 11.0024"
+            stroke="#09090B"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M3.5 6.29248H17.0071"
+            stroke="#09090B"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M9.9043 4.67993V6.29483"
+            stroke="#09090B"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M11.9766 20.7921L16.7381 11.8386L21.4996 20.7921"
+            stroke="#09090B"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M13.8454 6.29248C13.9592 6.52131 13.3793 14.5893 4.08398 17.3194"
+            stroke="#09090B"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+        En
+      </button>
+      <div class="Login_Information">
+        <basis core="call" file="authentication/modal" lid="2"></basis>
+      </div>
+      <button
+        id="hamber-menu"
+        class="h-14 w-14 lg:hidden bg-primary-600 rounded-xl flex justify-center items-center"
+        type="button"
+      >
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M20 20H4C3.448 20 3 19.553 3 19C3 18.447 3.448 18 4 18H20C20.552 18 21 18.447 21 19C21 19.553 20.552 20 20 20Z"
+            fill="white"
+          />
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M20 6H4C3.448 6 3 5.553 3 5C3 4.447 3.448 4 4 4H20C20.552 4 21 4.447 21 5C21 5.553 20.552 6 20 6Z"
+            fill="white"
+          />
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M20 13H4C3.448 13 3 12.553 3 12C3 11.447 3.448 11 4 11H20C20.552 11 21 11.447 21 12C21 12.553 20.552 13 20 13Z"
+            fill="white"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+<nav
+  class="menu translate-x-[1890px] shadow-2xl lg:hidden flex flex-col gap-4 fixed z-[100] w-full h-full bg-white top-0 left-0"
+>
+  <div
+    class="flex px-5 !h-[99px] w-full justify-between items-center bg-primary-600"
+  >
+    <img
+      width=""
+      height=""
+      class="!w-[140px] !h-[50px]"
+      src="[##cms.cms.cdn##]/images/footer-logo/logo.png"
+      alt="logo"
+    />
+    <button class="hover:opacity-85 h-[19px]" id="nav-closer" type="button">
+      <svg
+        width="19"
+        height="19"
+        viewBox="0 0 13 13"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M7.81295 6.50009L12.7277 1.58528C13.0908 1.22221 13.0908 0.635366 12.7277 0.2723C12.3646 -0.0907666 11.7778 -0.0907666 11.4148 0.2723L6.5 5.18711L1.58525 0.2723C1.22219 -0.0907666 0.635353 -0.0907666 0.272294 0.2723C-0.0907647 0.635366 -0.0907647 1.22221 0.272294 1.58528L5.18704 6.50009L0.272294 11.415C-0.0907647 11.778 -0.0907647 12.3649 0.272294 12.7279C0.453359 12.909 0.691065 13 0.928771 13C1.16648 13 1.40418 12.909 1.58525 12.7279L6.5 7.81317L11.4148 12.7279C11.5958 12.909 11.8335 13 12.0712 13C12.3089 13 12.5466 12.909 12.7277 12.7279C13.0908 12.3649 13.0908 11.778 12.7277 11.415L7.81295 6.50009Z"
+          class="!fill-zinc-800"
+        ></path>
+      </svg>
+    </button>
+  </div>
+  <div class="w-full flex flex-col px-5">
+    <a
+      class="text-zinc-900 py-8 border-b border-zinc-300 hover:text-primary-600"
+      href="/"
+      >Home</a
+    >
+
+    <a
+      class="text-zinc-900 py-8 border-b border-zinc-300 hover:text-primary-600"
+      href="/about-us"
+      >About us</a
+    >
+    <a
+      class="text-zinc-900 py-8 border-b border-zinc-300 hover:text-primary-600"
+      href="/blog"
+      >Blog</a
+    >
+  </div>
+  <div class="flex w-full gap-4 items-center px-5 mt-16">
+    <button
+      class="bg-zinc-900 rounded-xl w-14 h-14 flex justify-center items-center"
+      type="button"
+    >
+      <svg
+        width="12"
+        height="22"
+        viewBox="0 0 12 22"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M7.31428 17.006V12.6803C8.44818 12.6926 9.3661 13.6537 9.3661 14.8363C9.3661 16.0256 8.44818 16.9936 7.31428 17.006ZM2.6339 7.6175C2.6339 6.40887 3.53858 5.42712 4.68038 5.33775V9.911C3.5399 9.82163 2.6339 8.833 2.6339 7.6175ZM12 14.8363C12 12.1371 9.89946 9.94263 7.31428 9.93025V5.32125H7.76205C8.64572 5.32125 9.36478 6.06787 9.36478 6.985V7.16237C9.36478 7.92275 9.95477 8.53737 10.6817 8.53737C11.4087 8.53737 11.9987 7.92275 11.9987 7.16237V6.985C11.9987 4.55125 10.0983 2.57125 7.76205 2.57125H7.31428V1.375C7.31428 0.614625 6.72429 0 5.99733 0C5.27038 0 4.68038 0.614625 4.68038 1.375V2.58775C2.08605 2.67987 0 4.89225 0 7.61888C0.00131695 10.3496 2.08869 12.5689 4.68038 12.661V17.0088H4.23789C3.35428 17.0088 2.63654 16.2566 2.63654 15.3312C2.63654 14.5709 2.04654 13.9562 1.31959 13.9562C0.592629 13.9562 0.00263371 14.5709 0.00263371 15.3312C0.00263371 17.7719 1.903 19.7588 4.23789 19.7588H4.68038V20.625C4.68038 21.384 5.27038 22 5.99733 22C6.72429 22 7.31428 21.384 7.31428 20.625V19.756C9.89946 19.7436 12 17.5422 12 14.8363Z"
+          fill="white"
+        />
+      </svg>
+    </button>
+    <button
+      class="!bg-transparent rounded-xl w-[111px] h-14 justify-center border border-zinc-900 text-zinc-950 flex items-center gap-5"
+      type="button"
+    >
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M16.6599 18.6473C13.099 18.8809 8.07966 14.6367 7.18457 11.0024"
+          stroke="#09090B"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M3.5 6.29248H17.0071"
+          stroke="#09090B"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M9.9043 4.67993V6.29483"
+          stroke="#09090B"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M11.9766 20.7921L16.7381 11.8386L21.4996 20.7921"
+          stroke="#09090B"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M13.8454 6.29248C13.9592 6.52131 13.3793 14.5893 4.08398 17.3194"
+          stroke="#09090B"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+      En
+    </button>
+  </div>
+</nav>

@@ -1,0 +1,291 @@
+@import url(customized.ui.min.css);
+.Basis_Calendar .basis_s_day,
+.Basis_Calendar .day_of_date,
+.Basis_Calendar .month_of_date,
+.CountPassenger.room::before,
+.Others-Button:hover,
+.after-btn:hover,
+.before-btn:hover,
+.circle,
+.details-button:hover,
+.fa-times,
+.font-color_1,
+.font-color_2,
+.font-color_3,
+.highlight,
+.mm-spn li:before,
+.mm-spn.mm-spn--navbar:before,
+.radioButton:checked + label span::after,
+.reserve-button:hover,
+.row1-footer .fa:hover,
+.row1-footer .far:hover,
+.section-filter-icon button:hover,
+.section-research-left button:hover,
+.select-arrow::before,
+.selectCountry i,
+.sort-box .sort-items li.active,
+.total-cost {
+  color: var(--primary);
+  color: var(--primary);
+}
+@font-face {
+  font-display: swap;
+  font-family: fontawesome !important;
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url("../_fonts/fontawesome-webfont.eot");
+  src: url("../_fonts/fontawesome-webfont.eot") format("embedded-opentype"),
+    url("../_fonts/fontawesome-webfont.ttf") format("truetype"),
+    url("../_fonts/fontawesome-webfont.woff") format("truetype"),
+    url("../_fonts/fontawesome-webfont.svg") format("svg");
+}
+@font-face {
+  font-family: PFEuroset;
+  src: url("../_fonts/PFEuroset.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: PFEuroset;
+  src: url("../_fonts/PFEuroset.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-display: swap;
+  font-family: flaticon;
+  src: url("../fonts/fontFlaticon.ttf") format("truetype"),
+    url("../fonts/fontFlaticon.eot#iefix") format("embedded-opentype");
+}
+.EnNum,
+button,
+html,
+html body,
+input,
+select {
+  font-family: PFEuroset;
+}
+body {
+  font-family: PFEuroset;
+}
+.Basis_Calendar .selected_date,
+.active-item-search img,
+.background-color_1,
+.background-color_2,
+.category-title:hover {
+  background: var(--primary) !important;
+}
+.UserInfo {
+  float: left !important;
+}
+.item-search:before {
+  border: 1px dashed var(--primary);
+}
+.background-color_3,
+.controlsPage:hover,
+.createChildDropdown select,
+.fa-angle-double-left:hover,
+.fa-angle-double-right:hover,
+.right-border-d::after,
+.right-border-d::before,
+.row1-footer .fa,
+.row1-footer .far,
+.second-part-header .col1-second-part-header a span,
+.second-part-header .col1-second-part-header a:after,
+.second-part-header .col1-second-part-header a:before,
+.section-details button:hover,
+.section-input_2 input[type="checkbox"]:checked + label span.checkbox::after,
+.ui-datepicker-today .ui-state-highlight {
+  background: var(--primary);
+}
+.total-cost {
+  font-size: 15px;
+}
+.Others-Button,
+.details-button,
+.reserve-button,
+.row1-footer .fa,
+.row1-footer .far {
+  border: 1px solid var(--primary);
+}
+.title-result {
+  border-bottom: 1px solid var(--primary);
+}
+.add-room,
+.confirm,
+.confirm:hover {
+  background: linear-gradient(-90deg, var(--primary) 0, var(--primary) 100%);
+}
+.Basis_Calendar .date_info_selected,
+.details-item-title {
+  border-bottom: 2px solid var(--primary);
+}
+.section-details button,
+.section-input_2 span.checkbox::before {
+  border: 2px solid var(--primary);
+}
+.progress-bar {
+  background: var(--primary);
+  background-image: -webkit-linear-gradient(
+    top,
+    var(--primary) 0,
+    var(--primary) 100%
+  );
+  background-image: -o-linear-gradient(
+    top,
+    var(--primary) 0,
+    var(--primary) 100%
+  );
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(var(--primary)),
+    to(var(--primary))
+  );
+  background-image: linear-gradient(
+    to bottom,
+    var(--primary) 0,
+    var(--primary) 100%
+  );
+  background-repeat: repeat-x;
+}
+.radioButton:checked + label span::after {
+  border: 2px solid var(--primary);
+  border: 3px solid var(--primary);
+}
+.link-2:hover:after {
+  border-color: var(--primary);
+}
+.ui-datepicker .ui-datepicker-buttonpane button,
+.ui-datepicker table thead th,
+.ui-datepicker-buttonpane .ui-datepicker-current:focus,
+.ui-datepicker-buttonpane .ui-datepicker-current:hover,
+.ui-datepicker-buttonpane .ui-state-default:focus,
+.ui-datepicker-buttonpane .ui-state-default:hover {
+  background-color: var(--primary);
+}
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active {
+  border: 1px solidvar(--primary);
+  background: var(--primary) !important;
+}
+.loader {
+  border-top: 5px solid var(--primary);
+}
+.CountPassenger.room::before,
+.Link-Forgetpass:hover,
+.Link-Login:hover,
+.Link-Register:hover,
+.Link-ResendMail:hover,
+.active-item-search .fa-arrow-down:before {
+  color: var(--primary) !important;
+}
+.ChangeFlight-header {
+  background: linear-gradient(-135deg, var(--primary), var(--primary));
+}
+.active_tab_tour {
+  color: #fff !important;
+  background: var(--primary);
+}
+.active-item-search .item-search:before {
+  border: 1px dashed var(--primary) !important;
+  display: none;
+}
+.right-border-d {
+  border-left: 2px dashed var(--primary);
+}
+.fa.fa-user.is-login,
+.selected {
+  color: #00a703;
+}
+.section_tour_room.active_room span,
+.width_100 button {
+  background: #00a703;
+}
+.submit:hover {
+  color: #34495e;
+}
+.font-color_4 {
+  color: #fff;
+}
+.top-menu img {
+  width: 42px;
+  height: auto;
+  filter: unset;
+}
+.col2-second-part-header img {
+  width: auto;
+  height: 45px;
+  margin-top: 3px;
+}
+.mm-spn--open {
+  margin-top: 100px !important;
+}
+.Basis_Calendar .month_day_list table td:hover,
+.Basis_Calendar .month_detail,
+.Basis_Calendar .selected_day {
+  background: var(--fourth);
+}
+.Basis_Calendar .month_detail {
+  border-bottom: 2px solid var(--fourth);
+}
+.warning {
+  color: red;
+}
+.fa-exchange-alt,
+.fa-map-marker-alt {
+  font-weight: 900;
+}
+.currency-selected::after {
+  font-size: 15px;
+  margin-left: 10px;
+}
+.mm-spn,
+.mm-spn a,
+.mm-spn li,
+.mm-spn ul {
+  display: block !important;
+}
+.line-two button,
+.line-two a {
+  cursor: pointer;
+  width: 150px;
+  white-space: nowrap;
+}
+.before-btn,
+.after-btn {
+  width: 140px;
+}
+.fa .fas .far {
+  font-family: fontawesome !important;
+}
+.fa-exchange-alt:before {
+  content: "\f362";
+  font-family: fontawesome !important;
+}
+.fa-map-marker-alt:before {
+  content: "\f3c5";
+  font-family: fontawesome !important;
+}
+@font-face {
+  font-family: IRANSansWeb;
+  src: url("../_fonts/IRANSansWeb.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: IRANSansWeb;
+  src: url("../_fonts/IRANSansWeb.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+div#content{
+    font-family: IRANSansWeb !important;
+}

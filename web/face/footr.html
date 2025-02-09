@@ -1,0 +1,524 @@
+<basis core="dbsource" source="hosting" name="tag" urlid="[##cms.seo.urlid##]">
+  <member type="list" name="list" request="taglist" preview=""></member>
+</basis>
+<basis
+  core="dbsource"
+  source="basiscore"
+  name="db"
+  mid="5"
+  lid="2"
+  usedforid="[##cms.cms.ownerid##]"
+>
+  <member name="info" type="view"></member>
+</basis>
+<footer class="w-full flex flex-col p-0 mt-11">
+  <div
+    class="w-full bg-primary-600 flex justify-center py-9 items-center px-4 lg:px-0"
+  >
+    <div
+      class="w-full lg:w-[950px] xl:w-[1200px] 2xl:w-[1280px] flex gap-10 !flex-col lg:!flex-row justify-center items-center lg:justify-between"
+    >
+      <img
+        loading="lazy"
+        width="274"
+        height="98"
+        class="!w-[247px] !h-[98px]"
+        src="[##cms.cms.cdn##]/images/footer-logo/logo.png"
+        alt="logo"
+      />
+      <div id="contact-form" class="bg-primary-400 w-full lg:w-[62%] flex flex-col lg:flex-row gap-3 rounded-xl p-3">
+        <basis
+          core="schema"
+          run="atclient"
+          schemaurl="/schema/domainform/F4C8DC36-F8D0-4D80-924B-8C4AC44A4B32/46FBC7BA-2F71-49FE-86FF-4F1FB9A3D353/en/contact"
+          displaymode="new"
+          button="[data-btn-uploadAdvice]"
+          resultsourceid="upload.dataAdvice"
+          OnRendered="RenderFormAdvice"
+        ></basis>
+        <basis
+          core="api"
+          if="{##cms.uploadAdvice.run|(false)##}"
+          run="atclient"
+          url="/schema/domainform/F4C8DC36-F8D0-4D80-924B-8C4AC44A4B32/en/editobject"
+          method="post"
+          body="object_edit={##cms.uploadAdvice.value##}&captcha={##cms.uploadAdvice.captcha##}&captchaid={##cms.uploadAdvice.captchaid##}"
+          content-type="application/x-www-form-urlencoded"
+          triggers="cms.uploadAdvice"
+          OnProcessed="OnProcessedEditObjectAdvice"
+        ></basis>
+
+        <basis
+          core="callback"
+          run="atclient"
+          method="uploadDocumentAdvice"
+          triggers="upload.dataAdvice"
+        ></basis>
+        <div class="captcha-button">
+          <div
+            id="captchaContainer"
+            class="captchaContainerclass w-full flex captcha-sefaresh ml-2.5 max-xl:ml-0 max-xl:mb-[20px]"
+            data-bc-answer-container
+            data-bc-schema-info-multi="0"
+            data-bc-schema-info-word="58"
+            data-bc-schema-info-part="1"
+            data-bc-schema-info-part-0-type="text"
+          >
+            <basis
+              core="dbsource"
+              source="trust_login"
+              name="captcha"
+              run="atclient"
+              triggers="captcha.refreshAdvice"
+            >
+              <member
+                name="advicecode"
+                type="scalar"
+                request="captcha"
+              ></member>
+            </basis>
+            <basis
+              datamembername="captcha.Advicecode"
+              core="print"
+              run="atclient"
+            >
+              <face>
+                <script type="text/template">
+                 <div class="flex lg:w-fit w-full justify-between !h-full items-center gap-4"><div class="flex !h-full items-center lg:flex-row w-full flex-col ">
+                     <div class="float-right !h-full w-full lg:w-fit"><input type="text" class="adviceUsInput !h-full adviceUsInput2 codeinputm bg-secondary-50 rounded-2xl p-3" name="captcha" maxlength="4" placeholder="Security code"/><input type="hidden" name="captchaid" value="@captcha@" /></div>
+                  <div class="float-right customizing lg:mt-0 justify-end h-fit leading-[65px] flex items-center gap-2">
+                   <img class="captcha-images" src="/@captcha@" width="120" height="60" alt="captcha" />
+                    <svg class="cursor-pointer inline-block align-middle" onclick="refreshCaptchaAdvice()" width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18.1247 8.56165H18.1238C18.0007 8.56175 17.8788 8.5861 17.7651 8.63331C17.6514 8.68052 17.5481 8.74967 17.4611 8.8368C17.3741 8.92393 17.3052 9.02734 17.2581 9.14113C17.2111 9.25492 17.187 9.37685 17.1871 9.49997C17.1859 10.8143 16.8245 12.1032 16.1421 13.2265C15.4597 14.3498 14.4824 15.2646 13.3166 15.8714C12.1507 16.4782 10.8408 16.7538 9.52921 16.6683C8.21765 16.5827 6.95463 16.1393 5.87744 15.3862C2.63134 13.1132 1.83959 8.62309 4.11255 5.37696C6.38552 2.13083 10.8757 1.33899 14.1218 3.61204C14.6129 3.95501 15.0592 4.358 15.4504 4.81165H12.8121C12.5635 4.81165 12.325 4.91042 12.1492 5.08623C11.9734 5.26205 11.8746 5.5005 11.8746 5.74915C11.8746 5.99779 11.9734 6.23624 12.1492 6.41206C12.325 6.58787 12.5635 6.68665 12.8121 6.68665H17.1871C17.4358 6.68665 17.6742 6.58787 17.85 6.41206C18.0259 6.23624 18.1246 5.99779 18.1246 5.74915V1.37415C18.1246 1.12551 18.0259 0.887048 17.85 0.711233C17.6742 0.535418 17.4358 0.436646 17.1871 0.436646C16.9385 0.436646 16.7 0.535418 16.5242 0.711233C16.3484 0.887048 16.2496 1.12551 16.2496 1.37415V2.93536C15.9206 2.62321 15.5689 2.33596 15.1973 2.07598C14.2225 1.39342 13.1228 0.909542 11.9609 0.651979C10.7991 0.394417 9.59797 0.368213 8.42603 0.574863C7.25409 0.781513 6.13433 1.21697 5.13067 1.85637C4.12702 2.49578 3.25914 3.3266 2.57658 4.30141C1.19808 6.27013 0.658111 8.70582 1.07546 11.0727C1.49281 13.4395 2.83329 15.5436 4.80201 16.9221C6.31776 17.9898 8.12639 18.563 9.98041 18.5633C10.5144 18.5631 11.0474 18.5162 11.5732 18.4233C13.6714 18.0531 15.5722 16.9556 16.9417 15.3235C18.3112 13.6914 19.062 11.6289 19.0621 9.49833C19.0619 9.24983 18.963 9.01159 18.7873 8.83596C18.6115 8.66032 18.3732 8.56166 18.1247 8.56165Z" fill="#18181B"/></svg>
+                      </div>
+
+               </div></div>
+                </script>
+              </face>
+            </basis>
+            <button
+              class="data-body-btn bg-zinc-950 rounded-xl w-14 h-14 flex justify-center items-center"
+              type="submit"
+              data-btn-uploadAdvice
+            >
+              <svg
+                width="24"
+                height="25"
+                viewBox="0 0 24 25"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M21.4354 3.08198C20.9352 2.5686 20.1949 2.37734 19.5046 2.57866L3.408 7.25952C2.6797 7.46186 2.16349 8.04269 2.02443 8.78055C1.88237 9.5315 2.37858 10.4848 3.02684 10.8834L8.0599 13.9768C8.57611 14.2939 9.24238 14.2144 9.66956 13.7835L15.4329 7.9843C15.723 7.68231 16.2032 7.68231 16.4934 7.9843C16.7835 8.27623 16.7835 8.74935 16.4934 9.05134L10.72 14.8516C10.2918 15.2814 10.2118 15.9508 10.5269 16.4702L13.6022 21.5538C13.9623 22.1577 14.5826 22.5 15.2628 22.5C15.3429 22.5 15.4329 22.5 15.513 22.4899C16.2933 22.3893 16.9135 21.8558 17.1436 21.1008L21.9156 5.02479C22.1257 4.34028 21.9356 3.59537 21.4354 3.08198Z"
+                  fill="white"
+                />
+              </svg>
+            </button>
+          </div>
+
+          <div
+            class="Loading_Form absolute hidden data-body-btn w-[126px] h-12 px-4 py-2 bg-secondary-800 rounded-2xl justify-center items-center gap-2.5 flex"
+          >
+            <div
+              id="ballsWaveG"
+              class="ext-zinc-50 text-base font-normal leading-normal"
+            >
+              <div id="ballsWaveG_1" class="ballsWaveG"></div>
+              <div id="ballsWaveG_2" class="ballsWaveG"></div>
+              <div id="ballsWaveG_3" class="ballsWaveG"></div>
+              <div id="ballsWaveG_4" class="ballsWaveG"></div>
+              <div id="ballsWaveG_5" class="ballsWaveG"></div>
+              <div id="ballsWaveG_6" class="ballsWaveG"></div>
+              <div id="ballsWaveG_7" class="ballsWaveG"></div>
+              <div id="ballsWaveG_8" class="ballsWaveG"></div>
+            </div>
+          </div>
+          <div class="message-api text-right custom-msg"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="w-full flex justify-center py-9 items-center px-4 lg:px-0 bg-red-50 overflow-hidden relative"
+  >
+    <span class="absolute right-0 z-0 lg:block bottom-0 hidden">
+      <svg
+        width="437"
+        height="499"
+        viewBox="0 0 437 499"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M466.49 -7.36738L528.747 10.5588C545.963 15.5158 553.221 35.9096 543.005 50.6186L344.59 336.294C328.471 359.502 321.242 387.733 324.222 415.832L363.151 782.889C365.11 801.353 347.74 815.918 329.891 810.779L238.952 784.594C224.586 780.457 212.674 770.377 206.221 756.896L7.88829 342.601C-9.0598 307.198 2.75571 264.728 35.5521 243.165L401.628 2.47415C420.773 -10.1137 444.467 -13.7088 466.49 -7.36738Z"
+          fill="#FFEAED"
+        />
+      </svg>
+    </span>
+
+    <span class="absolute left-0 z-0 lg:block hidden top-0">
+      <svg
+        width="449"
+        height="403"
+        viewBox="0 0 449 403"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M-89.0125 390.657L-144.014 356.422C-159.223 346.955 -160.641 325.354 -146.799 313.992L122.045 93.3063C143.885 75.3782 158.544 50.1914 163.345 22.3455L226.062 -341.403C229.217 -359.7 249.903 -368.972 265.671 -359.157L346.013 -309.15C358.704 -301.25 367.414 -288.301 369.943 -273.571L447.688 179.124C454.331 217.808 431.374 255.442 393.938 267.236L-23.9264 398.89C-45.7803 405.775 -69.5557 402.768 -89.0125 390.657Z"
+          fill="#FFEAED"
+        />
+      </svg>
+    </span>
+    <div
+      class="w-full z-20 lg:w-[950px] xl:w-[1200px] 2xl:w-[1280px] flex gap-14 !flex-col justify-center items-start lg:justify-between"
+    >
+      <div class="w-full flex flex-col-reverse lg:flex-row gap-5">
+        <div class="flex flex-col gap-5 items-start justify-between">
+          <p class="text-xl text-zinc-900 font-normal">Contact us</p>
+
+          <div class="flex gap-2 items-center group">
+            <span
+              class="border !bg-transparent border-primary-600 rounded-xl p-3 group-hover:shadow-lg transition-all duration-200 ease-in-out"
+            >
+              <img
+                loading="lazy"
+                class="!w-[88px] lg:!w-[45px] !h-[33px]"
+                width="100"
+                height="99"
+                src="[##cms.cms.cdn##]/images/Building-office.png"
+                alt="add"
+              />
+            </span>
+            <basis core="view" datamembername="db.info">
+              <face filter="prpID=7999">
+                <div class="flex flex-col justify-between text-zinc-900">
+                  <p
+                    class="text-sm group-hover:font-bold transition-all duration-150 ease-in-out"
+                  >
+                    @Question
+                  </p>
+                  <div
+                    class="lg:text-xs text-sm group-hover:text-primary-600 transition-all duration-150 ease-in-out"
+                  >
+                    @Answer
+                  </div>
+                </div>
+              </face>
+            </basis>
+          </div>
+
+          <basis core="view" datamembername="db.info">
+            <face filter="prpID=8000">
+              <div class="flex gap-2 items-center group">
+                <span
+                  class="border !bg-transparent border-primary-600 rounded-xl p-3 group-hover:shadow-lg transition-all duration-200 ease-in-out"
+                >
+                  <img
+                    loading="lazy"
+                    class="!w-[30px] lg:!w-[33px] !h-[33px]"
+                    width="93"
+                    height="99"
+                    src="[##cms.cms.cdn##]/images/Calling.png"
+                    alt="Calling"
+                  />
+                </span>
+                <div class="flex flex-col justify-between text-zinc-900">
+                  <p
+                    class="text-sm group-hover:font-bold transition-all duration-150 ease-in-out"
+                  >
+                    @Question
+                  </p>
+                  <a
+                    href="tel:@Answer"
+                    class="lg:text-xs text-sm transition-all duration-150 ease-in-out group-hover:text-primary-600"
+                  >
+                    @Answer
+                  </a>
+                </div>
+              </div>
+            </face></basis
+          >
+
+          <basis core="view" datamembername="db.info">
+            <face filter="prpID=8001">
+              <div class="flex gap-2 items-center group">
+                <span
+                  class="border !bg-transparent border-primary-600 rounded-xl p-3 group-hover:shadow-lg transition-all duration-200 ease-in-out"
+                >
+                  <img
+                    loading="lazy"
+                    class="!w-[30px] lg:!w-[33px] !h-[33px]"
+                    width="100"
+                    height="99"
+                    src="[##cms.cms.cdn##]/images/email.png"
+                    alt="email"
+                  />
+                </span>
+                <div class="flex flex-col justify-between text-zinc-900">
+                  <p
+                    class="text-sm group-hover:font-bold transition-all duration-150 ease-in-out"
+                  >
+                    @Question
+                  </p>
+                  <a
+                    href="mailto:@Answer"
+                    class="lg:text-xs text-sm transition-all duration-150 ease-in-out group-hover:text-primary-600"
+                  >
+                    @Answer
+                  </a>
+                </div>
+              </div></face
+            ></basis
+          >
+
+          <div
+            class="flex gap-3 lg:gap-11 lg:items-center w-full lg:w-fit flex-col-reverse lg:flex-row"
+          >
+            <div class="flex gap-3 items-center lg:justify-start">
+              <basis core="print" datamembername="db.info"
+                ><face filter="text in('Telegram')">
+                  <a href="@Answer" rel="noopener">
+                    <img
+                      loading="lazy"
+                      width="144"
+                      height="145"
+                      class="!w-12 rounded-full !h-12 hover:shadow-lg hover:animate-bounce hover:scale-105"
+                      src="[##cms.cms.cdn##]/images/telegram.png"
+                      alt="@text"
+                    /> </a></face
+              ></basis>
+
+              <basis core="print" datamembername="db.info"
+                ><face filter="text in('linkedin')">
+                  <a href="@Answer" rel="noopener">
+                    <img
+                      loading="lazy"
+                      width="144"
+                      height="145"
+                      class="!w-12 rounded-full !h-12 hover:shadow-lg hover:animate-bounce hover:scale-105"
+                      src="[##cms.cms.cdn##]/images/linkdin.png"
+                      alt="@text"
+                    />
+                  </a> </face
+              ></basis>
+
+              <basis core="print" datamembername="db.info"
+                ><face filter="text in('Twitter')">
+                  <a href="@Answer" rel="noopener">
+                    <img
+                      loading="lazy"
+                      width="144"
+                      height="145"
+                      class="!w-12 rounded-full !h-12 hover:shadow-lg hover:animate-bounce hover:scale-105"
+                      src="[##cms.cms.cdn##]/images/x.png"
+                      alt="@text"
+                    />
+                  </a> </face
+              ></basis>
+              <basis core="print" datamembername="db.info"
+                ><face filter="text in('Instagram')">
+                  <a href="@Answer" rel="noopener">
+                    <img
+                      loading="lazy"
+                      width="144"
+                      height="145"
+                      class="!w-12 rounded-full !h-12 hover:shadow-lg hover:animate-bounce hover:scale-105"
+                      src="[##cms.cms.cdn##]/images/insta.png"
+                      alt="@text"
+                    />
+                  </a> </face
+              ></basis>
+            </div>
+
+            <div class="flex gap-3 items-center">
+              <a target="_blank" href="[##cms.cms.cdn##]/images/kheilirahat.pdf">
+                <img
+                  loading="lazy"
+                  class="!w-[93px] !h-[42px] hover:scale-105 transition-all duration-200 ease-in-out"
+                  width="372"
+                  height="169"
+                  src="[##cms.cms.cdn##]/images/tursab-en.png"
+                  alt="tursab"
+                />
+              </a>
+              <div>
+                <img
+                  loading="lazy"
+                  class="!w-[56px] !h-[44px] hover:scale-105 transition-all duration-200 ease-in-out"
+                  width="224"
+                  height="177"
+                  src="[##cms.cms.cdn##]/images/mastercard.png"
+                  alt="mastercard"
+                />
+              </div>
+              <div>
+                <img
+                  loading="lazy"
+                  class="!w-[88px] !h-[50px] hover:scale-105 transition-all duration-200 ease-in-out"
+                  width="352"
+                  height="201"
+                  src="[##cms.cms.cdn##]/images/visa.png"
+                  alt="mastercard"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-5 items-start w-full lg:w-[14%]">
+          <a
+            class="text-zinc-900 text-sm hover:text-primary-600 transition-all duration-200 ease-in-out"
+            href="/"
+            rel="nofollow"
+            >Home</a
+          >
+          <span
+            class="text-zinc-900 cursor-pointer text-sm hover:text-primary-600 transition-all duration-200 ease-in-out"
+            data-name="flight"
+            onclick="change_url(this)"
+            >flight</span
+          >
+          <span
+            class="text-zinc-900 cursor-pointer text-sm hover:text-primary-600 transition-all duration-200 ease-in-out"
+            data-name="hotel"
+            onclick="change_url(this)"
+            >Hotel</span
+          >
+          <a
+            class="text-zinc-900 text-sm hover:text-primary-600 transition-all duration-200 ease-in-out"
+            href="/about-us"
+            rel="nofollow"
+            >about us</a
+          >
+          <a
+            class="text-zinc-900 text-sm hover:text-primary-600 transition-all duration-200 ease-in-out"
+             href="/blog"
+            rel="nofollow"
+            >Blog</a
+          >
+        </div>
+
+        <div class="flex flex-col gap-5 items-start w-full lg:w-[43%]">
+          <p class="text-xl text-zinc-900 font-normal">About us</p>
+          <p class="text-sm text-primary-600 font-normal">
+            a company by GTS Holiday
+          </p>
+          <basis core="view" datamembername="db.info">
+            <face filter="prpID=8004">
+              <div class="text-sm text-zinc-800 line-clamp-[8] font-normal">
+                @largetext
+              </div>
+            </face>
+          </basis>
+        </div>
+      </div>
+      <div class="w-full lg:flex hidden justify-between">
+        <div class="flex gap-8 items-center">
+          <p class="lg:text-xs text-sm text-zinc-700">
+            Web Design & Online Reservation By
+          </p>
+          <a target="_blank" href="http://basisfly.ae/">
+            <img
+              loading="lazy"
+              class="!w-[68px] !h-[17px]"
+              width="136"
+              height="34"
+              src="[##cms.cms.cdn##]/images/basisfly-logo.png"
+              alt="basisfly-Logo"
+            />
+          </a>
+        </div>
+        <img
+          loading="lazy"
+          width="90"
+          height="15"
+          src="[##cms.cms.cdn##]/images/trust.png"
+          alt="trust"
+        />
+      </div>
+
+      <div class="w-full flex lg:hidden flex-col gap-2 justify-between">
+        <p class="lg:text-xs text-sm text-center text-zinc-700">
+          Web Design & Online Reservation By
+        </p>
+
+        <div class="flex gap-3 items-center w-full justify-center">
+          <a target="_blank" href="http://basisfly.ae/">
+            <img
+              loading="lazy"
+              class="!w-[68px] !h-[17px]"
+              width="136"
+              height="34"
+              src="[##cms.cms.cdn##]/images/basisfly-logo.png"
+              alt="basisfly-Logo"
+            />
+          </a>
+          <img
+            loading="lazy"
+            width="90"
+            height="15"
+            src="[##cms.cms.cdn##]/images/trust.png"
+            alt="trust"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<basis core="call" file="script.inc" lid="2"></basis>
+
+<script type="text/javascript">
+  function uploadDocumentAdvice(args) {
+    document.querySelector("#contact-form .Loading_Form").style.display =
+      "block";
+    const captcha = document
+      .querySelector("#contact-form")
+      .querySelector("#captchaContainer input[name='captcha']").value;
+    const captchaid = document
+      .querySelector("#contact-form")
+      .querySelector("#captchaContainer input[name='captchaid']").value;
+    const stringJson = JSON.stringify(args.source?.rows[0]);
+    $bc.setSource("cms.uploadAdvice", {
+      value: stringJson,
+      captcha: captcha,
+      captchaid: captchaid,
+      run: true,
+    });
+  }
+
+  function refreshCaptchaAdvice(e) {
+    $bc.setSource("captcha.refreshAdvice", true);
+  }
+
+  async function OnProcessedEditObjectAdvice(args) {
+    var response = args.response;
+    var json = await response.json();
+    var errorid = json.errorid;
+    if (errorid == "6") {
+      document.querySelector("#contact-form .Loading_Form").style.display =
+        "none";
+      document.querySelector("#contact-form .message-api").innerHTML =
+        "Your request has been successfully registered.";
+    } else {
+      refreshCaptchaAdvice();
+      setTimeout(() => {
+        document.querySelector("#contact-form .Loading_Form").style.display =
+          "none";
+        document.querySelector("#contact-form .message-api").innerHTML =
+          "An error occurred, please try again";
+      }, 2000);
+    }
+  }
+
+  async function RenderFormAdvice() {
+    var inputElementVisa7 = document.querySelector(
+      "#contact-form .name-answer input[data-bc-text-input]"
+    );
+    inputElementVisa7.setAttribute("placeholder", "First/Last Name");
+
+    var inputElementVisa7 = document.querySelector(
+      "#contact-form .email-answer input[data-bc-text-input]"
+    );
+    inputElementVisa7.setAttribute("placeholder", "Email");
+  }
+</script>

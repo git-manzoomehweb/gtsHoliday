@@ -1,0 +1,798 @@
+<basis
+  core="dbsource"
+  source="basiscore"
+  name="db"
+  lid="2"
+  mid="1"
+  usedforid="[##cms.query.id##]"
+>
+  <member request="json-ld" type="scalar" name="json" />
+</basis>
+<basis
+  core="dbsource"
+  source="basiscore"
+  name="db"
+  mid="1"
+  lid="2"
+  usedforid="[##cms.query.id##]"
+>
+  <member propertyid="7249" name="view" type="view" />
+  <member
+    name="related-tour"
+    type="list"
+    blgid="221"
+    propertyid="10000504,8077,8181,8076,77191,77192,77193,77267,77330"
+    typeid="159"
+    link="tour.bc"
+    perpage="20"
+  />
+  <member
+    name="related-article"
+    type="list"
+    blgid="222"
+    link="article.bc"
+    propertyid="7244,7248,7249,7227,77320"
+    typeid="159"
+  />
+  <member name="data" type="view" request="rdfa" />
+</basis>
+
+<basis
+  core="dbsource"
+  source="media"
+  lid="2"
+  name="db"
+  usedforid="[##cms.query.id##]"
+  sourcemid="article"
+>
+  <member type="list" name="gallery" format="4" order="ord"></member>
+</basis>
+<basis
+  core="dbsource"
+  source="userbehavior"
+  name="db"
+  usedforid="[##cms.query.id##]"
+>
+  <member name="comment" type="list" order="ord" request="listcomment" />
+</basis>
+
+<basis
+  core="dbsource"
+  source="basiscore"
+  lid="2"
+  mid="1"
+  name="db"
+  catid="[##cms.query.catid##]"
+>
+  <member
+    name="navigation"
+    type="tree"
+    request="navcatid"
+    parentid="[##cms.query.catid##]"
+  />
+</basis>
+
+<basis
+  core="dbsource"
+  source="basiscore"
+  lid="2"
+  mid="1"
+  name="db"
+  catid="213011"
+>
+  <member
+    name="news-list"
+    type="list"
+    typeid="159"
+    propertyid="7244"
+    order="ord"
+  />
+</basis>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0,shrink-to-fit=no,viewport-fit=cover"
+    />
+    <title>[##cms.seo.title|(GTS Holiday Travel Agency)##]</title>
+    <meta
+      name="description"
+      content="[##cms.seo.description|(GTS Holiday Travel Agency)##]"
+    />
+    <basis
+      core="dbsource"
+      source="hosting"
+      name="tag"
+      urlid="[##cms.seo.urlid##]"
+    >
+      <member type="list" name="list" request="taglist" preview=""></member>
+    </basis>
+    <basis core="print" datamembername="tag.list">
+      <face filter="key = 'canonical'">
+        <link rel="canonical" href="@value" />
+      </face>
+      <face>
+        <meta property="@key" content="@value" />
+      </face>
+    </basis>
+    <basis core="call" file="pwa.inc" lid="2" />
+    <basis core="call" file="style.inc" lid="2" />
+  </head>
+
+  <body class="">
+    <basis core="call" file="header.inc" lid="2" />
+    <main
+      class="pt-[149.5px] overflow-hidden w-full justify-center relative flex"
+    >
+      <section
+        class="w-full relative lg:w-[950px] xl:w-[1200px] 2xl:w-[1280px] flex flex-col gap-4 items-center justify-center"
+      >
+        <div class="w-full flex gap-6">
+          <div class="w-[80%] flex flex-col gap-6">
+            <ul class="flex gap-2 items-center z-20">
+              <li class="text-xs hover:text-primary-600 text-zinc-600">
+                <a href="/">Home </a>
+              </li>
+              <li class="text-xs text-zinc-600">></li>
+              <li class="text-xs hover:text-primary-600 text-zinc-600">
+                <a href="/blog">Blog </a>
+              </li>
+              <li class="text-xs text-zinc-600">></li>
+              <basis core="print" datamembername="db.view">
+                <face filter="TypeID=150">
+                  <li class="text-xs text-zinc-900">@text</li>
+                </face>
+              </basis>
+            </ul>
+
+            <div class="flex w-full items-center justify-between">
+              <basis core="print" datamembername="db.view">
+                <face filter="TypeID=150">
+                  <h1 class="text-base font-normal text-zinc-900">@text</h1>
+                </face>
+              </basis>
+
+              <div class="flex gap-5 items-center">
+                <div
+                  class="flex relative shareBtn text-zinc-900 text-xs group items-center gap-2"
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M21.0396 12.4306L14.1306 18.6756C13.7126 19.0526 13.1336 19.1446 12.6206 18.9156C12.1036 18.6866 11.7836 18.1926 11.7836 17.6276L11.7836 14.4736C7.68054 14.5936 5.05154 16.2226 3.53354 19.5696C3.44254 19.7716 3.22954 19.8886 3.00854 19.8586C2.78754 19.8266 2.61454 19.6536 2.58354 19.4336C2.55454 19.2256 1.88954 14.2886 4.79254 10.9416C6.38954 9.1006 8.73954 8.1206 11.7836 8.0256L11.7856 5.5426C11.7866 4.9896 12.0996 4.5016 12.6016 4.2686C12.7936 4.1796 12.9956 4.1366 13.1966 4.1366C13.5216 4.1366 13.8426 4.2506 14.1036 4.4726L21.0026 10.3156C21.3126 10.5796 21.4946 10.9636 21.5016 11.3696C21.5076 11.7736 21.3396 12.1596 21.0396 12.4306Z"
+                      fill="#18181B"
+                      class="group-hover:fill-primary-600"
+                    />
+                  </svg>
+                  <span class="hover:text-primary-600">Share</span>
+                  <div
+                    class="absolute sharedropDown flex gap-4 p-4 rounded-xl bg-white shadow-lg hidden top-0 pt-4 text-primary-600 text-sm"
+                  >
+                    <ul class="flex gap-3">
+                      <li>
+                        <a id="share-whatsapp" href="/"
+                          ><svg
+                            width="205"
+                            height="205"
+                            viewBox="0 0 205 205"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M102.8 204.54H102.351C46.1141 204.54 0.36084 158.774 0.36084 102.52V102.07C0.36084 45.8173 46.1141 0.0506592 102.351 0.0506592H102.8C159.037 0.0506592 204.79 45.8173 204.79 102.07V102.52C204.79 158.774 159.037 204.54 102.8 204.54ZM102.351 6.97242C49.9268 6.97242 7.28056 49.6312 7.28056 102.07V102.52C7.28056 154.96 49.9268 197.618 102.351 197.618H102.8C155.224 197.618 197.871 154.96 197.871 102.52V102.07C197.871 49.6312 155.224 6.97242 102.8 6.97242H102.351Z"
+                              fill="#383D38"
+                            />
+                            <path
+                              d="M121.83 131.19C96.5519 131.19 75.9865 110.612 75.9796 85.3268C75.9865 78.9173 81.204 73.7051 87.5978 73.7051C88.2552 73.7051 88.9056 73.7605 89.5284 73.8713C90.8985 74.0997 92.1994 74.5634 93.3965 75.2625C93.5695 75.3664 93.6871 75.5326 93.7148 75.7264L96.3858 92.5669C96.4204 92.7677 96.3582 92.9615 96.2267 93.1069C94.7528 94.7404 92.8706 95.9172 90.7739 96.5056L89.7637 96.7893L90.1442 97.7652C93.5902 106.542 100.607 113.554 109.388 117.015L110.364 117.402L110.647 116.392C111.236 114.294 112.412 112.412 114.045 110.937C114.163 110.827 114.322 110.771 114.481 110.771C114.516 110.771 114.55 110.771 114.592 110.778L131.427 113.45C131.628 113.485 131.794 113.595 131.898 113.768C132.59 114.966 133.053 116.274 133.289 117.644C133.399 118.254 133.448 118.897 133.448 119.569C133.448 125.971 128.237 131.183 121.83 131.19Z"
+                              fill="#383D38"
+                            />
+                            <path
+                              d="M166.656 96.7476C165.292 81.3398 158.234 67.0464 146.782 56.5046C135.261 45.9004 120.314 40.0585 104.683 40.0585C70.3746 40.0585 42.4605 67.9808 42.4605 102.299C42.4605 113.817 45.6366 125.037 51.6498 134.81L38.2394 164.505L81.1763 159.93C88.6427 162.989 96.545 164.539 104.676 164.539C106.814 164.539 109.007 164.429 111.208 164.2C113.145 163.993 115.104 163.688 117.027 163.3C145.758 157.493 166.732 131.986 166.898 102.631V102.299C166.898 100.43 166.815 98.5611 166.649 96.7546L166.656 96.7476ZM82.8301 146.896L59.0747 149.429L66.1675 133.71L64.7489 131.806C64.6451 131.668 64.5413 131.53 64.4237 131.37C58.2651 122.863 55.0128 112.813 55.0128 102.306C55.0128 74.9095 77.2943 52.6214 104.683 52.6214C130.341 52.6214 152.09 72.6461 154.186 98.2082C154.297 99.5787 154.359 100.956 154.359 102.313C154.359 102.7 154.352 103.081 154.345 103.489C153.82 126.407 137.814 145.871 115.422 150.827C113.713 151.208 111.962 151.499 110.218 151.686C108.405 151.893 106.544 151.997 104.696 151.997C98.1158 151.997 91.722 150.724 85.681 148.204C85.0098 147.934 84.3524 147.643 83.7366 147.346L82.8371 146.91L82.8301 146.896Z"
+                              fill="#383D38"
+                            />
+                          </svg>
+                        </a>
+                      </li>
+                      <li>
+                        <a id="share-telegram" href="/"
+                          ><svg
+                            width="205"
+                            height="205"
+                            viewBox="0 0 205 205"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M102.484 204.54H102.035C45.7979 204.54 0.0447998 158.774 0.0447998 102.52V102.07C0.0447998 45.8173 45.7979 0.0506592 102.035 0.0506592H102.484C158.721 0.0506592 204.474 45.8173 204.474 102.07V102.52C204.474 158.774 158.721 204.54 102.484 204.54ZM102.035 6.97242C49.6107 6.97242 6.96452 49.6312 6.96452 102.07V102.52C6.96452 154.96 49.6107 197.618 102.035 197.618H102.484C154.908 197.618 197.554 154.96 197.554 102.52V102.07C197.554 49.6312 154.908 6.97242 102.484 6.97242H102.035Z"
+                              fill="#383D38"
+                            />
+                            <path
+                              d="M40.9125 98.9211C41.1893 98.7826 41.4662 98.6511 41.7361 98.5265C46.4277 96.353 51.1815 94.318 55.9285 92.283C56.1845 92.283 56.6134 91.9854 56.8556 91.8885C57.2223 91.7292 57.5891 91.577 57.9559 91.4178C58.6617 91.1133 59.3676 90.8156 60.0664 90.511C61.4781 89.9088 62.8827 89.3067 64.2943 88.7045C67.1106 87.5002 69.9269 86.2958 72.7433 85.0845C78.3759 82.6757 84.0156 80.2599 89.6483 77.8511C95.2809 75.4423 100.92 73.0267 106.553 70.6179C112.186 68.2091 117.825 65.7935 123.458 63.3847C129.091 60.9759 134.73 58.5602 140.363 56.1515C141.615 55.6116 142.972 54.8086 144.314 54.5733C145.442 54.3726 146.542 53.985 147.677 53.7704C149.829 53.362 152.202 53.1959 154.265 54.0888C154.977 54.4003 155.635 54.8363 156.181 55.3831C158.797 57.9718 158.43 62.2219 157.877 65.8627C154.022 91.2379 150.168 116.62 146.307 141.995C145.781 145.477 145.061 149.298 142.314 151.499C139.989 153.361 136.682 153.568 133.81 152.779C130.938 151.983 128.406 150.315 125.921 148.675C115.618 141.85 105.308 135.025 95.0041 128.2C92.5545 126.58 89.8282 124.462 89.8559 121.521C89.8697 119.749 90.9284 118.17 92.0078 116.765C100.962 105.081 113.881 97.0522 123.493 85.9081C124.849 84.3369 125.915 81.499 124.053 80.5923C122.946 80.0524 121.673 80.7859 120.662 81.485C107.958 90.3103 95.2602 99.1424 82.5555 107.968C78.4106 110.847 74.0651 113.81 69.069 114.516C64.5989 115.152 60.1011 113.907 55.7762 112.633C52.1503 111.567 48.5312 110.473 44.926 109.345C43.0092 108.75 41.0302 108.106 39.5494 106.756C38.0685 105.407 37.2175 103.136 38.1102 101.337C38.6707 100.209 39.7571 99.4956 40.8988 98.9141L40.9125 98.9211Z"
+                              fill="#383D38"
+                            />
+                          </svg>
+                        </a>
+                      </li>
+                      <li>
+                        <a id="share-email" href="#"
+                          ><svg
+                            width="205"
+                            height="206"
+                            viewBox="0 0 205 206"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M102.965 205.211H102.516C46.279 205.211 0.525818 159.444 0.525818 103.191V102.741C0.525818 46.4881 46.279 0.721313 102.516 0.721313H102.965C159.202 0.721313 204.955 46.4881 204.955 102.741V103.191C204.955 159.444 159.202 205.211 102.965 205.211ZM102.516 7.64307C50.0918 7.64307 7.44554 50.302 7.44554 102.741V103.191C7.44554 155.63 50.0918 198.289 102.516 198.289H102.965C155.389 198.289 198.035 155.63 198.035 103.191V102.741C198.035 50.302 155.389 7.64307 102.965 7.64307H102.516Z"
+                              fill="#383D38"
+                            />
+                            <path
+                              d="M161.306 97.7229C158.648 67.7378 133.398 44.1484 102.744 44.1484C70.3182 44.1484 43.9333 70.541 43.9333 102.963C43.9333 114.868 47.4969 125.964 53.607 135.232L46.2791 151.477C44.3485 155.748 47.7875 160.496 52.4445 160.005L79.729 157.098C86.8009 160.116 94.5787 161.784 102.744 161.784C104.82 161.784 106.882 161.673 108.903 161.465C110.771 161.265 112.605 160.981 114.418 160.621C141.162 155.208 161.382 131.577 161.541 103.302V102.963C161.541 101.204 161.465 99.4395 161.306 97.7229ZM135.405 89.7213L123.06 108.77L116.528 118.848C115.137 120.994 112.21 121.506 110.176 119.956L99.3464 111.746L92.6688 106.687C92.1291 106.278 91.3748 106.292 90.8489 106.721L74.4631 120.094C71.8267 122.247 68.2215 119.007 70.0691 116.155L81.6319 98.325L88.1641 88.24C89.5549 86.0942 92.4751 85.5821 94.5164 87.1257L105.028 95.0995L111.705 100.152C112.245 100.568 112.999 100.554 113.525 100.118L131.004 85.7829C133.641 83.6233 137.26 86.8626 135.405 89.7213Z"
+                              fill="#383D38"
+                            />
+                          </svg>
+                        </a>
+                      </li>
+                      <li>
+                        <a id="share-facebook" href="/"
+                          ><svg
+                            width="205"
+                            height="205"
+                            viewBox="0 0 205 205"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M102.44 204.921H101.99C45.7532 204.921 0 159.155 0 102.902V102.452C0 46.1985 45.7532 0.431763 101.99 0.431763H102.44C158.676 0.431763 204.429 46.1985 204.429 102.452V102.902C204.429 159.155 158.676 204.921 102.44 204.921ZM101.99 7.35352C49.566 7.35352 6.91972 50.0124 6.91972 102.452V102.902C6.91972 155.341 49.566 198 101.99 198H102.44C154.863 198 197.51 155.341 197.51 102.902V102.452C197.51 50.0124 154.863 7.35352 102.44 7.35352H101.99Z"
+                              fill="#383D38"
+                            />
+                            <path
+                              d="M115.968 79.7482V101.268H142.581L138.367 130.256H115.968V197.044C111.477 197.667 106.882 197.993 102.218 197.993C96.8347 197.993 91.548 197.564 86.3997 196.733V130.256H61.8555V101.268H86.3997V74.9376C86.3997 58.6022 99.6372 45.354 115.975 45.354V45.3679C116.023 45.3679 116.065 45.354 116.113 45.354H142.588V70.4246H125.289C120.147 70.4246 115.975 74.5984 115.975 79.7413L115.968 79.7482Z"
+                              fill="#383D38"
+                            />
+                          </svg>
+                        </a>
+                      </li>
+                      <li>
+                        <a id="share-linkedin" href="#"
+                          ><svg
+                            width="206"
+                            height="206"
+                            viewBox="0 0 206 206"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M103.168 205.211H102.718C46.4818 205.211 0.728516 159.444 0.728516 103.191V102.741C0.728516 46.4881 46.4818 0.721313 102.718 0.721313H103.168C159.405 0.721313 205.158 46.4881 205.158 102.741V103.191C205.158 159.444 159.405 205.211 103.168 205.211ZM102.718 7.64307C50.2946 7.64307 7.64824 50.302 7.64824 102.741V103.191C7.64824 155.63 50.2946 198.289 102.718 198.289H103.168C155.592 198.289 198.238 155.63 198.238 103.191V102.741C198.238 50.302 155.592 7.64307 103.168 7.64307H102.718Z"
+                              fill="#383D38"
+                            />
+                            <path
+                              d="M51.291 69.849C48.6892 67.4333 47.3953 64.4431 47.3953 60.8853C47.3953 57.3276 48.6962 54.2057 51.291 51.7831C53.8929 49.3674 57.242 48.1561 61.3454 48.1561C65.4488 48.1561 68.6665 49.3674 71.2614 51.7831C73.8633 54.1988 75.1572 57.2376 75.1572 60.8853C75.1572 64.5331 73.8563 67.4333 71.2614 69.849C68.6596 72.2647 65.3589 73.476 61.3454 73.476C57.332 73.476 53.8929 72.2647 51.291 69.849ZM72.9706 83.7064V157.769H49.575V83.7064H72.9706Z"
+                              fill="#383D38"
+                            />
+                            <path
+                              d="M150.852 91.0225C155.952 96.56 158.498 104.16 158.498 113.837V156.461H136.279V116.841C136.279 111.961 135.013 108.168 132.487 105.468C129.962 102.769 126.557 101.412 122.294 101.412C118.032 101.412 114.627 102.762 112.102 105.468C109.576 108.168 108.31 111.961 108.31 116.841V156.461H85.959V83.4987H108.31V93.1753C110.572 89.9497 113.624 87.4025 117.458 85.5267C121.291 83.6509 125.602 82.7164 130.397 82.7164C138.936 82.7164 145.759 85.4851 150.852 91.0225Z"
+                              fill="#383D38"
+                            />
+                          </svg>
+                        </a>
+                      </li>
+                      <li>
+                        <a id="share-twitter" href="/"
+                          ><svg
+                            width="205"
+                            height="205"
+                            viewBox="0 0 205 205"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M102.965 204.54H102.516C46.279 204.54 0.525818 158.774 0.525818 102.52V102.07C0.525818 45.8173 46.279 0.0506592 102.516 0.0506592H102.965C159.202 0.0506592 204.955 45.8173 204.955 102.07V102.52C204.955 158.774 159.202 204.54 102.965 204.54ZM102.516 6.97242C50.0918 6.97242 7.44554 49.6312 7.44554 102.07V102.52C7.44554 154.96 50.0918 197.618 102.516 197.618H102.965C155.389 197.618 198.035 154.96 198.035 102.52V102.07C198.035 49.6312 155.389 6.97242 102.965 6.97242H102.516Z"
+                              fill="#383D38"
+                            />
+                            <path
+                              d="M44.044 48.2399L89.5896 109.151L43.7603 158.677H54.0776L94.2051 115.319L126.624 158.677H161.728L113.622 94.3389L156.282 48.2399H145.965L109.013 88.1716L79.1547 48.2399H44.0509H44.044ZM59.212 55.8401H75.335L146.546 151.077H130.423L59.212 55.8401Z"
+                              fill="#383D38"
+                            />
+                          </svg>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <basis core="print" datamembername="db.view">
+                  <face filter="prpid=7249">
+                    <div
+                      class="flex text-zinc-900 hover:text-primary-600 text-xs items-center gap-2"
+                    >
+                      <svg
+                        width="24"
+                        height="25"
+                        viewBox="0 0 24 25"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M19.3449 8.59773C19.3449 7.19973 18.9289 6.02973 18.1259 5.22673C17.4019 4.51373 16.3809 4.10673 15.1709 3.99773V3.04573C15.1709 2.63973 14.8339 2.30273 14.4279 2.30273C14.0119 2.30273 13.6839 2.63973 13.6839 3.04573V6.56573C13.6149 6.58573 13.5559 6.60473 13.4859 6.60473C13.0699 6.60473 12.7429 6.26773 12.7429 5.86173V4.15773C12.7429 4.04728 12.6534 3.95773 12.5429 3.95773H7.95395V3.04573C7.95395 2.63973 7.62695 2.30273 7.21095 2.30273C6.80395 2.30273 6.46695 2.63973 6.46695 3.04573V6.56573C6.40795 6.58573 6.33895 6.60473 6.26895 6.60473C5.86295 6.60473 5.52595 6.26773 5.52595 5.86173V4.41219C5.52595 4.2823 5.40363 4.18681 5.27921 4.22412C3.38753 4.79146 2.29395 6.32578 2.29395 8.59773V9.19073C2.29395 9.30119 2.38349 9.39073 2.49395 9.39073H19.1449C19.2554 9.39073 19.3449 9.30119 19.3449 9.19073V8.59773Z"
+                          fill="#18181B"
+                        />
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M9.46004 15.027C9.04004 15.027 8.69004 14.677 8.69004 14.247C8.69004 13.817 9.04004 13.467 9.46004 13.467C9.89004 13.467 10.24 13.817 10.24 14.247C10.24 14.677 9.89004 15.027 9.46004 15.027ZM5.78004 15.027C5.35004 15.027 5.00004 14.677 5.00004 14.247C5.00004 13.817 5.35004 13.467 5.78004 13.467C6.21004 13.467 6.56004 13.817 6.56004 14.247C6.56004 14.677 6.21004 15.027 5.78004 15.027ZM5.78004 18.377C5.35004 18.377 5.00004 18.027 5.00004 17.597C5.00004 17.167 5.35004 16.827 5.78004 16.827C6.21004 16.827 6.56004 17.167 6.56004 17.597C6.56004 18.027 6.21004 18.377 5.78004 18.377ZM17.3 12.377C17.9172 12.377 18.5122 12.4798 19.0664 12.6603C19.1996 12.7037 19.34 12.6068 19.34 12.4667V11.077C19.34 10.9665 19.2505 10.877 19.14 10.877H2.49004C2.37958 10.877 2.29004 10.9665 2.29004 11.077V16.667C2.29004 19.617 4.07004 21.387 7.04004 21.387H11.9954C12.1533 21.387 12.2501 21.2117 12.1736 21.0736C11.7078 20.233 11.44 19.2665 11.44 18.237C11.44 15.007 14.06 12.377 17.3 12.377Z"
+                          fill="#18181B"
+                        />
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M19.1902 19.7268C19.0502 19.9568 18.8002 20.0868 18.5502 20.0868C18.4202 20.0868 18.2802 20.0568 18.1602 19.9768L16.9402 19.2468C16.7202 19.1168 16.5802 18.8768 16.5802 18.6068V17.0368C16.5802 16.6268 16.9102 16.2868 17.3302 16.2868C17.7402 16.2868 18.0802 16.6268 18.0802 17.0368V18.1868L18.9302 18.6968C19.2902 18.9068 19.4002 19.3668 19.1902 19.7268ZM17.3502 13.9668C14.9402 13.9668 12.9902 15.9268 12.9902 18.3368C12.9902 20.7368 14.9402 22.6968 17.3502 22.6968C19.7502 22.6968 21.7102 20.7368 21.7102 18.3368C21.7102 15.9268 19.7502 13.9668 17.3502 13.9668Z"
+                          fill="#18181B"
+                        />
+                      </svg>
+
+                      @answer
+                    </div>
+                  </face>
+                </basis>
+              </div>
+            </div>
+            <basis core="print" datamembername="db.view">
+              <face filter="TypeID=159">
+                <img
+                  loading="lazy"
+                  class="!w-full rounded-xl"
+                  width="919"
+                  height="573"
+                  src="@text"
+                  alt="@Question"
+                />
+              </face>
+            </basis>
+            <basis core="print" datamembername="db.view">
+              <face filter="TypeID=129">
+                <div class="text-sm text-zinc-900">@largetext</div>
+              </face>
+            </basis>
+            <basis core="print" datamembername="db.view">
+              <face
+                filter="TypeID<>150 and TypeID<>128 and TypeID<>159 and TypeID <>129 and prpID<>3087456"
+              >
+                <h3 id="@valueID" class="text-xl text-zinc-900">@text</h3>
+                <div class="text-sm text-zinc-900">@largetext</div>
+              </face>
+            </basis>
+          </div>
+          <div class="w-[20%] flex flex-col gap-4 sticky top-4">
+            <div
+              class="w-full flex flex-col gap-3 bg-zinc-50 rounded-xl py-5 px-6"
+            >
+              <basis core="print" datamembername="db.view">
+                <face filter="prpID=7248">
+                  <div class="flex flex-col gap-3">
+                    <p class="text-xs font-normal text-zinc-900">@text</p>
+                    <p class="text-xs font-normal text-zinc-600">Blog author</p>
+                  </div>
+                </face>
+              </basis>
+
+              <basis core="print" datamembername="db.view">
+                <else-layout></else-layout>
+                <layout>
+                  <div class="flex w-full flex-col ">@child</div>
+                </layout>
+
+                <face
+                  filter="TypeID not in(150,128,159,129) and prpID not in(3087456)  and text <> ''"
+                >
+                  <div
+                    data-id="@valueID"
+                    onclick="Set_Offset_Item(this)"
+                    class="py-4 group set-offset-item cursor-pointer border-b line-clamp-1 border-zinc-200 w-full text-xs text-zinc-900 flex gap-2 items-center"
+                  >
+                    <span
+                      class="w-[10px] h-[10px] bg-primary-600 rounded-full"
+                    ></span>
+                    <span class="w-[80%] group-hover:text-primary-600">@text</span>
+                  </div>
+                </face>
+              </basis>
+
+              <div class="flex gap-3 items-center lg:justify-start">
+                <basis core="print" datamembername="db.info">
+                  <face filter="text in('Telegram')">
+                    <a href="@Answer" rel="noopener">
+                      <img
+                        loading="lazy"
+                        width="144"
+                        height="145"
+                        class="!w-10 rounded-full !h-10 hover:shadow-lg hover:scale-105"
+                        src="[##cms.cms.cdn##]/images/telegram.png"
+                        alt="@text"
+                      />
+                    </a>
+                  </face>
+                </basis>
+
+                <basis core="print" datamembername="db.info">
+                  <face filter="text in('linkedin')">
+                    <a href="@Answer" rel="noopener">
+                      <img
+                        loading="lazy"
+                        width="144"
+                        height="145"
+                        class="!w-10 rounded-full !h-10 hover:shadow-lg hover:scale-105"
+                        src="[##cms.cms.cdn##]/images/linkdin.png"
+                        alt="@text"
+                      />
+                    </a>
+                  </face>
+                </basis>
+
+                <basis core="print" datamembername="db.info">
+                  <face filter="text in('Twitter')">
+                    <a href="@Answer" rel="noopener">
+                      <img
+                        loading="lazy"
+                        width="144"
+                        height="145"
+                        class="!w-10 rounded-full !h-10 hover:shadow-lg hover:scale-105"
+                        src="[##cms.cms.cdn##]/images/x.png"
+                        alt="@text"
+                      />
+                    </a>
+                  </face>
+                </basis>
+                <basis core="print" datamembername="db.info">
+                  <face filter="text in('Instagram')">
+                    <a href="@Answer" rel="noopener">
+                      <img
+                        loading="lazy"
+                        width="144"
+                        height="145"
+                        class="!w-10 rounded-full !h-10 hover:shadow-lg hover:scale-105"
+                        src="[##cms.cms.cdn##]/images/insta.png"
+                        alt="@text"
+                      />
+                    </a>
+                  </face>
+                </basis>
+              </div>
+            </div>
+            <basis core="list" datamembername="db.news-list">
+              <layout>
+                <div class="w-full grid grid-cols-1 gap-5 mt-4">@child</div>
+              </layout>
+              <face>
+                <div
+                  class="relative w-full h-[260px] overflow-hidden rounded-xl"
+                >
+                  <img
+                    loading="lazy"
+                    class="!w-full !h-full object-cover"
+                    src="@type_159"
+                    alt="@title"
+                    width="632"
+                    height="402"
+                  />
+                  <span
+                    class="z-10 p-6 absolute top-0 left-0 w-full h-full flex flex-col gap-1 justify-end"
+                  >
+                    <p class="text-white tetx-base font-normal line-clamp-2">
+                      @title
+                    </p>
+                    <p
+                      class="text-white line-clamp-3 tetx-xs font-normal scale-[0.85] -translate-x-5"
+                    >
+                      @prp_7244
+                    </p>
+                    <a
+                      class="bg-primary-600 hover:shadow-lg hover:scale-105 hover:bg-primary-950 transition-all duration-200 ease-in-out text-white rounded-xl flex justify-center items-center w-[156px] h-12"
+                      href="@link"
+                      >Viwe more</a
+                    >
+                  </span>
+                </div>
+              </face>
+
+              <face filter="link is null">
+                <div
+                  class="relative w-full h-[260px] overflow-hidden rounded-xl"
+                >
+                  <img
+                    loading="lazy"
+                    class="!w-full !h-full object-cover"
+                    src="@type_159"
+                    alt="@title"
+                    width="632"
+                    height="402"
+                  />
+                  <span
+                    class="z-10 p-6 absolute top-0 left-0 w-full h-full flex flex-col gap-1 justify-end"
+                  >
+                    <p class="text-white tetx-base font-normal line-clamp-2">
+                      @title
+                    </p>
+                    <p
+                      class="text-white line-clamp-3 tetx-xs font-normal scale-[0.85] -translate-x-5"
+                    >
+                      @prp_7244
+                    </p>
+                    <a
+                      class="bg-primary-600 hover:shadow-lg hover:scale-105 hover:bg-primary-950 transition-all duration-200 ease-in-out text-white rounded-xl flex justify-center items-center w-[156px] h-12"
+                      href="/article.bc?id=@id"
+                      >Viwe more</a
+                    >
+                  </span>
+                </div>
+              </face>
+            </basis>
+          </div>
+        </div>
+
+        <div class="w-full py-5 flex flex-col gap-5 justify-center">
+          <div class="grid grid-cols-2 w-full gap-5">
+            <basis core="list" datamembername="db.related-article">
+              <face filter="RowNumber=1">
+                <div class="flex flex-col gap-3">
+                  <h4 class="text-xl text-zinc-900 font-normal">
+                    Similar blogs
+                  </h4>
+                  <div class="!h-[402px] rounded-xl overflow-hidden relative">
+                    <img
+                      loading="lazy"
+                      class="!w-full !h-full object-cover"
+                      width="632"
+                      height="402"
+                      src="@type_159"
+                      alt="@title"
+                    />
+                    <span
+                      class="z-10 p-6 absolute top-0 left-0 w-full h-full flex flex-col gap-1 justify-end"
+                    >
+                      <p class="text-white tetx-base font-normal">@title</p>
+                      <p
+                        class="text-white line-clamp-3 tetx-xs font-normal scale-[0.85] -translate-x-8"
+                      >
+                        @prp_7244
+                      </p>
+                      <a
+                        class="bg-primary-600 hover:shadow-lg hover:scale-105 hover:bg-primary-950 transition-all duration-200 ease-in-out text-white rounded-xl flex justify-center items-center w-[156px] h-12"
+                        href="@link"
+                        >Viwe more</a
+                      >
+                    </span>
+                  </div>
+                </div>
+              </face>
+              <face filter="RowNumber=1 and link is null">
+                <div class="flex flex-col gap-3">
+                  <h4 class="text-xl text-zinc-900 font-normal">
+                    Similar blogs
+                  </h4>
+
+                  <div class="!h-[402px] rounded-xl overflow-hidden relative">
+                    <img
+                      loading="lazy"
+                      class="!w-full !h-full object-cover"
+                      width="632"
+                      height="402"
+                      src="@type_159"
+                      alt="@title"
+                    />
+                    <span
+                      class="z-10 p-6 absolute top-0 left-0 w-full h-full flex flex-col gap-1 justify-end"
+                    >
+                      <p class="text-white tetx-base font-normal">@title</p>
+                      <p
+                        class="text-white line-clamp-3 tetx-xs font-normal scale-[0.85] -translate-x-8"
+                      >
+                        @prp_7244
+                      </p>
+                      <a
+                        class="bg-primary-600 hover:shadow-lg hover:scale-105 hover:bg-primary-950 transition-all duration-200 ease-in-out text-white rounded-xl flex justify-center items-center w-[156px] h-12"
+                        href="/article.bc?id=@id"
+                        >Viwe more</a
+                      >
+                    </span>
+                  </div>
+                </div>
+              </face>
+            </basis>
+
+            <div class="w-full flex flex-col gap-5">
+              <basis core="list" datamembername="db.related-article">
+                <face filter="RowNumber=2">
+                  <div class="!h-[191px] rounded-xl overflow-hidden relative">
+                    <img
+                      loading="lazy"
+                      class="!w-full !h-full object-cover"
+                      width="632"
+                      height="402"
+                      src="@type_159"
+                      alt="@title"
+                    />
+                    <span
+                      class="z-10 p-6 absolute top-0 left-0 w-full h-full flex flex-col gap-1 justify-end"
+                    >
+                      <p class="text-white tetx-base font-normal">@title</p>
+                      <p
+                        class="text-white tetx-xs line-clamp-3 font-normal scale-[0.85] -translate-x-8"
+                      >
+                        @prp_7244
+                      </p>
+                      <a
+                        class="bg-primary-600 hover:shadow-lg hover:scale-105 hover:bg-primary-950 transition-all duration-200 ease-in-out text-white rounded-xl flex justify-center items-center w-[156px] h-12"
+                        href="@link"
+                        >Viwe more</a
+                      >
+                    </span>
+                  </div>
+                </face>
+                <face filter="RowNumber=2 and link is null">
+                  <div class="!h-[191px] rounded-xl overflow-hidden relative">
+                    <img
+                      loading="lazy"
+                      class="!w-full !h-full object-cover"
+                      width="632"
+                      height="402"
+                      src="@type_159"
+                      alt="@title"
+                    />
+                    <span
+                      class="z-10 p-6 absolute top-0 left-0 w-full h-full flex flex-col gap-1 justify-end"
+                    >
+                      <p class="text-white tetx-base font-normal">@title</p>
+                      <p
+                        class="text-white tetx-xs line-clamp-3 font-normal scale-[0.85] -translate-x-8"
+                      >
+                        @prp_7244
+                      </p>
+                      <a
+                        class="bg-primary-600 hover:shadow-lg hover:scale-105 hover:bg-primary-950 transition-all duration-200 ease-in-out text-white rounded-xl flex justify-center items-center w-[156px] h-12"
+                        href="/article.bc?id=@id"
+                        >Viwe more</a
+                      >
+                    </span>
+                  </div>
+                </face>
+              </basis>
+
+              <basis core="list" datamembername="db.related-article">
+                <face filter="RowNumber=3">
+                  <div class="!h-[191px] rounded-xl overflow-hidden relative">
+                    <img
+                      loading="lazy"
+                      class="!w-full !h-full object-cover"
+                      width="632"
+                      height="402"
+                      src="@type_159"
+                      alt="@title"
+                    />
+                    <span
+                      class="z-10 p-6 absolute top-0 left-0 w-full h-full flex flex-col gap-1 justify-end"
+                    >
+                      <p class="text-white tetx-base font-normal">@title</p>
+                      <p
+                        class="text-white tetx-xs line-clamp-3 font-normal scale-[0.85] -translate-x-8"
+                      >
+                        @prp_7244
+                      </p>
+                      <a
+                        class="bg-primary-600 hover:shadow-lg hover:scale-105 hover:bg-primary-950 transition-all duration-200 ease-in-out text-white rounded-xl flex justify-center items-center w-[156px] h-12"
+                        href="@link"
+                        >Viwe more</a
+                      >
+                    </span>
+                  </div>
+                </face>
+
+                <face filter="RowNumber=3 and link is null">
+                  <div class="!h-[191px] rounded-xl overflow-hidden relative">
+                    <img
+                      loading="lazy"
+                      class="!w-full !h-full object-cover"
+                      width="632"
+                      height="402"
+                      src="@type_159"
+                      alt="@title"
+                    />
+                    <span
+                      class="z-10 p-6 absolute top-0 left-0 w-full h-full flex flex-col gap-1 justify-end"
+                    >
+                      <p class="text-white tetx-base font-normal">@title</p>
+                      <p
+                        class="text-white tetx-xs line-clamp-3 font-normal scale-[0.85] -translate-x-8"
+                      >
+                        @prp_7244
+                      </p>
+                      <a
+                        class="bg-primary-600 hover:shadow-lg hover:scale-105 hover:bg-primary-950 transition-all duration-200 ease-in-out text-white rounded-xl flex justify-center items-center w-[156px] h-12"
+                        href="/article.bc?id=@id"
+                        >Viwe more</a
+                      >
+                    </span>
+                  </div>
+                </face>
+              </basis>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <basis core="call" file="footer.inc" lid="2" />
+    <script>
+      function Set_Offset_Item(element) {
+        var hrefValue = element.getAttribute("data-id");
+        var HEADER_HEIGHT = 0;
+        if (document.querySelector(".will-fixed")) {
+          var HEADER_HEIGHT =
+            document.querySelector(".will-fixed").offsetHeight;
+        }
+        const targetElement = document.getElementById(hrefValue);
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+          setTimeout(() => {
+            const offsetTop =
+              targetElement.getBoundingClientRect().top +
+              window.scrollY -
+              HEADER_HEIGHT -
+              200;
+
+            window.scrollTo({ top: offsetTop, behavior: "smooth" });
+          }, 1);
+        }
+      }
+    </script>
+    <script>
+      const currentUrl = window.location.href;
+
+      document
+        .getElementById("share-facebook")
+        .setAttribute(
+          "href",
+          "https://www.facebook.com/sharer/sharer.php?u=" + currentUrl
+        );
+
+      document
+        .getElementById("share-whatsapp")
+        .setAttribute("href", "whatsapp://send?text=" + currentUrl);
+
+      document
+        .getElementById("share-twitter")
+        .setAttribute("href", "https://twitter.com/home?status=" + currentUrl);
+
+      document
+        .getElementById("share-linkedin")
+        .setAttribute(
+          "href",
+          "https://www.linkedin.com/shareArticle?mini=true&url=" + currentUrl
+        );
+
+      document
+        .getElementById("share-email")
+        .setAttribute(
+          "href",
+          "mailto:info@example.com?&subject=&body=" + currentUrl
+        );
+
+      document
+        .getElementById("share-telegram")
+        .setAttribute(
+          "href",
+          "https://telegram.me/share/url?url=" + currentUrl + "&text="
+        );
+    </script>
+  </body>
+</html>
