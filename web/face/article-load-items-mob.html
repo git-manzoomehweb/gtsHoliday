@@ -1,0 +1,103 @@
+<basis
+  core="dbsource"
+  source="basiscore"
+  lid="2"
+  mid="1"
+  name="db"
+  catid="[##cms.query.catid##]"
+>
+<basis
+  core="dbsource"
+  source="basiscore"
+  lid="2"
+  mid="1"
+  name="db"
+  catid="[##cms.query.catid##]"
+>
+  <member
+    name="tour-list"
+    type="list"
+    propertyid="3087451,3087452,3087453,3087454,3087455"
+    perpage="6"
+    order="ord"
+  />
+</basis>
+<basis core="dbsource" source="basiscore" lid="2" mid="1" name="root">
+  <member
+    name="cat"
+    type="tree"
+    request="cat"
+    parentid="212906"
+    order="ord"
+    postsql="select * from [root.cat] where catid =  [##cms.query.catid##]"
+  ></member>
+</basis>
+ 
+  <basis core="list" datamembername="db.tour-list">
+    <layout>
+      <div class="w-full flex flex-col gap-3">
+        <p class="text-sm">[##root.cat.urldescription##]</p>
+        <div class="w-full grid gap-5 grid-cols-1">@child</div>
+      </div>
+    </layout>
+    <face>
+      <div
+        class="border w-full cursor-pointer border-zinc-200 tour-card-container rounded-xl py-5 px-3 flex gap-3 items-center"
+      >
+        <p class="text-sm font-normal dep-place text-center text-zinc-900">
+          @prp_3087451
+        </p>
+        <p class="hidden dep-id">@prp_3087453</p>
+        <span
+          class="w-[40%] h-[1px] border-b border-dashed border-zinc-400"
+        ></span>
+        <p class="text-sm font-normal text-center return-place text-zinc-900">
+          @prp_3087452
+        </p>
+        <p class="hidden return-id">@prp_3087454</p>
+        <p class="text-sm text-primary-600 font-normal text-center">
+          @prp_3087455
+        </p>
+        <button
+          class="transition-all duration-300 ease-in-out hover:scale-125"
+          type="button"
+        >
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M8.49998 3.33608L16.9139 11.7501L8.49998 20.1641L7.08598 18.7501L14.086 11.7501L7.08598 4.75008L8.49998 3.33608Z"
+              fill="#EA2B2B"
+            />
+          </svg>
+        </button>
+      </div>
+    </face>
+  </basis>
+  <script>
+    var tCard = document.querySelectorAll(".tour-card-container");
+
+    tCard.forEach((card) => {
+      card.addEventListener("click", () => {
+        const dpCity = card.querySelector(".dep-place").innerText,
+          dpId = card.querySelector(".dep-id").innerText,
+          rtCity = card.querySelector(".return-place").innerText,
+          rtId = card.querySelector(".return-id").innerText;
+
+        document.querySelector(".r-flight #flightSearch .FCD1").value = dpCity;
+        document.querySelector(".r-flight #flightSearch .FCDid1").value = dpId;
+        document.querySelector(".r-flight #flightSearch .FCD2").value = rtCity;
+        document.querySelector(".r-flight #flightSearch .FCDid2").value = rtId;
+        var main = document.querySelector("main");
+        main &&
+          window.scrollTo({ top: main.offsetTop + 50, behavior: "smooth" });
+      });
+    });
+  </script>
+</basis>

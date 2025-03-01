@@ -1,0 +1,66 @@
+<basis core="dbsource" source="hosting" name="tag" urlid="[##cms.seo.urlid##]">
+  <member type="list" name="list" request="taglist" preview=""></member> </basis
+><!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0,shrink-to-fit=no,viewport-fit=cover"
+    />
+    <title>[##cms.seo.title|(GTS Holiday Travel Agency)##]</title>
+    <meta
+      name="description"
+      content="[##cms.seo.description|(GTS Holiday Travel Agency)##]"
+    />
+    <basis
+      core="dbsource"
+      source="hosting"
+      name="tag"
+      urlid="[##cms.seo.urlid##]"
+    >
+      <member type="list" name="list" request="taglist" preview=""></member>
+    </basis>
+    <basis core="print" datamembername="tag.list">
+      <face filter="key = 'canonical'">
+        <link rel="canonical" href="@value" />
+      </face>
+      <face>
+        <meta property="@key" content="@value" />
+      </face>
+    </basis>
+    <basis core="call" file="pwa.inc" lid="2"/>
+    <basis core="call" file="style.inc" lid="2" />
+   
+  </head>
+  <body class="">
+    <basis core="call" file="header.inc" lid="2" />
+
+    <main
+      class="pt-[129.5px] overflow-hidden w-full justify-center relative flex"
+    >
+      <section
+        class="w-full my-14 relative lg:w-[950px] xl:w-[1200px] 2xl:w-[1280px] flex flex-col gap-6 items-center justify-center"
+      >
+        <img  loading="lazy"
+          width="1677"
+          height="1676"
+          src="[##cms.cms.cdn##]/images/500.png"
+          alt="404"
+          class="!w-[419px] !h-[419px]"
+        />
+        <h1 class="text-base text-zinc-900">
+          The requested page was not found.
+        </h1>
+        <a
+          href="/"
+          class="bg-primary-600 rounded-xl px-9 py-3 text-white hover:bg-primary-950 hover:shadow-xl"
+          >Go to Home</a
+        >
+      </section>
+    </main>
+
+    <basis core="call" file="footer.inc" lid="2" />
+  </body>
+ 
+</html>

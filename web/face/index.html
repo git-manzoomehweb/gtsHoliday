@@ -1,0 +1,840 @@
+<basis
+  core="dbsource"
+  source="basiscore"
+  lid="2"
+  mid="1"
+  name="db"
+  catid="212905"
+>
+  <member
+    name="hotel-list"
+    type="list"
+    perpage=""
+    typeid="159"
+    propertyid="7243,3087456"
+    size="233x276"
+    order="ord"
+  />
+</basis>
+<basis core="dbsource" source="basiscore" lid="2" mid="1" name="hotel">
+  <member
+    name="cat"
+    type="tree"
+    request="cat"
+    parentid="212901"
+    order="ord"
+  ></member>
+</basis>
+<basis
+  core="dbsource"
+  name="db"
+  source="basiscore"
+  lid="2"
+  mid="1"
+  usedforid="2372479"
+>
+  <member name="service-list" type="view" />
+</basis>
+
+<basis core="dbsource" source="basiscore" lid="2" mid="1" name="popular-btns">
+  <member
+    name="cat"
+    type="tree"
+    request="cat"
+    parentid="212906 "
+    order="ord"
+  ></member>
+</basis>
+
+<basis
+  core="dbsource"
+  source="basiscore"
+  lid="2"
+  mid="1"
+  name="db"
+  catid="212921"
+>
+  <member
+    name="tourism-article-list1"
+    type="list"
+    typeid="159"
+    propertyid="7244"
+    size="632x402"
+    order="ord"
+    postsql="select * from [db.tourism-article-list1] LIMIT 1"
+  />
+  <member
+    name="tourism-article-list2"
+    type="list"
+    typeid="159"
+    propertyid="7244"
+    size="632x193"
+    order="ord"
+    postsql="select * from [db.tourism-article-list2] WHERE id NOT IN (SELECT id FROM [db.tourism-article-list2] LIMIT 1)"
+  />
+</basis>
+
+<basis
+  core="dbsource"
+  name="db"
+  source="basiscore"
+  lid="2"
+  mid="1"
+  usedforid="2372474"
+>
+  <member name="faq" type="view" />
+</basis>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0,shrink-to-fit=no,viewport-fit=cover"
+    />
+    <!-- Title & Description -->
+    <title>GTS Holiday Travel Agency</title>
+    <meta
+      name="description"
+      content="Experience the best and easiets trip with GTS Holiday Travel Agency."
+    />
+    <!-- canonical for Homepage -->
+    <link
+      rel="canonical"
+      href="[##cms.request.:scheme##]://[##cms.request.full-url##]"
+    />
+    <script
+      src="[##cms.cms.cdn##]/_js/jquery/jquery-3.6.3.min.js"
+      type="text/javascript"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.basiscore.net/basisfly.com/css/swiper-bundle.min.css"
+    />
+    <!-- fill items with Agancy Info -->
+    <meta name="og:locale" content="en-US" />
+    <meta property="og:title" content="GTS Holiday Travel Agency" />
+    <meta
+      property="og:url"
+      content="[##cms.request.:scheme##]://[##cms.request.full-url##]"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content=" GTS Holiday Travel Agency" />
+    <meta property="og:image" content="[##cms.cms.cdn##]/images/logo.png" />
+    <meta property="og:image:alt" content="More and Easy Travel Agency logo" />
+    <meta
+      property="og:description"
+      content=" GTS Holiday is a prominent travel agency in Turkey, specializing in crafting unforgettable travel experiences for discerning travelers. With a focus on personalized service and a deep understanding of the country's diverse offerings, GTS Holiday curates unique itineraries that cater to individual preferences and budgets. From exploring ancient ruins and vibrant bazaars to indulging in luxurious spa retreats and exhilarating adventure activities, GTS Holiday provides a comprehensive range of travel services, including flight bookings, accommodation arrangements, guided tours, and visa assistance. Their team of experienced travel experts possesses in-depth knowledge of Turkish culture, history, and local customs, ensuring that every journey is enriched with insightful and authentic experiences."
+    />
+    <meta property="og:image:height" content="512" />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:type" content="image/png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content=" " />
+    <meta name="twitter:creator" content="sorinet Group" />
+    <meta name="twitter:image" content="[##cms.cms.cdn##]/images/logo.png" />
+    <meta name="twitter:title" content=" " />
+    <meta name="twitter:description" content=" " />
+    <meta property="seo:robots" content="index, follow" />
+    <!-- samandehi-enamad optional -->
+    <meta name="enamad" content="" />
+    <meta name="samandehi" content="" />
+    <!-- pwa metatags -->
+    <basis core="call" file="pwa.inc" lid="2" />
+    <!-- define -->
+    <link
+      rel="preload"
+      as="image"
+      imagesrcset="image address"
+      fetchpriority="high"
+    />
+    <!-- common styles for all page -->
+    <basis core="call" file="style.inc" lid="2" />
+  </head>
+  <body onload="loadContentHomaPage()">
+    <basis core="call" file="header.inc" lid="2" />
+    <main
+      class="pt-[93.5px] overflow-hidden w-full relative flex flex-col gap-7"
+    >
+      <section class="!w-full flex flex-col z-[100] h-824">
+        
+        <div
+          class="w-full flex justify-center mt-[-300px] search-box-container en"
+          id="search-box"
+        >
+          <span class="loader"></span>
+        </div>
+      </section>
+      <h1 class="hidden shadow-md -rotate-180">gts</h1>
+      <span class="absolute z-0 right-[-5rem] top-[1400px]">
+        <svg
+          width="522"
+          height="823"
+          viewBox="0 0 522 823"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M467.275 3.77154L529.532 21.6977C546.748 26.6547 554.006 47.0485 543.79 61.7575L345.375 347.433C329.256 370.641 322.027 398.872 325.007 426.971L363.936 794.028C365.895 812.492 348.525 827.057 330.676 821.918L239.737 795.733C225.371 791.596 213.459 781.516 207.006 768.035L8.67332 353.74C-8.27477 318.337 3.54074 275.867 36.3371 254.303L402.413 13.6131C421.558 1.02517 445.252 -2.56986 467.275 3.77154Z"
+            fill="#FAF0F0"
+          />
+        </svg>
+      </span>
+      <span class="absolute left-[-6rem] top-[950px]">
+        <svg
+          width="562"
+          height="814"
+          viewBox="0 0 562 814"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M322.571 19.5657L260.314 1.63961C243.099 -3.31744 226.107 10.0936 226.936 27.9831L243.05 375.43C244.359 403.656 235.468 431.409 218.002 453.62L-10.1632 743.77C-21.6406 758.365 -14.676 779.937 3.17255 785.077L94.1112 811.262C108.477 815.398 123.926 813.196 136.561 805.211L524.841 559.825C558.021 538.856 570.6 496.606 554.292 460.904L372.268 62.3934C362.748 41.5517 344.594 25.9071 322.571 19.5657Z"
+            fill="#FAF0F0"
+          />
+        </svg>
+      </span>
+      <div class="flex w-full justify-center z-20 tr-60y">
+        <div class="w-full lg:w-[950px] xl:w-[1200px] 2xl:w-[1280px]">
+          <h2 class="font-normal text-xl text-zinc-900">Top Hotels</h2>
+          <basis core="print" datamembername="hotel.cat"
+            ><face filter="catid=212905"
+              ><p class="text-zinc-700 text-sm">@urldescription</p>
+            </face></basis
+          >
+        </div>
+      </div>
+      <basis core="list" datamembername="db.hotel-list">
+        <layout>
+          <section class="w-full justify-center flex z-20 overflow-hidden">
+            <div class="w-full lg:w-[950px] xl:w-[1200px] 2xl:w-[1280px]">
+              <div class="first-swiper overflow-hidden flex flex-col w-full">
+                <div class="flex flex-col gap-3 translate-y-12"></div>
+                <div
+                  class="first-swiper-nav w-full flex mb-8 z-30 items-center gap-3 justify-end"
+                >
+                  <div
+                    class="swiper-button-next-first group !cursor-pointer rounded-xl bg-zinc-200 w-12 h-12 flex items-center justify-center"
+                  >
+                    <span>
+                      <svg
+                        width="10"
+                        height="18"
+                        viewBox="0 0 10 18"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M8.4999 17.5432L0.085939 9.12924L8.4999 0.715239L9.9139 2.12924L2.9139 9.12924L9.9139 16.1292L8.4999 17.5432Z"
+                          fill="#18181B"
+                          class="group-hover:fill-primary-600"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                  <div
+                    class="swiper-button-prev-first group !cursor-pointer rounded-xl bg-zinc-200 w-12 h-12 flex items-center justify-center"
+                  >
+                    <svg
+                      width="10"
+                      height="18"
+                      viewBox="0 0 10 18"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M1.49998 0.715245L9.91394 9.12924L1.49998 17.5432L0.0859793 16.1292L7.08598 9.12924L0.0859781 2.12924L1.49998 0.715245Z"
+                        fill="#18181B"
+                        class="group-hover:fill-primary-600"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <div class="swiper-wrapper">@child</div>
+                <div
+                  class="swiper-pagination-first flex justify-center mt-14"
+                ></div>
+              </div>
+            </div>
+          </section>
+        </layout>
+        <face>
+          <div
+            class="swiper-slide group h-[383px] relative overflow-hidden rounded-xl"
+          >
+            <a href="@link" class="!w-full !h-full">
+              <img
+                loading="lazy"
+                class="!w-full group-hover:scale-110 transition-all duration-500 ease-in-out !h-full object-cover"
+                src="@00233X00276prp"
+                alt="@title"
+                width="233"
+                height="276"
+              />
+              <span
+                class="w-full px-3 pb-5 flex flex-col justify-end items-center h-full bg-gradient-to-r from-special-1 absolute top-0 left-0 z-10"
+              >
+                <p
+                  class="text-white text-center text-xl font-normal line-clamp-1"
+                >
+                  @prp_3087456
+                </p>
+                <p
+                  class="text-white text-center text-sm font-normal line-clamp-1"
+                >
+                  @prp_7243
+                </p>
+              </span>
+            </a>
+          </div>
+        </face>
+        <face filter="link is null">
+          <div
+            class="swiper-slide group h-[383px] relative overflow-hidden rounded-xl"
+          >
+            <a href="/article.bc?id=@id" class="!w-full !h-full">
+              <img
+                loading="lazy"
+                class="!w-full group-hover:scale-110 transition-all duration-500 ease-in-out !h-full object-cover"
+                src="@00233X00276prp"
+                alt="@title"
+                width="233"
+                height="276"
+              />
+              <span
+                class="w-full px-3 pb-5 flex flex-col justify-end items-center h-full bg-gradient-to-r from-special-1 absolute top-0 left-0 z-10"
+              >
+                <p
+                  class="text-white w-full flex justify-center text-xl font-normal text-center line-clamp-1"
+                >
+                  @prp_3087456
+                </p>
+                <p
+                  class="text-white text-sm font-normal w-full flex justify-center text-center line-clamp-1"
+                >
+                  @prp_7243
+                </p>
+              </span>
+            </a>
+          </div>
+        </face>
+      </basis>
+
+      <section class="w-full mt-12 justify-center flex z-20">
+        <div
+          class="w-full lg:w-[950px] xl:w-[1200px] 2xl:w-[1280px] grid grid-cols-4 gap-5"
+        >
+          <basis core="print" datamembername="db.service-list">
+            <face filter="RowNumber=3">
+              <article
+                class="border border-zinc-200 transition-all duration-300 hover:shadow-lg rounded-xl py-5 px-7 gap-3 flex flex-col"
+              >
+                <svg
+                  width="74"
+                  height="74"
+                  viewBox="0 0 74 74"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g opacity="0.4">
+                    <path
+                      d="M18.265 12.9355C19.5422 12.9355 20.5775 13.9709 20.5775 15.248V20.0205C25.4821 18.5773 29.5097 17.8154 31.1861 17.5889C32.4515 17.4179 33.6164 18.3052 33.7872 19.5709C33.9583 20.8365 33.0709 22.0012 31.8052 22.1723C30.2385 22.384 25.8558 23.2127 20.5775 24.8522V37.7912C20.5775 39.0683 19.5422 40.1037 18.265 40.1037C16.9879 40.1037 15.9525 39.0683 15.9525 37.7912V23.219C15.9517 23.1831 15.9517 23.1473 15.9525 23.1116V15.248C15.9525 13.9709 16.9879 12.9355 18.265 12.9355Z"
+                      fill="#EA2B2B"
+                    />
+                    <path
+                      d="M62.4313 15.248C62.4313 13.9709 61.3959 12.9355 60.1188 12.9355C58.8417 12.9355 57.8063 13.9709 57.8063 15.248V20.0205C52.9016 18.5773 48.8742 17.8154 47.1978 17.5889C45.9321 17.4179 44.7675 18.3052 44.5964 19.5709C44.4256 20.8365 45.3129 22.0012 46.5783 22.1723C48.1453 22.384 52.5279 23.2127 57.8063 24.8522V37.7912C57.8063 39.0683 58.8417 40.1037 60.1188 40.1037C61.3959 40.1037 62.4313 39.0683 62.4313 37.7912V23.219C62.4322 23.1831 62.4322 23.1473 62.4313 23.1117V15.248Z"
+                      fill="#EA2B2B"
+                    />
+                    <path
+                      d="M62.4314 56.2918C62.4314 55.0147 61.396 53.9793 60.1189 53.9793C58.8418 53.9793 57.8064 55.0147 57.8064 56.2918V60.9846C57.8064 62.2618 58.8418 63.2971 60.1189 63.2971C61.396 63.2971 62.4314 62.2618 62.4314 60.9846V56.2918Z"
+                      fill="#EA2B2B"
+                    />
+                    <path
+                      d="M20.5775 56.2918C20.5775 55.0147 19.5422 53.9793 18.265 53.9793C16.9878 53.9793 15.9525 55.0147 15.9525 56.2918V60.9846C15.9525 62.2618 16.9878 63.2971 18.265 63.2971C19.5422 63.2971 20.5775 62.2618 20.5775 60.9846V56.2918Z"
+                      fill="#EA2B2B"
+                    />
+                  </g>
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M41.4927 10.7488C40.7626 10.8444 40.2156 11.0206 39.6578 11.3401L39.2101 11.5962L38.7322 11.3384C37.961 10.9223 37.2229 10.7525 36.1844 10.7525C35.001 10.7525 34.3508 10.8855 33.398 11.322C31.3818 12.2459 30.1234 13.951 29.7102 16.3187C29.3027 18.6543 29.8765 20.7464 31.5286 22.948C33.0077 24.9194 35.7093 27.0718 38.2527 28.3054C39.1435 28.7374 39.4713 28.7098 40.5637 28.1106C43.1157 26.711 45.3293 24.9083 46.7902 23.0402C48.1095 21.3529 48.6864 19.913 48.769 18.0992C48.8791 15.6903 48.1203 13.6913 46.5725 12.3119C45.2824 11.162 43.2092 10.5241 41.4927 10.7488ZM18.4721 36.4114C17.0503 36.7216 16.0831 37.144 14.6941 38.0623C12.0811 39.7895 10.3503 42.6506 10.0234 45.7829C9.95496 46.44 9.92299 48.0538 9.9455 49.7234C9.98293 52.4929 9.98953 52.5678 10.2652 53.3562C11.0341 55.5546 12.7248 57.084 14.9643 57.6063C15.5516 57.7432 18.4918 57.7617 39.1799 57.7589C54.2904 57.7567 62.9126 57.7191 63.2447 57.6538C65.0669 57.2955 66.8315 55.9909 67.7013 54.3592C68.3442 53.153 68.4339 52.5154 68.4339 49.149C68.4339 45.795 68.3538 44.952 67.9067 43.6055C66.7954 40.2573 64.1222 37.667 60.6704 36.5927C59.845 36.3874 59.3806 36.277 58.4751 36.3035L39.437 36.2866C22.4108 36.2712 19.0227 36.2912 18.4721 36.4114Z"
+                    fill="#EA2B2B"
+                  />
+                </svg>
+                <p class="text-sm text-zinc-900 font-normal">@text</p>
+                <div class="text-sm text-zinc-700 font-normal line-clamp-[7]">
+                  @Answer
+                </div>
+              </article>
+            </face>
+          </basis>
+
+          <basis core="print" datamembername="db.service-list">
+            <face filter="RowNumber=2">
+              <article
+                class="border border-zinc-200 transition-all duration-300 hover:shadow-lg rounded-xl py-5 px-7 gap-3 flex flex-col"
+              >
+                <svg
+                  width="62"
+                  height="62"
+                  viewBox="0 0 62 62"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g opacity="0.4">
+                    <path
+                      d="M38.4565 10.9276C36.9887 10.6565 35.6406 11.5932 35.3612 13.0259C35.0818 14.4587 36.0214 15.8576 37.4493 16.138C41.7483 16.9761 45.0677 20.3038 45.9091 24.6175C46.1486 25.8592 47.2417 26.7651 48.5007 26.7651C48.6696 26.7651 48.8385 26.7497 49.0105 26.7189C50.4383 26.4323 51.378 25.0365 51.0985 23.6007C49.8426 17.1579 44.8834 12.1817 38.4565 10.9276Z"
+                      fill="#EA2B2B"
+                    />
+                    <path
+                      d="M38.2646 0.191442C37.5767 0.0928433 36.8858 0.296204 36.3362 0.733737C35.7712 1.17743 35.418 1.81833 35.3413 2.53625C35.1785 3.9875 36.2256 5.3001 37.675 5.46341C47.6701 6.57881 55.439 14.365 56.5628 24.3913C56.7133 25.7347 57.8403 26.7485 59.1852 26.7485C59.2866 26.7485 59.3848 26.7423 59.4861 26.73C60.1893 26.6529 60.8158 26.3048 61.2579 25.7501C61.6971 25.1955 61.8966 24.5053 61.8168 23.7997C60.4166 11.29 50.7347 1.58107 38.2646 0.191442Z"
+                      fill="#EA2B2B"
+                    />
+                  </g>
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M28.0146 33.9982C40.3143 46.2944 43.1046 32.069 50.9358 39.8948C58.4858 47.4427 62.8251 48.9549 53.2594 58.5179C52.0612 59.4808 44.4484 71.0656 17.6943 44.319C-9.06314 17.569 2.51497 9.94837 3.47816 8.75051C13.067 -0.838975 14.5532 3.5256 22.1031 11.0734C29.9344 18.9025 15.7149 21.7019 28.0146 33.9982Z"
+                    fill="#EA2B2B"
+                  />
+                </svg>
+
+                <p class="text-sm text-zinc-900 font-normal">@text</p>
+                <div class="text-sm text-zinc-700 font-normal line-clamp-[7]">
+                  @Answer
+                </div>
+              </article>
+            </face>
+          </basis>
+
+          <basis core="print" datamembername="db.service-list">
+            <face filter="RowNumber=4">
+              <article
+                class="border border-zinc-200 transition-all duration-300 hover:shadow-lg rounded-xl py-5 px-7 gap-3 flex flex-col"
+              >
+                <svg
+                  width="74"
+                  height="74"
+                  viewBox="0 0 74 74"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    opacity="0.4"
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M34.3339 7.70801C19.9965 7.70801 8.37231 19.3322 8.37231 33.6697C8.37231 48.0072 19.9965 59.6313 34.3339 59.6313C48.6406 59.6313 60.2647 48.0072 60.2647 33.6697C60.2647 19.3322 48.6406 7.70801 34.3339 7.70801Z"
+                    fill="#EA2B2B"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M64.7189 61.0294L58.6046 54.9275C57.3991 53.725 55.4442 53.725 54.2448 54.9336C53.0392 56.1392 53.0423 58.0941 54.2479 59.2966L60.3652 65.3954C60.9665 65.9936 61.7558 66.2957 62.5421 66.2957C63.3314 66.2957 64.1238 65.9936 64.7251 65.3892C65.9276 64.1836 65.9245 62.2319 64.7189 61.0294Z"
+                    fill="#EA2B2B"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M35.4469 44.7358C36.2486 44.3041 43.3711 40.2649 45.1594 34.5299C46.6394 29.8743 44.4503 25.1568 40.1644 23.7384C38.2528 23.1526 36.1561 23.2759 34.3369 24.1393C32.5178 23.2759 30.452 23.1218 28.4786 23.7384C25.087 24.8176 23.0211 28.0243 23.0211 31.6008C23.0211 32.5566 23.1753 33.5433 23.4836 34.5299C25.3319 40.2264 32.182 44.166 33.1797 44.7395L33.2269 44.7666C33.5661 44.9516 33.9361 45.0441 34.3369 45.0441C34.7069 45.0441 35.1078 44.9516 35.4469 44.7358ZM34.3369 40.0183C36.4644 38.6308 39.8869 35.9174 40.7503 33.1116C41.3669 31.2308 40.8736 28.8259 38.7461 28.1476C37.7286 27.8392 36.5878 28.0242 35.6936 28.6717C34.8611 29.2884 33.7511 29.2576 32.9186 28.6717C32.0861 28.0242 30.9453 27.8084 29.8969 28.1476C27.8002 28.8259 27.276 31.1999 27.8927 33.1116C28.8177 35.9483 32.2094 38.6308 34.3369 40.0183Z"
+                    fill="#EA2B2B"
+                  />
+                </svg>
+
+                <p class="text-sm text-zinc-900 font-normal">@text</p>
+                <div class="text-sm text-zinc-700 font-normal line-clamp-[7]">
+                  @Answer
+                </div>
+              </article>
+            </face>
+          </basis>
+
+          <basis core="print" datamembername="db.service-list">
+            <face filter="RowNumber=5">
+              <article
+                class="border border-zinc-200 transition-all duration-300 hover:shadow-lg rounded-xl py-5 px-7 gap-3 flex flex-col"
+              >
+                <svg
+                  width="74"
+                  height="74"
+                  viewBox="0 0 74 74"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    opacity="0.4"
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M10.1781 30.4355C9.66717 30.4355 9.25305 30.8497 9.25305 31.3606V47.1472C9.25305 55.759 14.7846 61.5464 23.014 61.5464H54.0632C62.2988 61.5464 67.8303 55.759 67.8303 47.1472V31.3606C67.8303 30.8497 67.4162 30.4355 66.9053 30.4355H10.1781Z"
+                    fill="#EA2B2B"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M58.0253 45.3277C58.0253 48.2847 55.6203 50.6897 52.6633 50.6897H48.729C45.7752 50.6897 43.3702 48.2847 43.3702 45.3277V41.4736C43.3702 38.5136 45.7752 36.1086 48.729 36.1086H52.6633C55.6203 36.1086 58.0253 38.5136 58.0253 41.4736V45.3277ZM48.7312 40.7333H52.6624C53.0756 40.7333 53.3993 41.057 53.3993 41.4733V45.3274C53.3993 45.7406 53.0756 46.0644 52.6624 46.0644H48.7312C48.318 46.0644 47.9943 45.7406 47.9943 45.3274V41.4733C47.9943 41.057 48.318 40.7333 48.7312 40.7333Z"
+                    fill="#EA2B2B"
+                  />
+                  <path
+                    d="M31.8847 49.9189H21.3613C20.0848 49.9189 19.0488 48.8829 19.0488 47.6064C19.0488 46.3299 20.0848 45.2939 21.3613 45.2939H31.8847C33.1643 45.2939 34.1972 46.3299 34.1972 47.6064C34.1972 48.8829 33.1643 49.9189 31.8847 49.9189Z"
+                    fill="#EA2B2B"
+                  />
+                  <path
+                    d="M21.3613 36.8799H29.1776C30.4541 36.8799 31.4901 37.9159 31.4901 39.1924C31.4901 40.4689 30.4541 41.5049 29.1776 41.5049H21.3613C20.0848 41.5049 19.0488 40.4689 19.0488 39.1924C19.0488 37.9159 20.0848 36.8799 21.3613 36.8799Z"
+                    fill="#EA2B2B"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M66.7659 25.8049C67.2968 25.8049 67.7211 25.357 67.6637 24.8292C66.8547 17.361 61.6253 12.4541 54.0656 12.4541H23.0135C15.4569 12.4541 10.2276 17.361 9.41851 24.8292C9.36131 25.357 9.78561 25.8049 10.3166 25.8049H66.7659Z"
+                    fill="#EA2B2B"
+                  />
+                </svg>
+
+                <p class="text-sm text-zinc-900 font-normal">@text</p>
+                <div class="text-sm text-zinc-700 font-normal line-clamp-[7]">
+                  @Answer
+                </div>
+              </article>
+            </face>
+          </basis>
+        </div>
+      </section>
+
+      <section class="w-full mt-12 justify-center flex z-20">
+        <div
+          class="w-full flex flex-col justify-center items-center lg:w-[950px] xl:w-[1200px] 2xl:w-[1280px] h-[596px] relative"
+        >
+          <span
+            class="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-white"
+          ></span>
+          <img
+            loading="lazy"
+            class="!w-full object-cover popular-bg rounded-xl"
+            width="1280"
+            height="564"
+            src="[##cms.cms.cdn##]/images/popular-bg.jpg"
+            alt="popular"
+          />
+          <div
+            class="w-[80%] gap-5 absolute top-16 z-20 flex flex-col justify-center items-center"
+          >
+            <h3 class="text-3xl text-zinc-900 font-normal">Popular route</h3>
+            <p class="text-sm font-normal text-zinc-900">
+              Experience the best flights with GTS Holiday.
+            </p>
+            <div
+              class="w-full flex flex-wrap py-6 px-5 gap-6 rounded-xl bg-white border border-zinc-100"
+            >
+              <h4 class="text-xl text-zinc-900 w-full">Choose your origin</h4>
+              <basis
+                core="tree"
+                datamembername="popular-btns.cat"
+                idcol="catid"
+                parentidcol="parentid"
+                nullvalue="212906"
+              >
+                <layout>
+                  <ul class="flex gap-6 items-center">
+                    @child
+                  </ul> </layout
+                ><face filter="RowNumber not in(1)">
+                  <li
+                    data-id="@catid"
+                    class="tour-li w-[128px] h-[48px] flex justify-center items-center bg-zinc-100 text-zinc-800 transition-all duration-200 ease-in-out hover:text-white peer-checked/1:text-white peer-checked/1:bg-primary-600 hover:bg-primary-600 rounded-xl cursor-pointer"
+                  >
+                    @title
+                  </li>
+                </face>
+              </basis>
+
+              <div
+                class="fetch-content-article flex justify-center items-center w-full"
+              >
+                <span class="loader"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="w-full mt_7 justify-center flex z-20">
+        <div
+          class="w-full px-8 py-9 flex justify-between bg-primary-600 rounded-xl items-center lg:w-[950px] xl:w-[1200px] 2xl:w-[1280px] relative"
+        >
+          <div class="flex flex-col gap-3">
+            <h5 class="text-white font-normal text-[32px] leading-6">
+              Sign in save money
+            </h5>
+            <p class="text-white text-base font-normal">
+              Save 10% or more at particpation properties-just look for the blue
+              genius label
+            </p>
+          </div>
+          <img
+            loading="lazy"
+            class="!h-[144px] !w-[166px]"
+            width="498"
+            height="433"
+            src="[##cms.cms.cdn##]/images/gift.png"
+            alt="gift"
+          />
+        </div>
+      </section>
+
+      <section class="w-full mt-9 justify-center flex z-20">
+        <div
+          class="w-full py-9 flex flex-col gap-5 justify-center lg:w-[950px] xl:w-[1200px] 2xl:w-[1280px] relative"
+        >
+          <h6 class="text-xl text-zinc-900 font-normal">Tourism articles</h6>
+          <div class="grid grid-cols-2 w-full gap-5">
+            <basis core="list" datamembername="db.tourism-article-list1">
+              <face>
+                <div class="!h-[402px] rounded-xl overflow-hidden relative">
+                  <img
+                    loading="lazy"
+                    class="!w-full !h-full object-cover"
+                    width="632"
+                    height="402"
+                    src="@00632X00402prp"
+                    alt="@title"
+                  />
+                  <span
+                    class="z-10 p-6 absolute top-0 left-0 w-full h-full flex flex-col gap-1 justify-end"
+                  >
+                    <p class="text-white tetx-base font-normal">@title</p>
+                    <div
+                      class="text-white line-clamp-3 tetx-xs font-normal scale-[0.85] -translate-x-8"
+                    >
+                      @prp_7244
+                    </div>
+                    <a
+                      class="bg-primary-600 hover:shadow-lg hover:scale-105 hover:bg-primary-950 transition-all duration-200 ease-in-out text-white rounded-xl flex justify-center items-center w-[156px] h-12"
+                      href="@link"
+                      >Viwe more</a
+                    >
+                  </span>
+                </div>
+              </face>
+              <face filter="link is null">
+                <div class="!h-[402px] rounded-xl overflow-hidden relative">
+                  <img
+                    loading="lazy"
+                    class="!w-full !h-full object-cover"
+                    width="632"
+                    height="402"
+                    src="@00632X00402prp"
+                    alt="@title"
+                  />
+                  <span
+                    class="z-10 p-6 absolute top-0 left-0 w-full h-full flex flex-col gap-1 justify-end"
+                  >
+                    <p class="text-white tetx-base font-normal">@title</p>
+                    <div
+                      class="text-white line-clamp-3 tetx-xs font-normal scale-[0.85] -translate-x-8"
+                    >
+                      @prp_7244
+                    </div>
+                    <a
+                      class="bg-primary-600 hover:shadow-lg hover:scale-105 hover:bg-primary-950 transition-all duration-200 ease-in-out text-white rounded-xl flex justify-center items-center w-[156px] h-12"
+                      href="/article.bc?id=@id"
+                      >Viwe more</a
+                    >
+                  </span>
+                </div>
+              </face>
+            </basis>
+
+            <div class="w-full flex flex-col gap-5">
+              <basis core="list" datamembername="db.tourism-article-list2">
+                <face filter="RowNumber=1">
+                  <div class="!h-[191px] rounded-xl overflow-hidden relative">
+                    <img
+                      loading="lazy"
+                      class="!w-full !h-full object-cover"
+                      width="632"
+                      height="193"
+                      src="@00632X00193prp"
+                      alt="@title"
+                    />
+                    <span
+                      class="z-10 p-6 absolute top-0 left-0 w-full h-full flex flex-col gap-1 justify-end"
+                    >
+                      <p class="text-white tetx-base font-normal">@title</p>
+                      <div
+                        class="text-white tetx-xs line-clamp-3 font-normal scale-[0.85] -translate-x-8"
+                      >
+                        @prp_7244
+                      </div>
+                      <a
+                        class="bg-primary-600 hover:shadow-lg hover:scale-105 hover:bg-primary-950 transition-all duration-200 ease-in-out text-white rounded-xl flex justify-center items-center w-[156px] h-12"
+                        href="@link"
+                        >Viwe more</a
+                      >
+                    </span>
+                  </div>
+                </face>
+                <face filter="RowNumber=1 and link is null">
+                  <div class="!h-[191px] rounded-xl overflow-hidden relative">
+                    <img
+                      loading="lazy"
+                      class="!w-full !h-full object-cover"
+                      width="632"
+                      height="193"
+                      src="@00632X00193prp"
+                      alt="@title"
+                    />
+                    <span
+                      class="z-10 p-6 absolute top-0 left-0 w-full h-full flex flex-col gap-1 justify-end"
+                    >
+                      <p class="text-white tetx-base font-normal">@title</p>
+                      <div
+                        class="text-white tetx-xs line-clamp-3 font-normal scale-[0.85] -translate-x-8"
+                      >
+                        @prp_7244
+                      </div>
+                      <a
+                        class="bg-primary-600 hover:shadow-lg hover:scale-105 hover:bg-primary-950 transition-all duration-200 ease-in-out text-white rounded-xl flex justify-center items-center w-[156px] h-12"
+                        href="/article.bc?id=@id"
+                        >Viwe more</a
+                      >
+                    </span>
+                  </div>
+                </face>
+              </basis>
+              <basis core="list" datamembername="db.tourism-article-list2">
+                <face filter="RowNumber=2">
+                  <div class="!h-[191px] rounded-xl overflow-hidden relative">
+                    <img
+                      loading="lazy"
+                      class="!w-full !h-full object-cover"
+                      width="632"
+                      height="193"
+                      src="@00632X00193prp"
+                      alt="@title"
+                    />
+                    <span
+                      class="z-10 p-6 absolute top-0 left-0 w-full h-full flex flex-col gap-1 justify-end"
+                    >
+                      <p class="text-white tetx-base font-normal">@title</p>
+                      <div
+                        class="text-white tetx-xs line-clamp-3 font-normal scale-[0.85] -translate-x-8"
+                      >
+                        @prp_7244
+                      </div>
+                      <a
+                        class="bg-primary-600 hover:shadow-lg hover:scale-105 hover:bg-primary-950 transition-all duration-200 ease-in-out text-white rounded-xl flex justify-center items-center w-[156px] h-12"
+                        href="@link"
+                        >Viwe more</a
+                      >
+                    </span>
+                  </div>
+                </face>
+                <face filter="RowNumber=2 and link is null">
+                  <div class="!h-[191px] rounded-xl overflow-hidden relative">
+                    <img
+                      loading="lazy"
+                      class="!w-full !h-full object-cover"
+                      width="632"
+                      height="193"
+                      src="@00632X00193prp"
+                      alt="@title"
+                    />
+                    <span
+                      class="z-10 p-6 absolute top-0 left-0 w-full h-full flex flex-col gap-1 justify-end"
+                    >
+                      <p class="text-white tetx-base font-normal">@title</p>
+                      <div
+                        class="text-white tetx-xs line-clamp-3 font-normal scale-[0.85] -translate-x-8"
+                      >
+                        @prp_7244
+                      </div>
+                      <a
+                        class="bg-primary-600 hover:shadow-lg hover:scale-105 hover:bg-primary-950 transition-all duration-200 ease-in-out text-white rounded-xl flex justify-center items-center w-[156px] h-12"
+                        href="/article.bc?id=@id"
+                        >Viwe more</a
+                      >
+                    </span>
+                  </div>
+                </face>
+              </basis>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="w-full mt-5 justify-center flex z-20">
+        <div
+          class="w-full flex gap-5 justify-between lg:w-[950px] xl:w-[1200px] 2xl:w-[1280px] relative"
+        >
+          <div class="w-[43%]">
+            <img
+              loading="lazy"
+              class="!w-full rounded-xl"
+              width="1632"
+              height="1428"
+              src="[##cms.cms.cdn##]/images/common-qs.png"
+              alt="common"
+            />
+          </div>
+          <div class="w-[57%] common-questions">
+            <basis core="print" datamembername="db.faq">
+              <layout>
+                <div id="q-box-1" class="flex parent-box flex-col gap-4">
+                  @child
+                </div>
+              </layout>
+              <face filter="RowNumber<>1">
+                <div
+                  class="flex box-container group py-2 px-5 transition-all ease-in-out duration-200 hover:shadow-inner hover:border-primary-50 border border-zinc-300 rounded-xl w-full cursor-pointer flex-col gap-2"
+                >
+                  <div class="flex w-full justify-between items-center">
+                    <p
+                      id="question"
+                      class="text-base font-normal leading-6 text-zinc-900 group-hover:text-primary-950 transition-all duration-200 ease-in-out"
+                    >
+                      @text
+                    </p>
+
+                    <span class="w-12 h-12 flex justify-center items-center">
+                      <svg
+                        width="18"
+                        height="11"
+                        viewBox="0 0 18 11"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M17.4141 1.62926L9.00006 10.0432L0.586061 1.62925L2.00006 0.215252L9.00006 7.21525L16.0001 0.215254L17.4141 1.62926Z"
+                          fill="#18181B"
+                          class="group-hover:fill-primary-950"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                  <div
+                    id="answer"
+                    class="text-sm font-normal hidden transition-all duration-300 ease-in-out leading-6 text-zinc-800"
+                  >
+                    @largetext
+                  </div>
+                </div>
+              </face>
+            </basis>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="https://cdn.basiscore.net/basisfly.com/js/swiper-bundle.min.js"></script>
+    <link
+      href="https://cdn.basiscore.net/basisfly.com/css/reservation_tem_calendar_en.css"
+      type="text/css"
+      rel="stylesheet"
+    />
+    <basis core="call" file="footer.inc" lid="2" />
+  </body>
+</html>

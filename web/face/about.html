@@ -1,0 +1,338 @@
+<basis
+  core="dbsource"
+  source="basiscore"
+  name="db"
+  mid="1"
+  lid="2"
+  usedforid="2372529"
+>
+  <member name="view" type="view" />
+</basis>
+
+<basis
+  core="dbsource"
+  source="basiscore"
+  name="db"
+  mid="1"
+  lid="2"
+  usedforid="2372521 "
+>
+  <member name="left" type="view" />
+</basis>
+
+<basis
+  core="dbsource"
+  source="basiscore"
+  name="db"
+  mid="1"
+  lid="2"
+  usedforid="2372522"
+>
+  <member name="right" type="view" />
+</basis>
+
+<basis
+  core="dbsource"
+  name="db"
+  source="basiscore"
+  lid="2"
+  mid="1"
+  usedforid="2372474"
+>
+  <member name="faq" type="view" />
+</basis>
+
+<basis
+  core="dbsource"
+  source="basiscore"
+  name="db"
+  mid="1"
+  lid="2"
+  usedforid="2372518"
+>
+  <member name="goals" type="view" />
+</basis>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0,shrink-to-fit=no,viewport-fit=cover"
+    />
+    <title>[##cms.seo.title|(GTS Holiday Travel Agency)##]</title>
+    <meta
+      name="description"
+      content="[##cms.seo.description|(GTS Holiday Travel Agency)##]"
+    />
+    <basis
+      core="dbsource"
+      source="hosting"
+      name="tag"
+      urlid="[##cms.seo.urlid##]"
+    >
+      <member type="list" name="list" request="taglist" preview=""></member>
+    </basis>
+    <basis core="print" datamembername="tag.list">
+      <face filter="key = 'canonical'">
+        <link rel="canonical" href="@value" />
+      </face>
+      <face>
+        <meta property="@key" content="@value" />
+      </face>
+    </basis>
+    <basis core="call" file="pwa.inc" lid="2" />
+    <basis core="call" file="style.inc" lid="2" />
+  </head>
+  <body class="">
+    <basis core="call" file="header.inc" lid="2" />
+
+    <main
+      class="pt-[129.5px] overflow-hidden w-full justify-center relative flex"
+    >
+      <section
+        class="w-full relative lg:w-[950px] xl:w-[1200px] 2xl:w-[1280px] flex flex-col gap-6 items-center justify-center"
+      >
+        <div class="w-full h-[494px] rounded-xl overflow-hidden relative">
+          <img
+            loading="lazy"
+            width="1280"
+            height="494"
+            class="object-cover !w-full !h-full"
+            src="[##cms.cms.cdn##]/images/banner.jpg"
+            alt="banner"
+          />
+          <span
+            class="flex flex-col gap-4 justify-end items-center p-9 absolute w-full h-full top-0 left-0 bg-gradient-to-t from-red-60 z-20"
+          >
+            <h1 class="text-white text-xl mb-4 drop-shadow-md">About us</h1>
+          </span>
+        </div>
+
+        <basis core="print" datamembername="db.view">
+          <face filter="RowNumber=2">
+            <div class="text-xs text-zinc-900 my-9">@Answer</div>
+          </face>
+        </basis>
+
+        <div class="w-full flex justify-between items-center">
+          <basis core="print" datamembername="db.left">
+            <layout>
+              <div class="flex flex-col gap-20">@child</div>
+            </layout>
+            <face filter="RowNumber<>1">
+              <div class="flex flex-col gap-2">
+                <p class="text-3xl">@text</p>
+                <div class="text-xs text-zinc-600">@largetext</div>
+              </div>
+            </face>
+          </basis>
+
+          <div class="flex gap-3 items-end w-[63%]">
+            <span
+              class="bg-primary-600 w-[30%] px-4 relative rounded-xl shadow-inner h-[232px]"
+            >
+              <img
+                loading="lazy"
+                width="291"
+                height="348"
+                src="[##cms.cms.cdn##]/images/abut.png"
+                alt="about"
+                class="!w-[90%] !h-[270px] absolute bottom-0 left-3"
+              />
+            </span>
+
+            <basis core="print" datamembername="db.right">
+              <face filter="RowNumber<>1">
+                <div class="flex flex-col gap-3 w-[65%]">
+                  <h2 class="text-3xl mb-4">@text</h2>
+                  <div class="text-xs">@largetext</div>
+                </div>
+              </face>
+            </basis>
+          </div>
+        </div>
+        <div class="w-full my-7 common-questions">
+          <basis core="print" datamembername="db.faq">
+            <layout>
+              <div id="q-box-1" class="flex parent-box flex-col gap-4">
+                @child
+              </div>
+            </layout>
+            <face filter="RowNumber<>1">
+              <div
+                class="flex box-container border border-zinc-300 hover:border-primary-600 group py-2 px-5 transition-all ease-in-out duration-200 hover:bg-red-50 rounded-xl w-full cursor-pointer flex-col gap-2"
+              >
+                <div class="flex w-full justify-between items-center">
+                  <p
+                    id="question"
+                    class="text-base font-normal leading-6 text-zinc-900 transition-all duration-200 ease-in-out"
+                  >
+                    @text
+                  </p>
+
+                  <span class="w-12 h-12 flex justify-center items-center">
+                    <svg
+                      width="18"
+                      height="11"
+                      viewBox="0 0 18 11"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M17.4141 1.62926L9.00006 10.0432L0.586061 1.62925L2.00006 0.215252L9.00006 7.21525L16.0001 0.215254L17.4141 1.62926Z"
+                        fill="#18181B"
+                        class="group-hover:fill-primary-600"
+                      />
+                    </svg>
+                  </span>
+                </div>
+                <div
+                  id="answer"
+                  class="text-sm font-normal hidden transition-all duration-300 ease-in-out leading-6 text-zinc-800"
+                >
+                  @largetext
+                </div>
+              </div>
+            </face>
+          </basis>
+        </div>
+
+        <div class="w-full mb-7 flex gap-4">
+          <basis core="view" datamembername="db.info">
+            <face filter="prpID=91462">
+              <div class="w-[40%] h-fit">
+                <iframe
+                  defer=""
+                  title="gts location"
+                  class="inline w-full align-middle border-0 border-none rounded-xl my-auto"
+                  height="263"
+                  loading="lazy"
+                  target="_blank"
+                  allowfullscreen=""
+                  src="https://maps.google.com/maps?q=@largetext,@text&z=14&output=embed"
+                ></iframe>
+              </div> </face
+          ></basis>
+
+          <div class="flex flex-col gap-5 items-start">
+            <p class="text-xl text-zinc-900 font-normal">Contact us</p>
+
+            <div class="flex gap-2 items-center group">
+              <span
+                class="border !bg-transparent border-primary-600 rounded-xl p-3 group-hover:shadow-lg transition-all duration-200 ease-in-out"
+              >
+                <img
+                  loading="lazy"
+                  class="!w-[88px] lg:!w-[33px] !h-[33px]"
+                  width="100"
+                  height="99"
+                  src="[##cms.cms.cdn##]/images/Building-office.png"
+                  alt="add"
+                />
+              </span>
+              <basis core="view" datamembername="db.info">
+                <face filter="prpID=7999">
+                  <div class="flex flex-col justify-between text-zinc-900">
+                    <p
+                      class="text-sm group-hover:font-bold transition-all duration-150 ease-in-out"
+                    >
+                      @Question
+                    </p>
+                    <div
+                      class="lg:text-xs text-sm group-hover:text-primary-600 transition-all duration-150 ease-in-out"
+                    >
+                      @Answer
+                    </div>
+                  </div>
+                </face>
+              </basis>
+            </div>
+
+            <basis core="view" datamembername="db.info">
+              <face filter="prpID=8000">
+                <div class="flex gap-2 items-center group">
+                  <span
+                    class="border !bg-transparent border-primary-600 rounded-xl p-3 group-hover:shadow-lg transition-all duration-200 ease-in-out"
+                  >
+                    <img
+                      loading="lazy"
+                      class="!w-[30px] lg:!w-[33px] !h-[33px]"
+                      width="93"
+                      height="99"
+                      src="[##cms.cms.cdn##]/images/Calling.png"
+                      alt="Calling"
+                    />
+                  </span>
+                  <div class="flex flex-col justify-between text-zinc-900">
+                    <p
+                      class="text-sm group-hover:font-bold transition-all duration-150 ease-in-out"
+                    >
+                      @Question
+                    </p>
+                    <a
+                      href="tel:@Answer"
+                      class="lg:text-xs text-sm transition-all duration-150 ease-in-out group-hover:text-primary-600"
+                    >
+                      @Answer
+                    </a>
+                  </div>
+                </div>
+              </face></basis
+            >
+
+            <basis core="view" datamembername="db.info">
+              <face filter="prpID=8001">
+                <div class="flex gap-2 items-center group">
+                  <span
+                    class="border !bg-transparent border-primary-600 rounded-xl p-3 group-hover:shadow-lg transition-all duration-200 ease-in-out"
+                  >
+                    <img
+                      loading="lazy"
+                      class="!w-[30px] lg:!w-[33px] !h-[33px]"
+                      width="100"
+                      height="99"
+                      src="[##cms.cms.cdn##]/images/email.png"
+                      alt="email"
+                    />
+                  </span>
+                  <div class="flex flex-col justify-between text-zinc-900">
+                    <p
+                      class="text-sm group-hover:font-bold transition-all duration-150 ease-in-out"
+                    >
+                      @Question
+                    </p>
+                    <a
+                      href="mailto:@Answer"
+                      class="lg:text-xs text-sm transition-all duration-150 ease-in-out group-hover:text-primary-600"
+                    >
+                      @Answer
+                    </a>
+                  </div>
+                </div></face
+              ></basis
+            >
+          </div>
+        </div>
+        <div class="w-full flex flex-col gap-4">
+          <basis core="view" datamembername="db.goals">
+            <face filter="RowNumber=1">
+              <h3 class="text-xl text-zinc-900">@text</h3></face
+            >
+
+          
+          </basis>
+          <basis core="view" datamembername="db.goals">
+            <face filter="RowNumber=2">
+              <div class="text-xs text-zinc-900">@largetext</div>
+            </face>
+          </basis>
+        </div>
+      </section>
+    </main>
+    <script src="https://cdn.basiscore.net/basisfly.com/js/swiper-bundle.min.js"></script>
+    <basis core="call" file="footer.inc" lid="2" />
+  </body>
+</html>
