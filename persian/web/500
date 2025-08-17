@@ -1,0 +1,68 @@
+<basis core="dbsource" source="hosting" name="tag" urlid="[##cms.seo.urlid##]">
+  <member type="list" name="list" request="taglist" preview=""></member> </basis
+><!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0,shrink-to-fit=no,viewport-fit=cover"
+    /> 
+    <meta name="robots" content="noindex" />
+    <title>[##cms.seo.title|(آژانس مسافرتی GTS Holiday)##]</title>
+    <meta
+      name="description"
+      content="[##cms.seo.description|(آژانس مسافرتی GTS Holiday)##]"
+    />
+    <basis
+      core="dbsource"
+      source="hosting"
+      name="tag"
+      urlid="[##cms.seo.urlid##]"
+    >
+      <member type="list" name="list" request="taglist" preview=""></member>
+    </basis>
+    <basis core="print" datamembername="tag.list">
+      <face filter="key = 'canonical'">
+        <link rel="canonical" href="@value" />
+      </face>
+      <face>
+        <meta property="@key" content="@value" />
+      </face>
+    </basis>
+    <basis core="call" file="pwa.inc" lid="1"/>
+    <basis core="call" file="style.inc" lid="1" />
+   
+  </head>
+  <body class="fa-multi">
+    <basis core="call" file="header.inc" lid="1" />
+
+    <main
+      class="pt-[129.5px] overflow-hidden w-full justify-center relative flex"
+    >
+      <section
+        class="w-full my-14 relative lg:w-[950px] xl:w-[1200px] 2xl:w-[1280px] flex flex-col gap-6 items-center justify-center"
+      >
+        <img  loading="lazy"
+          width="1677"
+          height="1676"
+          src="[##cms.cms.cdn##]/images/500.png"
+          alt="404"
+          class="!w-[419px] !h-[419px]"
+        />
+        <h1 class="text-base text-zinc-900">
+          ارتباط با سرور با مشکل مواجه شد
+
+        </h1>
+        <a
+          href="/fa"
+          class="bg-primary-600 rounded-xl px-9 py-3 text-white hover:bg-primary-950 hover:shadow-xl"
+          >بازگشت به صفحه اصلی</a
+        >
+      </section>
+    </main>
+
+    <basis core="call" file="footer.inc" lid="1" />
+  </body>
+ 
+</html>
