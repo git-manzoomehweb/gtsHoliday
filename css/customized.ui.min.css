@@ -2392,7 +2392,7 @@ body.fa-multi .search-box-container input[type="text"] {
   }
   body.fa-multi .search-box-container .exchangeRoute {
     top: 0;
-    right: 103.6% !important;
+    right: 0 !important;
     height: 56px;
     width: 50px;
   }
@@ -2468,7 +2468,7 @@ body.fa-multi .search-box-container input[type="text"] {
     .route-content-inner
     .exchangeRoute {
     top: 0;
-    right: 102.6% !important;
+    right: 0 !important;
     height: 56px;
     width: 50px;
   }
@@ -3055,7 +3055,7 @@ i[class^="flaticon-"]:before {
   }
   .search-box-container.en.cstm .exchangeRoute {
     top: 0;
-    right: -57px;
+    right: 0;
     height: 56px;
     width: 50px;
   }
@@ -3202,7 +3202,7 @@ i[class^="flaticon-"]:before {
     padding-top: 3.3rem !important;
   }
   .search-box-container.en.cstm .exchangeRoute {
-    top: 70% !important;
+    top: 30% !important;
     height: 48px !important;
     width: 48px !important;
     border: 1.6px solid var(--primary-700);
@@ -3370,7 +3370,7 @@ body.ar-multi
   }
   body.ar-multi .search-box-container .exchangeRoute {
     top: 0;
-    right: 103.6% !important;
+    right: 0 !important;
     height: 56px;
     width: 50px;
   }
@@ -3499,7 +3499,7 @@ body.ar-multi
   }
   body.ar-multi .search-box-container .exchangeRoute,
   body.fa-multi .search-box-container .exchangeRoute {
-    top: 70% !important;
+    top: 30% !important;
     height: 48px !important;
     width: 48px !important;
     border: 1.6px solid var(--primary-700);
