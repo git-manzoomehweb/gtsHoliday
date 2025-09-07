@@ -3749,6 +3749,9 @@ div.text-sm.text-zinc-900 p img {
 }
 
 @media not all and (min-width: 1024px) {
+  .flighttype-items ul{
+    flex-wrap: wrap !important;
+  }
   .search-box-container.en.cstm .searchList,
   body.ar-multi .search-box-container .searchList,
   body.fa-multi .search-box-container .searchList {
@@ -3797,12 +3800,13 @@ div.text-sm.text-zinc-900 p img {
 .pt-\[93\.5px\],
 main.pt-\[129\.5px\],
 main.pt-\[99\.5px\],
-main.pt-\[149\.5px\] {
+main.pt-\[149\.5px\],
+main.pt-\[90\.5px\] {
   padding: 0 !important;
 }
 .mb-99 {
   margin-bottom: 99px !important;
 }
-.Basis_Calendar_Box{
+.Basis_Calendar_Box {
   margin-top: -60px !important;
 }
