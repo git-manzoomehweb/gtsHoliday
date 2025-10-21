@@ -4472,3 +4472,14 @@ main.pt-\[90\.5px\] {
 .Basis_Calendar_Box {
   margin-top: -90px !important;
 }
+
+body.ar-multi .search-box-container ul.ul-list,
+body.fa-multi .search-box-container ul.ul-list {
+  direction: rtl !important;
+}
+.mobile-search-box.en .label-search-list span {
+  font-size: 10px !important;
+}
+.mobile-search-box.en .close-text{
+  font-size: 12px !important;
+}
