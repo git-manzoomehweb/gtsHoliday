@@ -2,6 +2,9 @@
     <member name="hotel-list" type="list" perpage="" typeid="159" propertyid="7243,3087456" size="233x276"
         order="ord" />
 </basis>
+<basis core="dbsource" source="basiscore" lid="2" mid="1" name="hotel">
+    <member name="cat" type="tree" request="cat" parentid="212901" order="ord"></member>
+</basis>
 <basis core="dbsource" source="basiscore" lid="2" mid="1" name="db" catid="213809">
     <member name="events-list" type="list" perpage="" typeid="159" propertyid="7243,3087456" size="233x276"
         order="ord" />
@@ -10,22 +13,19 @@
     <member name="service-list" type="view" />
 </basis>
 
-<basis core="dbsource" source="basiscore" lid="2" mid="1" name="db" catid="212906">
-    <member name="popular" type="list" typeid="159" propertyid="" order="ord" />
+<basis core="dbsource" source="basiscore" lid="2" mid="1" name="popular-btns">
+    <member name="cat" type="tree" request="cat" parentid="212906 " order="ord"></member>
 </basis>
 
 <basis core="dbsource" source="basiscore" lid="2" mid="1" name="db" catid="212921">
-    <member name="tourism-article-list" type="list" typeid="159" propertyid="7244" size="288x301" order="ord" />
+    <member name="tourism-article-list1" type="list" typeid="159" propertyid="7244" size="632x402" order="ord"
+        postsql="select * from [db.tourism-article-list1] LIMIT 1" />
+    <member name="tourism-article-list2" type="list" typeid="159" propertyid="7244" size="632x193" order="ord"
+        postsql="select * from [db.tourism-article-list2] WHERE id NOT IN (SELECT id FROM [db.tourism-article-list2] LIMIT 1)" />
 </basis>
 
 <basis core="dbsource" name="db" source="basiscore" lid="2" mid="1" usedforid="2372474">
     <member name="faq" type="view" />
-</basis>
-<basis core="dbsource" source="basiscore" lid="2" mid="1" name="popular-btns">
-    <member name="cat" type="tree" request="cat" parentid="212906 " order="ord"></member>
-</basis>
-<basis core="dbsource" source="basiscore" lid="2" mid="1" name="hotel">
-    <member name="cat" type="tree" request="cat" parentid="212901" order="ord"></member>
 </basis>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -38,7 +38,7 @@
     <meta name="description" content="Experience the best and easiets trip with GTS Holiday Travel Agency." />
     <!-- canonical for Homepage -->
     <link rel="canonical" href="[##cms.request.:scheme##]://[##cms.request.full-url##]" />
-    <script src="[##cms.cms.cdn##]/_js/jquery/jquery-3.6.3.min.js" type="text/javascript"></script>
+
     <link rel="stylesheet" href="https://cdn.basiscore.net/basisfly.com/css/swiper-bundle.min.css" />
     <!-- fill items with Agancy Info -->
     <meta name="og:locale" content="en-US" />
@@ -73,137 +73,37 @@
 
 <body class="multi">
     <basis core="call" file="header.inc" lid="2" />
-
-    <main class="pt-[90.5px] overflow-hidden w-full relative flex flex-col gap-9">
-        <section class="!w-full flex flex-col h-830">
-            <div class=""></div>
-            <div class="w-full flex justify-center mt-[-750px] px-5 search-box-container mobile-search-box  en cstm">
-                <div class="w-full flex justify-center" id="search-box">
-                    <span class="loader"></span>
+    <main class="pt-[93.5px] overflow-hidden w-full relative flex flex-col gap-7">
+        <section class="!w-full flex flex-col items-center z-[100] h-824">
+            <div class="lg:w-[950px] xl:w-[1200px] 2xl:w-[1280px]">
+                <div class="w-full flex justify-center mt-[-300px] search-box-container en cstm">
+                    <div class="w-full flex justify-center" id="search-box">
+                        <span class="loader"></span>
+                    </div>
                 </div>
-
             </div>
         </section>
         <h1 class="hidden shadow-md -rotate-180">gts</h1>
-        <div class="flex w-full justify-center px-5 z-20 mt-4">
-            <div class="w-full mt-4">
-                <h2 class="font-normal text-xl text-zinc-900">Events</h2>
-                <basis core="print" datamembername="hotel.cat">
-                    <face filter="catid=212905">
-                        <p class="text-zinc-700 text-sm">@urldescription</p>
-                    </face>
-                </basis>
-            </div>
-        </div>
-        <basis core="list" datamembername="db.events-list">
-            <layout>
-                <section class="w-full justify-center flex z-20 overflow-hidden">
-                    <div class="w-full">
-                        <div class="second-swiper-mob overflow-hidden flex flex-col gap-10 w-full">
-                            <div class="swiper-wrapper ps-5">@child</div>
-                            <div class="swiper-pagination-second flex justify-center"></div>
-                        </div>
-                    </div>
-                </section>
-            </layout>
-            <face>
-                <div class="swiper-slide group relative overflow-hidden rounded-xl">
-                    <a href="@link" class="w-full h-full">
-                        <img loading="lazy"
-                            class="!w-full group-hover:scale-110 transition-all duration-500 ease-in-out !h-full object-cover"
-                            src="@00233X00276prp" alt="@title" width="233" height="276" />
-                        <span
-                            class="w-full pb-5 px-3 flex flex-col justify-end items-center h-full bg-gradient-to-r from-special-1 absolute top-0 left-0 z-10">
-                            <p class="text-white text-xl text-center font-normal line-clamp-1">
-                                @prp_3087456
-                            </p>
-                            <p class="text-white w-full text-sm text-center font-normal line-clamp-1">
-                                @prp_7243
-                            </p>
-                        </span>
-                    </a>
-                </div>
-            </face>
-            <face filter="link is null">
-                <div class="swiper-slide group relative overflow-hidden rounded-xl">
-                    <a href="/article.bc?id=@id" class="w-full h-full">
-                        <img loading="lazy"
-                            class="!w-full group-hover:scale-110 transition-all duration-500 ease-in-out !h-full object-cover"
-                            src="@00233X00276prp" alt="@title" width="233" height="276" />
-                        <span
-                            class="w-full pb-5 px-3 flex flex-col justify-end items-center h-full bg-gradient-to-r from-special-1 absolute top-0 left-0 z-10">
-                            <p class="text-white text-xl text-center font-normal line-clamp-1">
-                                @prp_3087456
-                            </p>
-                            <p class="text-white w-full text-sm text-center font-normal line-clamp-1">
-                                @prp_7243
-                            </p>
-                        </span>
-                    </a>
-                </div>
-            </face>
-        </basis>
-        <div class="flex w-full justify-center px-5 z-20 mt-4">
-            <div class="w-full mt-4">
-                <h2 class="font-normal text-xl text-zinc-900">Top Hotels</h2>
-                <basis core="print" datamembername="hotel.cat">
-                    <face filter="catid=212905">
-                        <p class="text-zinc-700 text-sm">@urldescription</p>
-                    </face>
-                </basis>
-            </div>
-        </div>
-        <basis core="list" datamembername="db.hotel-list">
-            <layout>
-                <section class="w-full justify-center flex z-20 overflow-hidden">
-                    <div class="w-full">
-                        <div class="first-swiper-mob overflow-hidden flex flex-col gap-10 w-full">
-                            <div class="swiper-wrapper ps-5">@child</div>
-                            <div class="swiper-pagination-first flex justify-center"></div>
-                        </div>
-                    </div>
-                </section>
-            </layout>
-            <face>
-                <div class="swiper-slide group relative overflow-hidden rounded-xl">
-                    <a href="@link" class="w-full h-full">
-                        <img loading="lazy"
-                            class="!w-full group-hover:scale-110 transition-all duration-500 ease-in-out !h-full object-cover"
-                            src="@00233X00276prp" alt="@title" width="233" height="276" />
-                        <span
-                            class="w-full pb-5 px-3 flex flex-col justify-end items-center h-full bg-gradient-to-r from-special-1 absolute top-0 left-0 z-10">
-                            <p class="text-white text-xl text-center font-normal line-clamp-1">
-                                @prp_3087456
-                            </p>
-                            <p class="text-white w-full text-sm text-center font-normal line-clamp-1">
-                                @prp_7243
-                            </p>
-                        </span>
-                    </a>
-                </div>
-            </face>
-            <face filter="link is null">
-                <div class="swiper-slide group relative overflow-hidden rounded-xl">
-                    <a href="/article.bc?id=@id" class="w-full h-full">
-                        <img loading="lazy"
-                            class="!w-full group-hover:scale-110 transition-all duration-500 ease-in-out !h-full object-cover"
-                            src="@00233X00276prp" alt="@title" width="233" height="276" />
-                        <span
-                            class="w-full pb-5 px-3 flex flex-col justify-end items-center h-full bg-gradient-to-r from-special-1 absolute top-0 left-0 z-10">
-                            <p class="text-white text-xl text-center font-normal line-clamp-1">
-                                @prp_3087456
-                            </p>
-                            <p class="text-white w-full text-sm text-center font-normal line-clamp-1">
-                                @prp_7243
-                            </p>
-                        </span>
-                    </a>
-                </div>
-            </face>
-        </basis>
+        <span class="absolute z-0 right-[-5rem] top-[1400px]">
+            <svg width="522" height="823" viewBox="0 0 522 823" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M467.275 3.77154L529.532 21.6977C546.748 26.6547 554.006 47.0485 543.79 61.7575L345.375 347.433C329.256 370.641 322.027 398.872 325.007 426.971L363.936 794.028C365.895 812.492 348.525 827.057 330.676 821.918L239.737 795.733C225.371 791.596 213.459 781.516 207.006 768.035L8.67332 353.74C-8.27477 318.337 3.54074 275.867 36.3371 254.303L402.413 13.6131C421.558 1.02517 445.252 -2.56986 467.275 3.77154Z"
+                    fill="#FAF0F0" />
+            </svg>
+        </span>
+        <span class="absolute left-[-6rem] top-[950px]">
+            <svg width="562" height="814" viewBox="0 0 562 814" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M322.571 19.5657L260.314 1.63961C243.099 -3.31744 226.107 10.0936 226.936 27.9831L243.05 375.43C244.359 403.656 235.468 431.409 218.002 453.62L-10.1632 743.77C-21.6406 758.365 -14.676 779.937 3.17255 785.077L94.1112 811.262C108.477 815.398 123.926 813.196 136.561 805.211L524.841 559.825C558.021 538.856 570.6 496.606 554.292 460.904L372.268 62.3934C362.748 41.5517 344.594 25.9071 322.571 19.5657Z"
+                    fill="#FAF0F0" />
+            </svg>
+        </span>
 
-        <section class="w-full mt-4 justify-center flex z-20">
-            <div class="w-full px-5 grid grid-cols-1 gap-5">
+
+
+
+        <section class="w-full mt-12 justify-center flex z-20">
+            <div class="w-full lg:w-[950px] xl:w-[1200px] 2xl:w-[1280px] grid grid-cols-4 gap-5">
                 <basis core="print" datamembername="db.service-list">
                     <face filter="RowNumber=3">
                         <article
@@ -321,29 +221,29 @@
             </div>
         </section>
 
-        <section class="w-full px-5 mt-4 justify-center flex z-20">
-            <div class="w-full flex flex-col justify-center items-center relative">
+        <section class="w-full mt-12 justify-center flex z-20">
+            <div
+                class="w-full flex flex-col justify-center items-center lg:w-[950px] xl:w-[1200px] 2xl:w-[1280px] h-[596px] relative">
                 <span class="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-white"></span>
-                <img loading="lazy" class="!w-full object-cover popular-bg1 rounded-xl" width="1280" height="574"
+                <img loading="lazy" class="!w-full object-cover popular-bg rounded-xl" width="1280" height="564"
                     src="[##cms.cms.cdn##]/images/popular-bg.jpg" alt="popular" />
-                <div class="w-full gap-5 mt_-55 z-20 flex flex-col justify-center items-center">
-                    <h3 class="text-xl text-zinc-900 font-normal">Popular route</h3>
-                    <p class="text-sm font-normal w-[80%] text-zinc-900">
+                <div class="w-[80%] gap-5 absolute top-16 z-20 flex flex-col justify-center items-center">
+                    <h3 class="text-3xl text-zinc-900 font-normal">Popular route</h3>
+                    <p class="text-sm font-normal text-zinc-900">
                         Experience the best flights with GTS Holiday.
                     </p>
-                    <div class="w-full flex flex-wrap py-6 px-2 gap-6 rounded-xl bg-white s-p-border">
+                    <div class="w-full flex flex-wrap py-6 px-5 gap-6 rounded-xl bg-white border border-zinc-100">
                         <h4 class="text-xl text-zinc-900 w-full">Choose your origin</h4>
-
                         <basis core="tree" datamembername="popular-btns.cat" idcol="catid" parentidcol="parentid"
                             nullvalue="212906">
                             <layout>
-                                <ul class="flex flex-wrap gap-6 items-center w-full">
+                                <ul class="flex gap-6 items-center">
                                     @child
                                 </ul>
                             </layout>
                             <face filter="RowNumber not in(1)">
                                 <li data-id="@catid"
-                                    class="w-[46%] tour-li h-[48px] flex justify-center items-center bg-zinc-100 text-zinc-800 transition-all duration-200 ease-in-out hover:text-white hover:bg-primary-600 rounded-xl cursor-pointer">
+                                    class="tour-li w-[128px] h-[48px] flex justify-center items-center bg-zinc-100 text-zinc-800 transition-all duration-200 ease-in-out hover:text-white peer-checked/1:text-white peer-checked/1:bg-primary-600 hover:bg-primary-600 rounded-xl cursor-pointer">
                                     @title
                                 </li>
                             </face>
@@ -357,14 +257,14 @@
             </div>
         </section>
 
-        <section class="w-full mt-4 px-5 justify-center flex z-20">
+        <section class="w-full mt_7 justify-center flex z-20">
             <div
-                class="w-full px-8 py-9 flex flex-col-reverse justify-between bg-primary-600 rounded-xl items-center relative">
+                class="w-full px-8 py-9 flex justify-between bg-primary-600 rounded-xl items-center lg:w-[950px] xl:w-[1200px] 2xl:w-[1280px] relative">
                 <div class="flex flex-col gap-3">
-                    <h5 class="text-white font-normal text-base leading-6">
+                    <h5 class="text-white font-normal text-[32px] leading-6">
                         Sign in save money
                     </h5>
-                    <p class="text-white text-xs font-normal">
+                    <p class="text-white text-base font-normal">
                         Save 10% or more at particpation properties-just look for the blue
                         genius label
                     </p>
@@ -373,57 +273,19 @@
                     src="[##cms.cms.cdn##]/images/gift.png" alt="gift" />
             </div>
         </section>
-        <basis core="list" datamembername="db.tourism-article-list">
-            <layout>
-                <section class="w-full px-5 justify-center flex z-20">
-                    <div class="w-full py-9 flex flex-col gap-5 justify-center relative">
-                        <h6 class="text-xl text-zinc-900 font-normal">
-                            Tourism articles
-                        </h6>
-                        <div class="grid grid-cols-1 w-full gap-5">@child</div>
-                    </div>
-                </section>
-            </layout>
-            <face>
-                <div class="!h-[302px] rounded-xl overflow-hidden relative">
-                    <img loading="lazy" class="!w-full !h-full object-cover" width="288" height="301"
-                        src="@00288X00301prp" alt="Tourism articles" />
-                    <span class="z-10 p-6 absolute top-0 left-0 w-full h-full flex flex-col gap-1 justify-end">
-                        <p class="text-white tetx-base font-normal">@title</p>
-                        <div class="text-white line-clamp-3 tetx-xs font-normal scale-[0.85] -translate-x-6">
-                            @prp_7244
-                        </div>
-                        <a class="bg-primary-600 hover:shadow-lg hover:scale-105 hover:bg-primary-950 transition-all duration-200 ease-in-out text-white rounded-xl flex justify-center items-center w-[156px] h-12"
-                            href="@link">Viwe more</a>
-                    </span>
-                </div>
-            </face>
-            <face filter="link is null">
-                <div class="!h-[302px] rounded-xl overflow-hidden relative">
-                    <img loading="lazy" class="!w-full !h-full object-cover" width="288" height="301"
-                        src="@00288X00301prp" alt="Tourism articles" />
-                    <span class="z-10 p-6 absolute top-0 left-0 w-full h-full flex flex-col gap-1 justify-end">
-                        <p class="text-white tetx-base font-normal">@title</p>
-                        <div class="text-white line-clamp-3 tetx-xs font-normal scale-[0.85] -translate-x-6">
-                            @prp_7244
-                        </div>
-                        <a class="bg-primary-600 hover:shadow-lg hover:scale-105 hover:bg-primary-950 transition-all duration-200 ease-in-out text-white rounded-xl flex justify-center items-center w-[156px] h-12"
-                            href="/article.bc?id=@id">Viwe more</a>
-                    </span>
-                </div>
-            </face>
-        </basis>
 
-        <section class="w-full justify-center px-5 flex z-20">
-            <div class="w-full flex flex-col gap-6 justify-between relative">
-                <div class="w-full">
+        
+
+        <section class="w-full mt-5 justify-center flex z-20">
+            <div class="w-full flex gap-5 justify-between lg:w-[950px] xl:w-[1200px] 2xl:w-[1280px] relative">
+                <div class="w-[43%]">
                     <img loading="lazy" class="!w-full rounded-xl" width="1632" height="1428"
                         src="[##cms.cms.cdn##]/images/common-qs.png" alt="common" />
                 </div>
-                <div class="w-full common-questions">
+                <div class="w-[57%] common-questions">
                     <basis core="print" datamembername="db.faq">
                         <layout>
-                            <div id="q-box-1" class="flex parent-box w-full flex-col gap-4">
+                            <div id="q-box-1" class="flex parent-box flex-col gap-4">
                                 @child
                             </div>
                         </layout>
@@ -432,7 +294,7 @@
                                 class="flex box-container group py-2 px-5 transition-all ease-in-out duration-200 hover:shadow-inner hover:border-primary-50 border border-zinc-300 rounded-xl w-full cursor-pointer flex-col gap-2">
                                 <div class="flex w-full justify-between items-center">
                                     <p id="question"
-                                        class="text-sm font-normal leading-6 text-zinc-900 group-hover:text-primary-950 transition-all duration-200 ease-in-out">
+                                        class="text-base font-normal leading-6 text-zinc-900 group-hover:text-primary-950 transition-all duration-200 ease-in-out">
                                         @text
                                     </p>
 

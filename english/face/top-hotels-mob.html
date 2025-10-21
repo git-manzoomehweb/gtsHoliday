@@ -1,0 +1,144 @@
+<basis core="dbsource" source="basiscore" lid="2" mid="1" name="db" catid="212905">
+    <member name="hotel-list" type="list" perpage="20" typeid="159" propertyid="7243,3087456" size="233x276"
+        order="ord" />
+    <member name="paging" type="list" request="paging" count="5" parentname="hotel-list" />
+</basis>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,shrink-to-fit=no,viewport-fit=cover" />
+    <title>[##cms.seo.title|(GTS Holiday Travel Agency)##]</title>
+    <meta name="description" content="[##cms.seo.description|(GTS Holiday Travel Agency)##]" />
+    <basis core="dbsource" source="hosting" name="tag" urlid="[##cms.seo.urlid##]">
+        <member type="list" name="list" request="taglist" preview=""></member>
+    </basis>
+    <basis core="print" datamembername="tag.list">
+        <face filter="key = 'canonical'">
+            <link rel="canonical" href="@value" />
+        </face>
+        <face>
+            <meta property="@key" content="@value" />
+        </face>
+    </basis>
+    <basis core="call" file="pwa.inc" lid="2" />
+    <basis core="call" file="style.inc" lid="2" />
+</head>
+
+<body class="">
+    <basis core="call" file="header.inc" lid="2" />
+
+    <main class="pt-[99.5px] overflow-hidden w-full justify-center relative flex">
+        <section
+            class="w-full px-4 relative   flex flex-col gap-4 items-center justify-center">
+             
+
+            <ul class="flex gap-2 items-center z-20">
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"
+                    class="text-xs hover:text-primary-600 text-zinc-600">
+                    <a itemprop="item" aria-label="home" href="/">
+                        <span itemprop="name"> Home </span>
+                        <meta itemprop="position" content="1" />
+                    </a>
+                </li>
+                <li class="text-xs text-zinc-600"> > </li>
+                <li class="text-xs text-zinc-600">Top Hotels</li>
+
+            </ul>
+
+            <h1 class="text-xl z-20 font-normal text-zinc-900">Top Hotels</h1>
+
+
+            <p class="text-sm z-20 font-normal text-center text-zinc-900">
+                Get to know with the best GTS Holiday Hotels.
+            </p>
+
+
+            <basis core="list" datamembername="db.hotel-list">
+                <layout>
+                    <section class="w-full justify-center flex z-20 overflow-hidden">
+                        <div class="w-full  ">
+                            <div class=" flex flex-col w-full">
+                                <div class="w-full grid grid-cols-1 gap-3">@child</div>
+
+
+                            </div>
+                        </div>
+                    </section>
+                </layout>
+                <face>
+                    <div class="group h-[383px] relative overflow-hidden rounded-xl">
+                        <a href="@link" class="!w-full !h-full">
+                            <img loading="lazy"
+                                class="!w-full group-hover:scale-110 transition-all duration-500 ease-in-out !h-full object-cover"
+                                src="@00233X00276prp" alt="@title" width="233" height="276" />
+                            <span
+                                class="w-full px-3 pb-5 flex flex-col justify-end items-center h-full bg-gradient-to-r from-special-1 absolute top-0 left-0 z-10">
+                                <p class="text-white text-center text-xl font-normal line-clamp-1">
+                                    @prp_3087456
+                                </p>
+                                <p class="text-white text-center text-sm font-normal line-clamp-1">
+                                    @prp_7243
+                                </p>
+                            </span>
+                        </a>
+                    </div>
+                </face>
+
+            </basis>
+
+            <div class="w-full flex gap-4 justify-center items-center">
+                <basis core="print" datamembername="db.paging">
+                    <face filter="(@sta='pre')">
+                        <a class="flex group hover:bg-primary-50 hover:text-primary-600 justify-center items-center w-14 h-14 rounded-xl bg-zinc-200"
+                            href="/[##cms.cms.link_page##]&pagenum=@page&catid=[##cms.query.catid|(212905)##]"
+                            aria-label="angle-left">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M14 19L7 12L14 5" stroke="#18181B" class="group-hover:stroke-primary-600"
+                                    stroke-width="1.5" stroke-linecap="square" />
+                            </svg>
+                        </a>
+                    </face>
+                </basis>
+
+                <basis core="print" datamembername="db.paging">
+                    <face filter="(@page=[##cms.query.pagenum|(1)##])">
+                        <a class="flex group hover:bg-primary-50 hover:text-primary-600 justify-center items-center w-14 h-14 rounded-xl bg-zinc-200"
+                            href="/[##cms.cms.link_page##]&pagenum=@page&catid=[##cms.query.catid|(212905)##]">
+                            @page
+                        </a>
+                    </face>
+                    <face filter="(@page<>[##cms.query.pagenum|(1)##]) and (@page>0) and (@sta='no')">
+                        <a href="/[##cms.cms.link_page##]&pagenum=@page&catid=[##cms.query.catid|(212905)##]"
+                            class="flex group hover:bg-primary-50 hover:text-primary-600 justify-center items-center w-14 h-14 rounded-xl bg-zinc-200">
+                            @page
+                        </a>
+                    </face>
+                </basis>
+
+                <basis core="print" datamembername="db.paging">
+                    <face filter="(@sta='nex')">
+                        <a href="/[##cms.cms.link_page##]&pagenum=@page&catid=[##cms.query.catid|(212905)##]"
+                            aria-label="angle-right"
+                            class="flex group rotate-180 hover:bg-primary-50 hover:text-primary-600 justify-center items-center w-14 h-14 rounded-xl bg-zinc-200">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M14 19L7 12L14 5" stroke="#18181B" class="group-hover:stroke-primary-600"
+                                    stroke-width="1.5" stroke-linecap="square" />
+                            </svg>
+                        </a>
+                    </face>
+                </basis>
+            </div>
+
+
+        </section>
+    </main>
+
+    <basis core="call" file="footer.inc" lid="2" />
+</body>
+<script src="https://cdn.basiscore.net/basisfly.com/js/swiper-bundle.min.js"></script>
+
+</html>

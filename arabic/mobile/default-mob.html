@@ -38,7 +38,7 @@
   <meta name="description" content="Experience the best and easiets trip with وكالة السياحة والسفر  GTS Holiday." />
   <!-- canonical for Homepage -->
   <link rel="canonical" href="[##cms.request.:scheme##]://[##cms.request.full-url##]" />
-  <script src="[##cms.cms.cdn##]/_js/jquery/jquery-3.6.3.min.js" type="text/javascript"></script>
+ 
 
   <link rel="stylesheet" href="[##cms.cms.cdn##]/_css/swiper-bundle.min.css" />
 
@@ -95,127 +95,10 @@
     </section>
     <h1 class="hidden">جی تی اس هالیدی</h1>
 
-    <div class="flex w-full justify-center z-20">
-      <div class="w-full px-5">
-        <h2 class="font-bold text-xl text-zinc-900">الأحداث</h2>
-        <basis core="print" datamembername="hotel.cat">
-          <face filter="catid=213809">
-            <p class="text-zinc-700 text-sm">@urldescription</p>
-          </face>
-        </basis>
-      </div>
-    </div>
-    <basis core="list" datamembername="db.events-list">
-      <layout>
-        <section class="w-full justify-center flex z-20 overflow-hidden">
-          <div class="w-full pr-5">
-            <div class="second-swiper-mob overflow-hidden flex flex-col w-full">
-              <div class="swiper-wrapper">@child</div>
-              <div class="swiper-pagination-second"></div>
-            </div>
-          </div>
-        </section>
-      </layout>
-      <face>
-        <div class="swiper-slide group relative overflow-hidden rounded-xl">
-          <a href="@link" class="!w-full !h-full">
-            <img loading="lazy"
-              class="!w-full group-hover:scale-110 transition-all duration-500 ease-in-out !h-full object-cover"
-              src="@00233X00276prp" alt="@title" width="233" height="276" />
-            <span
-              class="w-full px-3 pb-5 flex flex-col justify-end items-center h-full bg-gradient-to-r from-special-1 absolute top-0 left-0 z-10">
-              <p class="text-white text-center text-xl font-normal line-clamp-1">
-                @prp_3087456
-              </p>
-              <p class="text-white text-center text-sm font-normal line-clamp-1">
-                @prp_7243
-              </p>
-            </span>
-          </a>
-        </div>
-      </face>
-      <face filter="link is null">
-        <div class="swiper-slide group relative overflow-hidden rounded-xl">
-          <a href="/article.bc?id=@id&lid=3" class="!w-full !h-full">
-            <img loading="lazy"
-              class="!w-full group-hover:scale-110 transition-all duration-500 ease-in-out !h-full object-cover"
-              src="@00233X00276prp" alt="@title" width="233" height="276" />
-            <span
-              class="w-full px-3 pb-5 flex flex-col justify-end items-center h-full bg-gradient-to-r from-special-1 absolute top-0 left-0 z-10">
-              <p class="text-white w-full flex justify-center text-xl font-normal text-center line-clamp-1">
-                @prp_3087456
-              </p>
-              <p class="text-white text-sm font-normal w-full flex justify-center text-center line-clamp-1">
-                @prp_7243
-              </p>
-            </span>
-          </a>
-        </div>
-      </face>
-    </basis>
-    <div class="flex w-full justify-center z-20">
-      <div class="w-full px-5">
-        <basis core="print" datamembername="hotel.cat">
-          <face filter="catid=212905">
-            <h2 class="font-bold text-xl text-zinc-900">@title</h2>
-          </face>
-        </basis>
-
-        <basis core="print" datamembername="hotel.cat">
-          <face filter="catid=212905">
-            <p class="text-zinc-700 text-sm">@urldescription</p>
-          </face>
-        </basis>
-      </div>
-    </div>
-    <basis core="list" datamembername="db.hotel-list">
-      <layout>
-        <section class="w-full justify-center flex z-20 overflow-hidden">
-          <div class="w-full pr-5">
-            <div class="first-swiper-mob overflow-hidden flex flex-col w-full">
-              <div class="swiper-wrapper">@child</div>
-              <div class="swiper-pagination-first flex justify-center mt-14"></div>
-            </div>
-          </div>
-        </section>
-      </layout>
-      <face>
-        <div class="swiper-slide group relative overflow-hidden rounded-xl">
-          <a href="@link" class="!w-full !h-full">
-            <img loading="lazy"
-              class="!w-full group-hover:scale-110 transition-all duration-500 ease-in-out !h-full object-cover"
-              src="@00233X00276prp" alt="@title" width="233" height="276" />
-            <span
-              class="w-full px-3 pb-5 flex flex-col justify-end items-center h-full bg-gradient-to-r from-special-1 absolute top-0 left-0 z-10">
-              <p class="text-white text-center text-xl font-normal line-clamp-1">
-                @prp_3087456
-              </p>
-              <p class="text-white text-center text-sm font-normal line-clamp-1">
-                @prp_7243
-              </p>
-            </span>
-          </a>
-        </div>
-      </face>
-      <face filter="link is null">
-        <div class="swiper-slide group relative overflow-hidden rounded-xl">
-          <a href="/article.bc?id=@id&lid=3" class="!w-full !h-full">
-            <img loading="lazy"
-              class="!w-full group-hover:scale-110 transition-all duration-500 ease-in-out !h-full object-cover"
-              src="@00233X00276prp" alt="@title" width="233" height="276" />
-            <span
-              class="w-full px-3 pb-5 flex flex-col justify-end items-center h-full bg-gradient-to-r from-special-1 absolute top-0 left-0 z-10">
-              <p class="text-white w-full flex justify-center text-xl font-normal text-center line-clamp-1">
-                @prp_3087456
-              </p>
-              <p class="text-white text-sm font-normal w-full flex justify-center text-center line-clamp-1">
-                @prp_7243
-              </p>
-            </span>
-          </a>
-        </div>
-      </face>
-    </basis>
+    
+   
+    
+   
 
     <section class="w-full mt-12 justify-center flex z-20">
       <div class="w-full px-5 grid grid-cols-1 gap-5">
@@ -387,107 +270,7 @@
       </div>
     </section>
 
-    <section class="w-full mt-9 justify-center flex z-20">
-      <div
-        class="w-full py-9 flex flex-col gap-5 px-5 justify-center lg:w-[950px] xl:w-[1200px] 2xl:w-[1280px] relative">
-        <h6 class="text-xl text-zinc-900 font-bold">مقالات سياحية</h6>
-        <div class="grid grid-cols-1 w-full gap-5">
-          <basis core="list" datamembername="db.tourism-article-list1">
-            <face>
-              <div class="!h-[302px] rounded-xl overflow-hidden relative">
-                <img loading="lazy" class="!w-full !h-full object-cover" width="632" height="402" src="@00632X00402prp"
-                  alt="@title" />
-                <span class="z-10 p-6 absolute top-0 left-0 w-full h-full flex flex-col gap-1 justify-end">
-                  <p class="text-white text-base font-bold">@title</p>
-                  <div class="text-white line-clamp-3 text-xs font-normal">
-                    @prp_7244
-                  </div>
-                  <a class="bg-primary-600 hover:shadow-lg hover:scale-105 hover:bg-primary-950 transition-all duration-200 ease-in-out text-white rounded-xl flex justify-center items-center w-[156px] h-12"
-                    href="@link">عرض المزيد</a>
-                </span>
-              </div>
-            </face>
-            <face filter="link is null">
-              <div class="!h-[302px] rounded-xl overflow-hidden relative">
-                <img loading="lazy" class="!w-full !h-full object-cover" width="632" height="402" src="@00632X00402prp"
-                  alt="@title" />
-                <span class="z-10 p-6 absolute top-0 left-0 w-full h-full flex flex-col gap-1 justify-end">
-                  <p class="text-white text-base font-bold">@title</p>
-                  <div class="text-white line-clamp-3 text-xs font-normal">
-                    @prp_7244
-                  </div>
-                  <a class="bg-primary-600 hover:shadow-lg hover:scale-105 hover:bg-primary-950 transition-all duration-200 ease-in-out text-white rounded-xl flex justify-center items-center w-[156px] h-12"
-                    href="/article.bc?id=@id&lid=3">عرض المزيد</a>
-                </span>
-              </div>
-            </face>
-          </basis>
-
-          <div class="w-full flex flex-col gap-5">
-            <basis core="list" datamembername="db.tourism-article-list2">
-              <face filter="RowNumber=1">
-                <div class="!h-[302px] rounded-xl overflow-hidden relative">
-                  <img loading="lazy" class="!w-full !h-full object-cover" width="632" height="193"
-                    src="@00632X00193prp" alt="@title" />
-                  <span class="z-10 p-6 absolute top-0 left-0 w-full h-full flex flex-col gap-1 justify-end">
-                    <p class="text-white text-base font-bold">@title</p>
-                    <div class="text-white text-xs line-clamp-3 font-normal">
-                      @prp_7244
-                    </div>
-                    <a class="bg-primary-600 hover:shadow-lg hover:scale-105 hover:bg-primary-950 transition-all duration-200 ease-in-out text-white rounded-xl flex justify-center items-center w-[156px] h-12"
-                      href="@link">عرض المزيد</a>
-                  </span>
-                </div>
-              </face>
-              <face filter="RowNumber=1 and link is null">
-                <div class="!h-[191px] rounded-xl overflow-hidden relative">
-                  <img loading="lazy" class="!w-full !h-full object-cover" width="632" height="193"
-                    src="@00632X00193prp" alt="@title" />
-                  <span class="z-10 p-6 absolute top-0 left-0 w-full h-full flex flex-col gap-1 justify-end">
-                    <p class="text-white text-base font-bold">@title</p>
-                    <div class="text-white text-xs line-clamp-3 font-normal">
-                      @prp_7244
-                    </div>
-                    <a class="bg-primary-600 hover:shadow-lg hover:scale-105 hover:bg-primary-950 transition-all duration-200 ease-in-out text-white rounded-xl flex justify-center items-center w-[156px] h-12"
-                      href="/article.bc?id=@id&lid=3">عرض المزيد</a>
-                  </span>
-                </div>
-              </face>
-            </basis>
-            <basis core="list" datamembername="db.tourism-article-list2">
-              <face filter="RowNumber=2">
-                <div class="!h-[302px] rounded-xl overflow-hidden relative">
-                  <img loading="lazy" class="!w-full !h-full object-cover" width="632" height="193"
-                    src="@00632X00193prp" alt="@title" />
-                  <span class="z-10 p-6 absolute top-0 left-0 w-full h-full flex flex-col gap-1 justify-end">
-                    <p class="text-white text-base font-bold">@title</p>
-                    <div class="text-white text-xs line-clamp-3 font-normal">
-                      @prp_7244
-                    </div>
-                    <a class="bg-primary-600 hover:shadow-lg hover:scale-105 hover:bg-primary-950 transition-all duration-200 ease-in-out text-white rounded-xl flex justify-center items-center w-[156px] h-12"
-                      href="@link">عرض المزيد</a>
-                  </span>
-                </div>
-              </face>
-              <face filter="RowNumber=2 and link is null">
-                <div class="!h-[302px] rounded-xl overflow-hidden relative">
-                  <img loading="lazy" class="!w-full !h-full object-cover" width="632" height="193"
-                    src="@00632X00193prp" alt="@title" />
-                  <span class="z-10 p-6 absolute top-0 left-0 w-full h-full flex flex-col gap-1 justify-end">
-                    <p class="text-white text-base font-bold">@title</p>
-                    <div class="text-white text-xs line-clamp-3 font-normal">
-                      @prp_7244
-                    </div>
-                    <a class="bg-primary-600 hover:shadow-lg hover:scale-105 hover:bg-primary-950 transition-all duration-200 ease-in-out text-white rounded-xl flex justify-center items-center w-[156px] h-12"
-                      href="/article.bc?id=@id&lid=3">عرض المزيد</a>
-                  </span>
-                </div>
-              </face>
-            </basis>
-          </div>
-        </div>
-      </div>
-    </section>
+    
 
     <section class="w-full mt-5 justify-center flex z-20">
       <div class="w-full flex flex-col gap-5 px-5 relative">

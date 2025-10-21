@@ -1,0 +1,161 @@
+<basis core="dbsource" source="basiscore" lid="3" mid="1" name="db" catid="212905">
+    <member name="hotel-list" type="list" perpage="20" typeid="159" propertyid="7243,3087456" size="233x276"
+        order="ord" />
+    <member name="paging" type="list" request="paging" count="5" parentname="hotel-list" />
+</basis>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,shrink-to-fit=no,viewport-fit=cover" />
+    <title>[##cms.seo.title|(آژانس مسافرتی GTS Holiday)##]</title>
+    <meta name="description" content="[##cms.seo.description|(آژانس مسافرتی GTS Holiday)##]" />
+    <basis core="dbsource" source="hosting" name="tag" urlid="[##cms.seo.urlid##]">
+        <member type="list" name="list" request="taglist" preview=""></member>
+    </basis>
+    <basis core="print" datamembername="tag.list">
+        <face filter="key = 'canonical'">
+            <link rel="canonical" href="@value" />
+        </face>
+        <face>
+            <meta property="@key" content="@value" />
+        </face>
+    </basis>
+    <basis core="call" file="pwa.inc" lid="3" />
+    <basis core="call" file="style.inc" lid="3" />
+</head>
+
+<body class="ar-multi">
+    <basis core="call" file="header.inc" lid="3" />
+
+    <main class="pt-[99.5px] overflow-hidden w-full justify-center relative flex">
+        <section
+            class="w-full relative lg:w-[950px] xl:w-[1200px] 2xl:w-[1280px] flex flex-col gap-4 items-center justify-center">
+            <span class="absolute top-0 left-[-6rem]">
+                <svg width="332" height="467" viewBox="0 0 332 467" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M194.788 11.2672L159.052 0.977337C149.17 -1.86807 139.416 5.83003 139.893 16.0989L149.142 215.538C149.894 231.74 144.79 247.67 134.764 260.42L3.79442 426.97C-2.79373 435.348 1.20401 447.73 11.4493 450.68L63.6493 465.711C71.8956 468.085 80.7632 466.821 88.0157 462.238L310.894 321.383C329.939 309.347 337.16 285.094 327.799 264.601L223.315 35.8508C217.85 23.8874 207.43 14.9072 194.788 11.2672Z"
+                        fill="#FAF0F0" />
+                </svg>
+            </span>
+            <span class="absolute top-2 right-[-8rem]">
+                <svg width="302" height="476" viewBox="0 0 302 476" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M183.836 471.29L220.817 475.215C231.043 476.3 239.311 467.025 237.058 456.995L193.3 262.196C189.745 246.371 192.003 229.796 199.662 215.498L299.705 28.7278C304.738 19.3327 298.649 7.83274 288.047 6.70749L234.03 0.974385C225.497 0.0686994 216.983 2.85397 210.637 8.62771L15.6195 186.061C-1.04537 201.224 -3.94268 226.362 8.83601 244.917L151.473 452.036C158.932 462.869 170.755 469.902 183.836 471.29Z"
+                        fill="#FAF0F0" />
+                </svg>
+            </span>
+
+            <ul class="flex gap-2 items-center z-20">
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"
+                    class="text-xs hover:text-primary-600 text-zinc-600">
+                    <a itemprop="item" aria-label="home" href="/AR">
+                        <span itemprop="name"> الصفحة الرئيسية </span>
+                        <meta itemprop="position" content="1" />
+                    </a>
+                </li>
+                <li class="text-xs text-zinc-600">></li>
+                <li class="text-xs text-zinc-600">
+                    أفضل الفنادق
+
+                </li>
+
+            </ul>
+
+            <h1 class="text-xl z-20 font-normal text-zinc-900"> أفضل الفنادق
+            </h1>
+
+
+            <p class="text-sm z-20 font-normal text-zinc-900">
+                تعرف على أفضل فنادق GTS Holiday.
+            </p>
+
+
+            <basis core="list" datamembername="db.hotel-list">
+                <layout>
+                    <section class="w-full justify-center flex z-20 overflow-hidden">
+                        <div class="w-full lg:w-[950px] xl:w-[1200px] 2xl:w-[1280px]">
+                            <div class=" flex flex-col w-full">
+                                <div class="w-full grid grid-cols-4 gap-3">@child</div>
+
+
+                            </div>
+                        </div>
+                    </section>
+                </layout>
+                <face>
+                    <div class="group h-[383px] relative overflow-hidden rounded-xl">
+                        <a href="@link" class="!w-full !h-full">
+                            <img loading="lazy"
+                                class="!w-full group-hover:scale-110 transition-all duration-500 ease-in-out !h-full object-cover"
+                                src="@00233X00276prp" alt="@title" width="233" height="276" />
+                            <span
+                                class="w-full px-3 pb-5 flex flex-col justify-end items-center h-full bg-gradient-to-r from-special-1 absolute top-0 left-0 z-10">
+                                <p class="text-white text-center text-xl font-normal line-clamp-1">
+                                    @prp_3087456
+                                </p>
+                                <p class="text-white text-center text-sm font-normal line-clamp-1">
+                                    @prp_7243
+                                </p>
+                            </span>
+                        </a>
+                    </div>
+                </face>
+
+            </basis>
+
+            <div class="w-full flex gap-4 justify-center items-center">
+                <basis core="print" datamembername="db.paging">
+                    <face filter="(@sta='pre')">
+                        <a class="flex group hover:bg-primary-50 hover:text-primary-600 justify-center items-center w-14 h-14 rounded-xl bg-zinc-200"
+                            href="/[##cms.cms.link_page##]&pagenum=@page&catid=[##cms.query.catid|(212905)##]"
+                            aria-label="angle-left">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M14 19L7 12L14 5" stroke="#18181B" class="group-hover:stroke-primary-600"
+                                    stroke-width="1.5" stroke-linecap="square" />
+                            </svg>
+                        </a>
+                    </face>
+                </basis>
+
+                <basis core="print" datamembername="db.paging">
+                    <face filter="(@page=[##cms.query.pagenum|(1)##])">
+                        <a class="flex group hover:bg-primary-50 hover:text-primary-600 justify-center items-center w-14 h-14 rounded-xl bg-zinc-200"
+                            href="/[##cms.cms.link_page##]&pagenum=@page&catid=[##cms.query.catid|(212905)##]">
+                            @page
+                        </a>
+                    </face>
+                    <face filter="(@page<>[##cms.query.pagenum|(1)##]) and (@page>0) and (@sta='no')">
+                        <a href="/[##cms.cms.link_page##]&pagenum=@page&catid=[##cms.query.catid|(212905)##]"
+                            class="flex group hover:bg-primary-50 hover:text-primary-600 justify-center items-center w-14 h-14 rounded-xl bg-zinc-200">
+                            @page
+                        </a>
+                    </face>
+                </basis>
+
+                <basis core="print" datamembername="db.paging">
+                    <face filter="(@sta='nex')">
+                        <a href="/[##cms.cms.link_page##]&pagenum=@page&catid=[##cms.query.catid|(212905)##]"
+                            aria-label="angle-right"
+                            class="flex group rotate-180 hover:bg-primary-50 hover:text-primary-600 justify-center items-center w-14 h-14 rounded-xl bg-zinc-200">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M14 19L7 12L14 5" stroke="#18181B" class="group-hover:stroke-primary-600"
+                                    stroke-width="1.5" stroke-linecap="square" />
+                            </svg>
+                        </a>
+                    </face>
+                </basis>
+            </div>
+
+
+        </section>
+    </main>
+
+    <basis core="call" file="footer.inc" lid="3" />
+</body>
+<script src="https://cdn.basiscore.net/basisfly.com/js/swiper-bundle.min.js"></script>
+
+</html>
