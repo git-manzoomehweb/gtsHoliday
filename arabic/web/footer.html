@@ -1,87 +1,34 @@
-<basis
-  core="dbsource"
-  source="basiscore"
-  name="db"
-  mid="5"
-  lid="3"
-  usedforid="[##cms.cms.ownerid##]"
->
+<basis core="dbsource" source="basiscore" name="db" mid="5" lid="3" usedforid="[##cms.cms.ownerid##]">
   <member name="info" type="view"></member>
 </basis>
-<footer class="w-full footer-landing-items flex flex-col p-0 mt-11">
-  <div
-    class="w-full bg-primary-600 flex justify-center py-9 items-center px-4 lg:px-0"
-  >
+<footer class="w-full footer-landing-items flex flex-col p-0 mt-11 arabic">
+  <div class="w-full bg-primary-600 flex justify-center py-9 items-center px-4 lg:px-0">
     <div
-      class="w-full lg:w-[950px] xl:w-[1200px] 2xl:w-[1280px] flex gap-10 !flex-col lg:!flex-row justify-center items-center lg:justify-between"
-    >
-      <img
-        loading="lazy"
-        width="274"
-        height="98"
-        class="!w-[247px] !h-[98px]"
-        src="[##cms.cms.cdn##]/images/footer-logo/logo.png"
-        alt="logo"
-      />
-      <div
-        id="contact-form"
-        class="bg-primary-400 contact-form-pers w-full lg:w-[62%] flex flex-col lg:flex-row gap-3 rounded-xl p-3"
-      >
-        <basis
-          core="schema"
-          run="atclient"
+      class="w-full lg:w-[950px] xl:w-[1200px] 2xl:w-[1280px] flex gap-10 !flex-col lg:!flex-row justify-center items-center lg:justify-between">
+      <img loading="lazy" width="274" height="98" class="!w-[247px] !h-[98px]"
+        src="[##cms.cms.cdn##]/images/footer-logo/logo.png" alt="logo" />
+      <div id="contact-form"
+        class="bg-primary-400 contact-form-pers w-full lg:w-[62%] flex flex-col lg:flex-row gap-3 rounded-xl p-3">
+        <basis core="schema" run="atclient"
           schemaurl="/schema/domainform/F4C8DC36-F8D0-4D80-924B-8C4AC44A4B32/DD4783BD-1F2C-460E-A1D7-5750FA29774F/fa/conatct-ar"
-          displaymode="new"
-          button="[data-btn-uploadAdvice]"
-          resultsourceid="upload.dataAdvice"
-          OnRendered="RenderFormAdvice"
-        ></basis>
-        <basis
-          core="api"
-          if="{##cms.uploadAdvice.run|(false)##}"
-          run="atclient"
-          url="/schema/domainform/F4C8DC36-F8D0-4D80-924B-8C4AC44A4B32/en/editobject"
-          method="post"
+          displaymode="new" button="[data-btn-uploadAdvice]" resultsourceid="upload.dataAdvice"
+          OnRendered="RenderFormAdvice"></basis>
+        <basis core="api" if="{##cms.uploadAdvice.run|(false)##}" run="atclient"
+          url="/schema/domainform/F4C8DC36-F8D0-4D80-924B-8C4AC44A4B32/en/editobject" method="post"
           body="object_edit={##cms.uploadAdvice.value##}&captcha={##cms.uploadAdvice.captcha##}&captchaid={##cms.uploadAdvice.captchaid##}"
-          content-type="application/x-www-form-urlencoded"
-          triggers="cms.uploadAdvice"
-          OnProcessed="OnProcessedEditObjectAdvice"
-        ></basis>
+          content-type="application/x-www-form-urlencoded" triggers="cms.uploadAdvice"
+          OnProcessed="OnProcessedEditObjectAdvice"></basis>
 
-        <basis
-          core="callback"
-          run="atclient"
-          method="uploadDocumentAdvice"
-          triggers="upload.dataAdvice"
-        ></basis>
+        <basis core="callback" run="atclient" method="uploadDocumentAdvice" triggers="upload.dataAdvice"></basis>
         <div class="captcha-button">
-          <div
-            id="captchaContainer"
+          <div id="captchaContainer"
             class="captchaContainerclass w-full flex captcha-sefaresh ml-2.5 max-xl:ml-0 max-xl:mb-[20px]"
-            data-bc-answer-container
-            data-bc-schema-info-multi="0"
-            data-bc-schema-info-word="58"
-            data-bc-schema-info-part="1"
-            data-bc-schema-info-part-0-type="text"
-          >
-            <basis
-              core="dbsource"
-              source="trust_login"
-              name="captcha"
-              run="atclient"
-              triggers="captcha.refreshAdvice"
-            >
-              <member
-                name="advicecode"
-                type="scalar"
-                request="captcha"
-              ></member>
+            data-bc-answer-container data-bc-schema-info-multi="0" data-bc-schema-info-word="58"
+            data-bc-schema-info-part="1" data-bc-schema-info-part-0-type="text">
+            <basis core="dbsource" source="trust_login" name="captcha" run="atclient" triggers="captcha.refreshAdvice">
+              <member name="advicecode" type="scalar" request="captcha"></member>
             </basis>
-            <basis
-              datamembername="captcha.Advicecode"
-              core="print"
-              run="atclient"
-            >
+            <basis datamembername="captcha.Advicecode" core="print" run="atclient">
               <face>
                 <script type="text/template">
                     <div class="flex lg:w-fit w-full justify-between !h-full items-center gap-4"><div class="flex !h-full items-center lg:flex-row w-full flex-col ">
@@ -95,33 +42,19 @@
                 </script>
               </face>
             </basis>
-            <button
-              class="data-body-btn bg-zinc-950 rounded-xl w-14 h-14 flex justify-center items-center"
-              type="submit"
-              data-btn-uploadAdvice
-            >
-              <svg
-                width="24"
-                height="25"
-                viewBox="0 0 24 25"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
+            <button class="data-body-btn bg-zinc-950 rounded-xl w-14 h-14 flex justify-center items-center"
+              type="submit" data-btn-uploadAdvice>
+              <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M21.4354 3.08198C20.9352 2.5686 20.1949 2.37734 19.5046 2.57866L3.408 7.25952C2.6797 7.46186 2.16349 8.04269 2.02443 8.78055C1.88237 9.5315 2.37858 10.4848 3.02684 10.8834L8.0599 13.9768C8.57611 14.2939 9.24238 14.2144 9.66956 13.7835L15.4329 7.9843C15.723 7.68231 16.2032 7.68231 16.4934 7.9843C16.7835 8.27623 16.7835 8.74935 16.4934 9.05134L10.72 14.8516C10.2918 15.2814 10.2118 15.9508 10.5269 16.4702L13.6022 21.5538C13.9623 22.1577 14.5826 22.5 15.2628 22.5C15.3429 22.5 15.4329 22.5 15.513 22.4899C16.2933 22.3893 16.9135 21.8558 17.1436 21.1008L21.9156 5.02479C22.1257 4.34028 21.9356 3.59537 21.4354 3.08198Z"
-                  fill="white"
-                />
+                  fill="white" />
               </svg>
             </button>
           </div>
 
           <div
-            class="Loading_Form absolute hidden data-body-btn w-[126px] h-12 px-4 py-2 bg-secondary-800 rounded-2xl justify-center items-center gap-2.5 flex"
-          >
-            <div
-              id="ballsWaveG"
-              class="ext-zinc-50 text-base font-normal leading-normal"
-            >
+            class="Loading_Form absolute hidden data-body-btn w-[126px] h-12 px-4 py-2 bg-secondary-800 rounded-2xl justify-center items-center gap-2.5 flex">
+            <div id="ballsWaveG" class="ext-zinc-50 text-base font-normal leading-normal">
               <div id="ballsWaveG_1" class="ballsWaveG"></div>
               <div id="ballsWaveG_2" class="ballsWaveG"></div>
               <div id="ballsWaveG_3" class="ballsWaveG"></div>
@@ -137,69 +70,41 @@
       </div>
     </div>
   </div>
-  <div
-    class="w-full flex justify-center py-9 items-center px-4 lg:px-0 bg-red-50 overflow-hidden relative"
-  >
+  <div class="w-full flex justify-center py-9 items-center px-4 lg:px-0 bg-red-50 overflow-hidden relative">
     <span class="absolute right-0 z-0 lg:block bottom-0 hidden">
-      <svg
-        width="437"
-        height="499"
-        viewBox="0 0 437 499"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
+      <svg width="437" height="499" viewBox="0 0 437 499" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
           d="M466.49 -7.36738L528.747 10.5588C545.963 15.5158 553.221 35.9096 543.005 50.6186L344.59 336.294C328.471 359.502 321.242 387.733 324.222 415.832L363.151 782.889C365.11 801.353 347.74 815.918 329.891 810.779L238.952 784.594C224.586 780.457 212.674 770.377 206.221 756.896L7.88829 342.601C-9.0598 307.198 2.75571 264.728 35.5521 243.165L401.628 2.47415C420.773 -10.1137 444.467 -13.7088 466.49 -7.36738Z"
-          fill="#FFEAED"
-        />
+          fill="#FFEAED" />
       </svg>
     </span>
 
     <span class="absolute left-0 z-0 lg:block hidden top-0">
-      <svg
-        width="449"
-        height="403"
-        viewBox="0 0 449 403"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
+      <svg width="449" height="403" viewBox="0 0 449 403" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
           d="M-89.0125 390.657L-144.014 356.422C-159.223 346.955 -160.641 325.354 -146.799 313.992L122.045 93.3063C143.885 75.3782 158.544 50.1914 163.345 22.3455L226.062 -341.403C229.217 -359.7 249.903 -368.972 265.671 -359.157L346.013 -309.15C358.704 -301.25 367.414 -288.301 369.943 -273.571L447.688 179.124C454.331 217.808 431.374 255.442 393.938 267.236L-23.9264 398.89C-45.7803 405.775 -69.5557 402.768 -89.0125 390.657Z"
-          fill="#FFEAED"
-        />
+          fill="#FFEAED" />
       </svg>
     </span>
     <div
-      class="w-full z-20 lg:w-[950px] xl:w-[1200px] 2xl:w-[1280px] flex gap-14 !flex-col justify-center items-start lg:justify-between"
-    >
+      class="w-full z-20 lg:w-[950px] xl:w-[1200px] 2xl:w-[1280px] flex gap-14 !flex-col justify-center items-start lg:justify-between">
       <div class="w-full flex flex-col-reverse lg:flex-row gap-5">
         <div class="flex flex-col gap-5 items-start justify-between">
           <p class="text-xl text-zinc-900 font-normal">تواصل معنا</p>
 
           <div class="flex gap-2 items-center group">
             <span
-              class="border Building-office flex justify-center items-center size-14 !bg-transparent border-primary-600 rounded-xl p-3 group-hover:shadow-lg transition-all duration-200 ease-in-out"
-            >
-              <img
-                loading="lazy"
-                class="!w-[88px] lg:!w-[45px] !h-[33px]"
-                width="100"
-                height="99"
-                src="[##cms.cms.cdn##]/images/Building-office.png"
-                alt="add"
-              />
+              class="border Building-office flex justify-center items-center size-14 !bg-transparent border-primary-600 rounded-xl p-3 group-hover:shadow-lg transition-all duration-200 ease-in-out">
+              <img loading="lazy" class="!w-[88px] lg:!w-[45px] !h-[33px]" width="100" height="99"
+                src="[##cms.cms.cdn##]/images/Building-office.png" alt="add" />
             </span>
             <basis core="view" datamembername="db.info">
               <face filter="prpID=7999">
                 <div class="flex flex-col w-80d justify-between text-zinc-900">
-                  <p
-                    class="text-sm group-hover:font-bold transition-all duration-150 ease-in-out"
-                  >
+                  <p class="text-sm group-hover:font-bold transition-all duration-150 ease-in-out">
                     @Question
                   </p>
-                  <div
-                    class="lg:text-xs text-sm group-hover:text-primary-600 transition-all duration-150 ease-in-out"
-                  >
+                  <div class="lg:text-xs text-sm group-hover:text-primary-600 transition-all duration-150 ease-in-out">
                     @Answer
                   </div>
                 </div>
@@ -211,223 +116,133 @@
             <face filter="prpID=8000">
               <div class="flex gap-2 items-center group">
                 <span
-                  class="border flex justify-center items-center size-14 !bg-transparent border-primary-600 rounded-xl p-3 group-hover:shadow-lg transition-all duration-200 ease-in-out"
-                >
-                  <img
-                    loading="lazy"
-                    class="!w-[30px] lg:!w-[33px] !h-[33px]"
-                    width="93"
-                    height="99"
-                    src="[##cms.cms.cdn##]/images/Calling.png"
-                    alt="Calling"
-                  />
+                  class="border  flex justify-center items-center size-14 !bg-transparent border-primary-600 rounded-xl p-3 group-hover:shadow-lg transition-all duration-200 ease-in-out">
+                  <img loading="lazy" class="!w-[30px] lg:!w-[33px] !h-[33px]" width="93" height="99"
+                    src="[##cms.cms.cdn##]/images/Calling.png" alt="Calling" />
                 </span>
                 <div class="flex flex-col justify-between text-zinc-900">
-                  <p
-                    class="text-sm group-hover:font-bold transition-all duration-150 ease-in-out"
-                  >
+                  <p class="text-sm group-hover:font-bold transition-all duration-150 ease-in-out">
                     @Question
                   </p>
-                  <a
-                    href="tel:@Answer"
-                    class="lg:text-xs text-sm transition-all duration-150 ease-in-out group-hover:text-primary-600"
-                  >
+                  <a href="tel:@Answer"
+                    class="lg:text-xs text-sm transition-all duration-150 ease-in-out group-hover:text-primary-600">
                     @Answer
                   </a>
                 </div>
               </div>
-            </face></basis
-          >
+            </face>
+          </basis>
 
           <basis core="view" datamembername="db.info">
             <face filter="prpID=8001">
               <div class="flex gap-2 items-center group">
                 <span
-                  class="border flex justify-center items-center size-14 !bg-transparent border-primary-600 rounded-xl p-3 group-hover:shadow-lg transition-all duration-200 ease-in-out"
-                >
-                  <img
-                    loading="lazy"
-                    class="!w-[30px] lg:!w-[33px] !h-[33px]"
-                    width="100"
-                    height="99"
-                    src="[##cms.cms.cdn##]/images/email.png"
-                    alt="email"
-                  />
+                  class="border  flex justify-center items-center size-14 !bg-transparent border-primary-600 rounded-xl p-3 group-hover:shadow-lg transition-all duration-200 ease-in-out">
+                  <img loading="lazy" class="!w-[30px] lg:!w-[33px] !h-[33px]" width="100" height="99"
+                    src="[##cms.cms.cdn##]/images/email.png" alt="email" />
                 </span>
                 <div class="flex flex-col justify-between text-zinc-900">
-                  <p
-                    class="text-sm group-hover:font-bold transition-all duration-150 ease-in-out"
-                  >
+                  <p class="text-sm group-hover:font-bold transition-all duration-150 ease-in-out">
                     @Question
                   </p>
-                  <a
-                    href="mailto:@Answer"
-                    class="lg:text-xs text-sm transition-all duration-150 ease-in-out group-hover:text-primary-600"
-                  >
+                  <a href="mailto:@Answer"
+                    class="lg:text-xs text-sm transition-all duration-150 ease-in-out group-hover:text-primary-600">
                     @Answer
                   </a>
                 </div>
-              </div></face
-            ></basis
-          >
+              </div>
+            </face>
+          </basis>
 
-          <div
-            class="flex gap-3 lg:gap-11 lg:items-center w-full lg:w-fit flex-col-reverse lg:flex-row"
-          >
+          <div class="flex gap-3 lg:gap-11 lg:items-center w-full lg:w-fit flex-col-reverse lg:flex-row">
             <div class="flex gap-3 lg:justify-start">
-              <basis core="print" datamembername="db.info"
-                ><face filter="text in('برقية')">
+              <basis core="print" datamembername="db.info">
+                <face filter="text in('برقية')">
                   <a href="@largetext" rel="noopener" aria-label="social-media">
-                    <img
-                      loading="lazy"
-                      width="144"
-                      height="145"
+                    <img loading="lazy" width="144" height="145"
                       class="!w-12 rounded-full !h-12 hover:shadow-lg hover:animate-bounce hover:scale-105"
-                      src="[##cms.cms.cdn##]/images/telegram.png"
-                      alt="@text"
-                    /> </a
-                ></face>
+                      src="[##cms.cms.cdn##]/images/telegram.png" alt="@text" /> </a>
+                </face>
                 <face filter="text in('LinkedIn')">
                   <a href="@largetext" rel="noopener" aria-label="social-media">
-                    <img
-                      loading="lazy"
-                      width="144"
-                      height="145"
+                    <img loading="lazy" width="144" height="145"
                       class="!w-12 rounded-full !h-12 hover:shadow-lg hover:animate-bounce hover:scale-105"
-                      src="[##cms.cms.cdn##]/images/linkdin.png"
-                      alt="@text"
-                    />
+                      src="[##cms.cms.cdn##]/images/linkdin.png" alt="@text" />
                   </a>
                 </face>
                 <face filter="text in('فيسبوك')">
-                  <a
-                    class="!w-12 flex justify-center items-center border border-primary-t rounded-full !h-12 hover:shadow-lg hover:animate-bounce hover:scale-105"
-                    href="@largetext"
-                    rel="noopener"
-                    aria-label="social-media"
-                  >
-                    <span
-                      class="w-full h-full flex justify-center rounded-full items-center"
-                    >
-                      <img
-                        loading="lazy"
-                        width="22.24"
-                        height="22.24"
-                        src="[##cms.cms.cdn##]/images/facebook.svg"
-                        alt="@text"
-                      />
+                  <a class="!w-12 flex justify-center items-center border border-primary-t rounded-full !h-12 hover:shadow-lg hover:animate-bounce hover:scale-105"
+                    href="@largetext" rel="noopener" aria-label="social-media">
+                    <span class="w-full h-full flex justify-center rounded-full items-center">
+                      <img loading="lazy" width="22.24" height="22.24" src="[##cms.cms.cdn##]/images/facebook.svg"
+                        alt="@text" />
                     </span>
                   </a>
                 </face>
 
                 <face filter="text in('Twitter')">
                   <a href="@largetext" rel="noopener" aria-label="social-media">
-                    <img
-                      loading="lazy"
-                      width="144"
-                      height="145"
+                    <img loading="lazy" width="144" height="145"
                       class="!w-12 rounded-full !h-12 hover:shadow-lg hover:animate-bounce hover:scale-105"
-                      src="[##cms.cms.cdn##]/images/x.png"
-                      alt="@text"
-                    />
-                  </a> </face
-                ><face filter="text in('الانستغرام')">
+                      src="[##cms.cms.cdn##]/images/x.png" alt="@text" />
+                  </a>
+                </face>
+                <face filter="text in('الانستغرام')">
                   <a href="@largetext" rel="noopener" aria-label="social-media">
-                    <img
-                      loading="lazy"
-                      width="144"
-                      height="145"
+                    <img loading="lazy" width="144" height="145"
                       class="!w-12 rounded-full !h-12 hover:shadow-lg hover:animate-bounce hover:scale-105"
-                      src="[##cms.cms.cdn##]/images/insta.png"
-                      alt="@text"
-                    />
+                      src="[##cms.cms.cdn##]/images/insta.png" alt="@text" />
                   </a>
                 </face>
                 <face filter="text in('ال WhatsApp')">
                   <a href="@largetext" rel="noopener" aria-label="social-media">
-                    <img
-                      loading="lazy"
-                      width="144"
-                      height="145"
+                    <img loading="lazy" width="144" height="145"
                       class="!w-12 rounded-full !h-12 hover:shadow-lg hover:animate-bounce hover:scale-105"
-                      src="[##cms.cms.cdn##]/images/whats.png"
-                      alt="@text"
-                    />
-                  </a> </face
-              ></basis>
+                      src="[##cms.cms.cdn##]/images/whats.png" alt="@text" />
+                  </a>
+                </face>
+              </basis>
             </div>
 
             <div class="flex gap-3 items-center">
-              <a
-                target="_blank"
-                href="[##cms.cms.cdn##]/images/kheilirahat.pdf"
-              >
-                <img
-                  loading="lazy"
-                  class="!w-[93px] !h-[42px] hover:scale-105 transition-all duration-200 ease-in-out"
-                  width="372"
-                  height="169"
-                  src="[##cms.cms.cdn##]/images/tursab-en.png"
-                  alt="tursab"
-                />
+              <a target="_blank" href="[##cms.cms.cdn##]/images/kheilirahat.pdf">
+                <img loading="lazy" class="!w-[93px] !h-[42px] hover:scale-105 transition-all duration-200 ease-in-out"
+                  width="372" height="169" src="[##cms.cms.cdn##]/images/tursab-en.png" alt="tursab" />
               </a>
               <div>
-                <img
-                  loading="lazy"
-                  class="!w-[56px] !h-[44px] hover:scale-105 transition-all duration-200 ease-in-out"
-                  width="224"
-                  height="177"
-                  src="[##cms.cms.cdn##]/images/mastercard.png"
-                  alt="mastercard"
-                />
+                <img loading="lazy" class="!w-[56px] !h-[44px] hover:scale-105 transition-all duration-200 ease-in-out"
+                  width="224" height="177" src="[##cms.cms.cdn##]/images/mastercard.png" alt="mastercard" />
               </div>
               <div>
-                <img
-                  loading="lazy"
-                  class="!w-[88px] !h-[50px] hover:scale-105 transition-all duration-200 ease-in-out"
-                  width="352"
-                  height="201"
-                  src="[##cms.cms.cdn##]/images/visa.png"
-                  alt="mastercard"
-                />
+                <img loading="lazy" class="!w-[88px] !h-[50px] hover:scale-105 transition-all duration-200 ease-in-out"
+                  width="352" height="201" src="[##cms.cms.cdn##]/images/visa.png" alt="mastercard" />
               </div>
             </div>
           </div>
         </div>
 
         <div class="flex flex-col gap-5 items-start w-full lg:w-[14%]">
-          <a
-            class="text-zinc-900 text-sm hover:text-primary-600 transition-all duration-200 ease-in-out"
-            href="/AR"
-            rel="nofollow"
-            >الصفحة الرئيسية
+          <a class="text-zinc-900 text-sm hover:text-primary-600 transition-all duration-200 ease-in-out" href="/AR"
+            rel="nofollow">الصفحة الرئيسية
           </a>
           <span
             class="text-zinc-900 cursor-pointer text-sm hover:text-primary-600 transition-all duration-200 ease-in-out"
-            data-id="flight"
-            data-nav="flight"
-            onclick="check_searchHistory('flight'); check_landing('flight')"
-            >الطیران</span
-          >
+            data-id="flight" data-nav="flight"
+            onclick="check_searchHistory('flight'); check_landing('flight')">الطیران</span>
           <span
             class="text-zinc-900 cursor-pointer text-sm hover:text-primary-600 transition-all duration-200 ease-in-out"
-            data-id="hotel"
-            data-nav="hotel"
-            onclick="check_searchHistory('hotel'); check_landing('hotel')"
-            >الفندق</span
-          >
-          <a
+            data-id="hotel" data-nav="hotel"
+            onclick="check_searchHistory('hotel'); check_landing('hotel')">الفندق</span>
+          <a class="text-zinc-900 text-sm hover:text-primary-600 transition-all duration-200 ease-in-out"
+            href="/معلومات-عنا" rel="nofollow">معلومات عنا</a>
+          <a class="text-zinc-900 text-sm hover:text-primary-600 transition-all duration-200 ease-in-out" href="/مدونة"
+            rel="nofollow">مدونة</a>
+          <a href="/article.bc?id=2389860&lid=3"
             class="text-zinc-900 text-sm hover:text-primary-600 transition-all duration-200 ease-in-out"
-            href="/معلومات-عنا"
-            rel="nofollow"
-            >معلومات عنا</a
-          >
-          <a
+            rel="nofollow">الإلغاءوالاسترداد</a>
+            <a href="/article.bc?id=2389861&lid=3"
             class="text-zinc-900 text-sm hover:text-primary-600 transition-all duration-200 ease-in-out"
-            href="/مدونة"
-            rel="nofollow"
-            >مدونة</a
-          >
+            rel="nofollow">اتفاقية السرية</a>
         </div>
 
         <div class="flex flex-col gap-5 items-start w-full lg:w-[43%]">
@@ -446,60 +261,28 @@
       </div>
       <div dir="ltr" class="w-full lg:flex hidden justify-between">
         <div class="flex gap-3 items-center">
-          <a
-            target="_blank"
-            href="https://basisfly.ae/"
-            class="lg:text-xs text-sm text-zinc-700"
-          >
+          <a target="_blank" href="https://basisfly.ae/" class="lg:text-xs text-sm text-zinc-700">
             Web Design & Online Reservation By
           </a>
           <a target="_blank" href="https://basisfly.ae/">
-            <img
-              loading="lazy"
-              class="!w-[68px] !h-[17px]"
-              width="136"
-              height="34"
-              src="[##cms.cms.cdn##]/images/basisfly-logo.png"
-              alt="basisfly-Logo"
-            />
+            <img loading="lazy" class="!w-[68px] !h-[17px]" width="136" height="34"
+              src="[##cms.cms.cdn##]/images/basisfly-logo.png" alt="basisfly-Logo" />
           </a>
         </div>
-        <img
-          loading="lazy"
-          width="90"
-          height="15"
-          src="[##cms.cms.cdn##]/images/trust.png"
-          alt="trust"
-        />
+        <img loading="lazy" width="90" height="15" src="[##cms.cms.cdn##]/images/trust.png" alt="trust" />
       </div>
 
       <div class="w-full flex lg:hidden flex-col gap-2 justify-between">
-        <a
-          target="_blank"
-          href="https://basisfly.ae/"
-          class="lg:text-xs text-sm text-center text-zinc-700"
-        >
+        <a target="_blank" href="https://basisfly.ae/" class="lg:text-xs text-sm text-center text-zinc-700">
           Web Design & Online Reservation By
         </a>
 
         <div class="flex gap-3 items-center w-full justify-center">
           <a target="_blank" href="https://basisfly.ae/">
-            <img
-              loading="lazy"
-              class="!w-[68px] !h-[17px]"
-              width="136"
-              height="34"
-              src="[##cms.cms.cdn##]/images/basisfly-logo.png"
-              alt="basisfly-Logo"
-            />
+            <img loading="lazy" class="!w-[68px] !h-[17px]" width="136" height="34"
+              src="[##cms.cms.cdn##]/images/basisfly-logo.png" alt="basisfly-Logo" />
           </a>
-          <img
-            loading="lazy"
-            width="90"
-            height="15"
-            src="[##cms.cms.cdn##]/images/trust.png"
-            alt="trust"
-          />
+          <img loading="lazy" width="90" height="15" src="[##cms.cms.cdn##]/images/trust.png" alt="trust" />
         </div>
       </div>
     </div>
