@@ -1482,19 +1482,38 @@ body.fa-multi
 
 .search-box-container.en.cstm #r-flight,
 .search-box-container.en.cstm #r-flighthotel,
-.search-box-container.en.cstm #r-hotel,
+.search-box-container.en.cstm #r-hotel {
+  padding-top: 1rem;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  background-color: #b1b1b13b;
+  border-bottom: 1px solid #ffffff8a;
+  /* border-top: 1px solid #ffffff8a; */
+  box-shadow: rgba(14, 30, 37, 0.12) 0 2px 4px 0,
+    rgba(14, 30, 37, 0.32) 0 2px 16px 0;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
 body.ar-multi .search-box-container #r-flight,
 body.ar-multi .search-box-container #r-flighthotel,
 body.ar-multi .search-box-container #r-hotel,
 body.fa-multi .search-box-container #r-flight,
 body.fa-multi .search-box-container #r-flighthotel,
 body.fa-multi .search-box-container #r-hotel {
-  background-color: var(--primary-600) !important;
-  border-bottom-left-radius: 2px;
-  border-bottom-right-radius: 2px;
   padding-top: 1rem;
-}
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  background-color: #b1b1b13b;
+  border-bottom: 1px solid #ffffff8a;
 
+  box-shadow: rgba(14, 30, 37, 0.12) 0 2px 4px 0,
+    rgba(14, 30, 37, 0.32) 0 2px 16px 0;
+  border-top-right-radius: 0px !important;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
 body.ar-multi .search-box-container .flighttype-items li,
 body.fa-multi .search-box-container .flighttype-items li {
   background-color: transparent !important;
@@ -1966,7 +1985,7 @@ body.fa-multi .search-box-container .close-passenger-box {
 .search-box-container.en.cstm .current_day .basis_m_day,
 body.ar-multi .search-box-container .current_day .basis_m_day,
 body.fa-multi .search-box-container .current_day .basis_m_day {
-  color: #fff !important;
+  color: #000 !important;
 }
 
 .search-box-container.en.cstm .Basis_Calendar .current_day::after,
@@ -3633,6 +3652,17 @@ i[class^="flaticon-"]:before {
 }
 
 @media not all and (min-width: 800px) {
+  body.ar-multi .search-box-container #r-flight,
+  body.ar-multi .search-box-container #r-flighthotel,
+  body.ar-multi .search-box-container #r-hotel,
+  body.fa-multi .search-box-container #r-flight,
+  body.fa-multi .search-box-container #r-flighthotel,
+  body.fa-multi .search-box-container #r-hotel {
+    border-top-right-radius: 0px !important;
+    border-top-left-radius: 0px !important;
+    border-bottom-left-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+  }
   .click-content,
   .flight-routes .reserve-field {
     height: 56px !important;
@@ -3730,6 +3760,7 @@ i[class^="flaticon-"]:before {
   .search-box-container.en.cstm #r-hotel {
     padding: 1.29rem 1rem;
     padding-top: 3.3rem !important;
+    border-top-right-radius: 0 !important;
   }
 
   .search-box-container.en.cstm .exchangeRoute {
@@ -3825,8 +3856,8 @@ body.multi .calendar-footer input {
   justify-self: center;
   justify-content: center;
   align-items: center;
-  background-color: #fff;
-  color: var(--primary-600);
+  background-color: var(--primary-600);
+  color: #fff;
   font-size: 12px !important;
   border-top-right-radius: 2px;
   border-top-left-radius: 2px;
@@ -3835,8 +3866,16 @@ body.multi .calendar-footer input {
 
 .reservation-item li.active-module,
 .reservation-item li:hover {
-  background-color: var(--primary-600) !important;
-  color: #fff !important;
+  /* background-color: var(--primary-600) !important; */
+  /* color: #fff !important; */
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  background-color: #b1b1b13b !important;
+  /* border-bottom: 1px solid #ffffff8a; */
+  border-top: 1px solid #ffffff8a;
+  box-shadow: rgba(14, 30, 37, 0.12) 0 2px 4px 0,
+    rgba(14, 30, 37, 0.32) 0 2px 16px 0;
+  z-index: 10;
 }
 
 body.ar-multi .search-box-container form input::placeholder {
@@ -4480,6 +4519,16 @@ body.fa-multi .search-box-container ul.ul-list {
 .mobile-search-box.en .label-search-list span {
   font-size: 10px !important;
 }
-.mobile-search-box.en .close-text{
+.mobile-search-box.en .close-text {
   font-size: 12px !important;
+}
+
+@media not all and (min-width: 800px) {
+  .user-profile-btn {
+    display: flex !important;
+  }
+}
+
+.search-box-container .reserve-btn.active-module span {
+  color: #000 !important;
 }
