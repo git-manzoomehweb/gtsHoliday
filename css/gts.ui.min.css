@@ -2243,7 +2243,9 @@ li.inactive:hover {
 #search-box .multi-route-tlt {
   right: 3rem;
 }
+#picker{font-family: Arial,Helvetica,sans-serif }
 @media not all and (min-width: 1024px) {
+  #picker{font-family: Arial,Helvetica,sans-serif !important;margin-top: -100px !important;}
   #search-box form {
     padding: 0 !important;
   }
@@ -2475,3 +2477,5 @@ li.inactive:hover {
   color: var(--primary-800);
   font-size: 16px;
 }
+
+
