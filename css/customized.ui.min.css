@@ -3873,8 +3873,8 @@ body.multi .calendar-footer input {
   background-color: #b1b1b13b !important;
   /* border-bottom: 1px solid #ffffff8a; */
   border-top: 1px solid #ffffff8a;
-  box-shadow: rgba(14, 30, 37, 0.12) 0 2px 4px 0,
-    rgba(14, 30, 37, 0.32) 0 2px 16px 0;
+  /* box-shadow: rgba(14, 30, 37, 0.12) 0 2px 4px 0,
+    rgba(14, 30, 37, 0.32) 0 2px 16px 0; */
   z-index: 10;
 }
 
@@ -4531,4 +4531,7 @@ body.fa-multi .search-box-container ul.ul-list {
 
 .search-box-container .reserve-btn.active-module span {
   color: #000 !important;
+}
+#search-box{
+  z-index: 10 !important;
 }
